@@ -1,5 +1,6 @@
 jQuery( document ).ready(function( $ ) {
 	$('#enviar').click(function () {
+		//revisarCampos();
     	calificar();
     	enviarDatos();
     });
@@ -16,7 +17,7 @@ jQuery( document ).ready(function( $ ) {
 		console.log(info);
 		for (i=1; i <= 50; i++) {
 			//NO OLVIDAR AÑADIR ":CHECKED" AL FINAL DE INPUT:RADIO
-			info.push({name: "R"+i, value: $("input:radio[name=\""+i+"i\"]").val() });
+			info.push({name: "R"+i, value: $("input:radio[name=\""+i+"i\"]:checked").val() });
 		}
 		//convertir el array en un url
 		var serializedData = jQuery.param(info);
@@ -59,20 +60,22 @@ jQuery( document ).ready(function( $ ) {
 	};
     function calificar() {
     	//For testing purposes
-    	for (var i=1; i<=50; i++){
+    	/*for (var i=1; i<=50; i++){
     		var azar = Math.floor((Math.random() * 5) + 1);
-    		$("input:radio[name=\""+i+"i\"]").val(azar);
-    	}
+    		$("input:radio[name=\""+i+"i\"]:checked").val(azar);
+    	}*/
     	//cálculo de resultados
     	var overall = 0, memoria = 0, cognitiva = 0, compensacion = 0, metacognitiva = 0, afectiva = 0, social = 0;
 		for (var i=1; i<= 50; i++) {
 			//NO OLVIDAR AÑADIR ":CHECKED" PARA CADA INPUT:RADIO
-			overall += Number($("input:radio[name=\""+i+"i\"]").val()); 
-			(i >= 1 && i <=9) ? memoria += Number($("input:radio[name=\""+i+"i\"]").val()) : (i >= 10 && i <= 23) ? cognitiva += Number($("input:radio[name=\""+i+"i\"]").val()) : (i >= 24 && i <=29) ? compensacion += Number($("input:radio[name=\""+i+"i\"]").val()) : (i >= 31 && i <= 38) ? metacognitiva += Number($("input:radio[name=\""+i+"i\"]").val()) : (i >= 39 && i <= 44) ? afectiva += Number($("input:radio[name=\""+i+"i\"]").val()) : social += Number($("input:radio[name=\""+i+"i\"]").val());
+			if($("input:radio[name=\""+i+"i\"]:checked").length == 0)
+	  		{break;}
+			overall += Number($("input:radio[name=\""+i+"i\"]:checked").val()); 
+			(i >= 1 && i <=9) ? memoria += Number($("input:radio[name=\""+i+"i\"]:checked").val()) : (i >= 10 && i <= 23) ? cognitiva += Number($("input:radio[name=\""+i+"i\"]:checked").val()) : (i >= 24 && i <=29) ? compensacion += Number($("input:radio[name=\""+i+"i\"]:checked").val()) : (i >= 31 && i <= 38) ? metacognitiva += Number($("input:radio[name=\""+i+"i\"]:checked").val()) : (i >= 39 && i <= 44) ? afectiva += Number($("input:radio[name=\""+i+"i\"]:checked").val()) : social += Number($("input:radio[name=\""+i+"i\"]:checked").val());
 		}
 		memoria /= 9, cognitiva/=14, compensacion/=6,metacognitiva/=9,afectiva/=6,social/=6,overall/=50;
     	memoria= Number(memoria.toFixed(1)),cognitiva= Number(cognitiva.toFixed(1)),compensacion= Number(compensacion.toFixed(1)),metacognitiva= Number(metacognitiva.toFixed(1)),afectiva= Number(afectiva.toFixed(1)),social= Number(social.toFixed(1)),overall= Number(overall.toFixed(1));
-    	//console.log("memoria:" + memoria + "\n" +"cognitiva:" + cognitiva + "\n" + "compensacion:" + compensacion + "\n" +"metacognitiva:" + metacognitiva + "\n" +"afectiva:" + afectiva + "\n" +"social:" + social + "\n" +"overall:" + overall + "\n");
+    	console.log("memoria:" + memoria + "\n" +"cognitiva:" + cognitiva + "\n" + "compensacion:" + compensacion + "\n" +"metacognitiva:" + metacognitiva + "\n" +"afectiva:" + afectiva + "\n" +"social:" + social + "\n" +"overall:" + overall + "\n");
     	var totales = "<div class=\"tabla\"><div class=\"fila prima\"><div class=\"celda\">Estrategias cubiertas</div><div class=\"celda\">Tu promedio</div></div><div class=\"fila\"><div class=\"celda\">Recordar de manera efectiva.</div><div class=\"celda\">" + memoria + "</div></div><div class=\"fila\"><div class=\"celda\">Usar todos tus procesos mentales.</div><div class=\"celda\">"	+ cognitiva + "	</div></div><div class=\"fila\"><div class=\"celda\">	Compensar la información faltante.</div><div class=\"celda\">"+ compensacion + "</div></div><div class=\"fila\"><div class=\"celda\">	Organizar y evaluar tu aprendizaje.</div><div class=\"celda\">"+metacognitiva + "</div></div><div class=\"fila\"><div class=\"celda\">	Regular tus emociones.</div><div class=\"celda\">"+afectiva + "</div></div><div class=\"fila\"><div class=\"celda\">	Aprender con otros.</div><div class=\"celda\">"+social + "</div></div><div class=\"fila\"><div class=\"celda\">	TOTAL GLOBAL</div><div class=\"celda\">"+overall + "</div></div></div>";
     	$("#promedios").html(totales);
     	$("#interpretacion").show();
@@ -105,4 +108,25 @@ jQuery( document ).ready(function( $ ) {
 	});
 	chart.render();
 	};
+	function revisarCampos() {
+	  var completo = true;
+	  var campoVacio = '';
+	$("input:radio").each(function(){
+	  var name = $(this).attr("name");
+	  if($("input:radio[name="+name+"]:checked").length == 0)
+	  {
+	    completo = false;
+	  }
+	});
+	alert(completo);
+	  /*for (i=1;i<=50;i++) {
+	  	if ($.trim($("input:radio[name=\""+i+"i\"]").val()) == '') {
+			completo = false;
+			campoVacio = "R"+i;
+			break;
+		}
+	  }
+	  console.log(completo + "\nRespuesta vacía:" + campoVacio);
+	  return completo;*/
+}
 });
