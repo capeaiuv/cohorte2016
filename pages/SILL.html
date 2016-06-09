@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <link rel="stylesheet" type="text/css" href="../css/estilo.css">
+    <script src="../js/canvasjs.min.js"></script>
+    <script src="../js/jquery-1.6.2.min.js"></script>
+    <script src="../js/funciones.js"></script>
+    <title>Así aprendo yo inglés</title>
+    </head>
+    <body>
+    <p class="title">Así aprendo yo inglés.</p>
+    	<p class="orden">Valora con 1, 2, 3, 4, 5 cada uno de los siguientes enunciados: 1= nunca, 2= ocasionalmente,  3 =  de vez en cuando,  4 =  a menudo,  5 =  siempre.  Selecciona la opción que corresponda</p><br><br>
+    	<div class="datos"><input type="text" id="nombre" placeholder="Nombre Completo">
+    	    	<input type="text" id="correo" placeholder="Correo electrónico">
+    	    	<input type="text" id="matricula" placeholder="Matrícula">
+    	    	<input type="text" id="seccion" placeholder="Sección"></div>
+    	<div class="tabs">
+    	<section id="tab1">
+    	<h2><a href="#tab1">Sección 1</a></h2>
+    	<div class="tabella">
+	    	<div class="riga">
+	    	<div class="colonna">
+	    	<ol><li><div class="inciso">Relaciono los contenidos nuevos con lo que ya sé</div></li><br>
+    			<li><div class="inciso">Utilizo palabras nuevas en las frases que construyo</div></li><br>
+    			<li><div class="inciso">Relaciono el sonido de una palabra con una imagen o dibujo</div></li><br>
+    			<li><div class="inciso">Asocio una palabra a una situación o imagen mental</div></li><br>
+    			<li><div class="inciso">Utilizo rimas para recordar palabras nuevas</div></li><br>
+    			<li><div class="inciso">Utilizo láminas o fichas para recordar nuevas palabras</div></li><br>
+    			<li><div class="inciso">Utilizo gestos físicos para aprender nuevas palabras</div></li><br>
+    			<li><div class="inciso">Repaso las lecciones a menudo</div></li><br>
+    			<li><div class="inciso">Relaciono las palabras nuevas con el lugar en el que aparecen</div></li><br>
+    			<li><div class="inciso">Pronuncio o escribo las palabras nuevas varias veces</div></li><br>
+    	</ol></div>
+    	<div class="colonna">
+    	<div><input type="radio" name="1i" value="1" id="1i1"><label for="1i1">1</label>
+		<input type="radio" name="1i" value="2" id="1i2"><label for="1i2">2</label>
+		<input type="radio" name="1i" value="3" id="1i3"><label for="1i3">3</label>
+		<input type="radio" name="1i" value="4" id="1i4"><label for="1i4">4</label>
+		<input type="radio" name="1i" value="5" id="1i5"><label for="1i5">5</label>
+		</div><br><br>
+		<div><input type="radio" name="2i" value="1" id="2i1"><label for="2i1">1</label>
+		<input type="radio" name="2i" value="2" id="2i2"><label for="2i2">2</label>
+		<input type="radio" name="2i" value="3" id="2i3"><label for="2i3">3</label>
+		<input type="radio" name="2i" value="4" id="2i4"><label for="2i4">4</label>
+		<input type="radio" name="2i" value="5" id="2i5"><label for="2i5">5</label>
+		</div><br><br>
+		<div><input type="radio" name="3i" value="1" id="3i1"><label for="3i1">1</label>
+		<input type="radio" name="3i" value="2" id="3i2"><label for="3i2">2</label>
+		<input type="radio" name="3i" value="3" id="3i3"><label for="3i3">3</label>
+		<input type="radio" name="3i" value="4" id="3i4"><label for="3i4">4</label>
+		<input type="radio" name="3i" value="5" id="3i5"><label for="3i5">5</label>
+		</div><br><br>
+		<div><input type="radio" name="4i" value="1" id="4i1"><label for="4i1">1</label>
+		<input type="radio" name="4i" value="2" id="4i2"><label for="4i2">2</label>
+		<input type="radio" name="4i" value="3" id="4i3"><label for="4i3">3</label>
+		<input type="radio" name="4i" value="4" id="4i4"><label for="4i4">4</label>
+		<input type="radio" name="4i" value="5" id="4i5"><label for="4i5">5</label>
+		</div><br><br>
+		<div><input type="radio" name="5i" value="1" id="5i1"><label for="5i1">1</label>
+		<input type="radio" name="5i" value="2" id="5i2"><label for="5i2">2</label>
+		<input type="radio" name="5i" value="3" id="5i3"><label for="5i3">3</label>
+		<input type="radio" name="5i" value="4" id="5i4"><label for="5i4">4</label>
+		<input type="radio" name="5i" value="5" id="5i5"><label for="5i5">5</label>
+		</div><br><br>
+		<div><input type="radio" name="6i" value="1" id="6i1"><label for="6i1">1</label>
+		<input type="radio" name="6i" value="2" id="6i2"><label for="6i2">2</label>
+		<input type="radio" name="6i" value="3" id="6i3"><label for="6i3">3</label>
+		<input type="radio" name="6i" value="4" id="6i4"><label for="6i4">4</label>
+		<input type="radio" name="6i" value="5" id="6i5"><label for="6i5">5</label>
+		</div><br><br>
+		<div><input type="radio" name="7i" value="1" id="7i1"><label for="7i1">1</label>
+		<input type="radio" name="7i" value="2" id="7i2"><label for="7i2">2</label>
+		<input type="radio" name="7i" value="3" id="7i3"><label for="7i3">3</label>
+		<input type="radio" name="7i" value="4" id="7i4"><label for="7i4">4</label>
+		<input type="radio" name="7i" value="5" id="7i5"><label for="7i5">5</label>
+		</div><br><br>
+		<div><input type="radio" name="8i" value="1" id="8i1"><label for="8i1">1</label>
+		<input type="radio" name="8i" value="2" id="8i2"><label for="8i2">2</label>
+		<input type="radio" name="8i" value="3" id="8i3"><label for="8i3">3</label>
+		<input type="radio" name="8i" value="4" id="8i4"><label for="8i4">4</label>
+		<input type="radio" name="8i" value="5" id="8i5"><label for="8i5">5</label>
+		</div><br><br>
+		<div><input type="radio" name="9i" value="1" id="9i1"><label for="9i1">1</label>
+		<input type="radio" name="9i" value="2" id="9i2"><label for="9i2">2</label>
+		<input type="radio" name="9i" value="3" id="9i3"><label for="9i3">3</label>
+		<input type="radio" name="9i" value="4" id="9i4"><label for="9i4">4</label>
+		<input type="radio" name="9i" value="5" id="9i5"><label for="9i5">5</label>
+		</div><br><br>
+		<div><input type="radio" name="10i" value="1" id="10i1"><label for="10i1">1</label>
+		<input type="radio" name="10i" value="2" id="10i2"><label for="10i2">2</label>
+		<input type="radio" name="10i" value="3" id="10i3"><label for="10i3">3</label>
+		<input type="radio" name="10i" value="4" id="10i4"><label for="10i4">4</label>
+		<input type="radio" name="10i" value="5" id="10i5"><label for="10i5">5</label>
+		</div><br><br></div>
+		</div>
+		</div>
+		</section>
+
+		<section id="tab2">
+		<h2><a href="#tab2">Sección 2</a></h2>
+		<div class="tabella">
+		<div class="riga">
+		<div class="colonna">
+		<ol><li><div class="inciso">Intento hablar como un nativo o el profesor</div></li><br>
+    			<li><div class="inciso">Practico los sonidos del inglés</div></li><br>
+    			<li><div class="inciso">Utilizo las palabras (en inglés) que conozco en contextos diferentes</div></li><br>
+    			<li><div class="inciso">Empiezo conversaciones en inglés</div></li><br>
+    			<li><div class="inciso">Veo la tele o vídeos y escucho música en inglés</div></li><br>
+    			<li><div class="inciso">Leo por placer en inglés</div></li><br>
+    			<li><div class="inciso">Escribo mensajes, notas, cartas, etc. en inglés</div></li><br>
+    			<li><div class="inciso">Antes de leer un texto compruebo de qué trata</div></li><br>
+    			<li><div class="inciso">Busco palabras en mi idioma parecidas a las del inglés</div></li><br>
+    			<li><div class="inciso">Intento encontrar normas o reglas que me faciliten el estudio del inglés</div></li><br></ol>
+	    </div>
+	   <div class="colonna"> 
+	   <div><input type="radio" name="11i" value="1" id="11i1"><label for="11i1">1</label>
+   		<input type="radio" name="11i" value="2" id="11i2"><label for="11i2">2</label>
+   		<input type="radio" name="11i" value="3" id="11i3"><label for="11i3">3</label>
+   		<input type="radio" name="11i" value="4" id="11i4"><label for="11i4">4</label>
+   		<input type="radio" name="11i" value="5" id="11i5"><label for="11i5">5</label>
+   		</div><br><br>
+   		<div><input type="radio" name="12i" value="1" id="12i1"><label for="12i1">1</label>
+   		<input type="radio" name="12i" value="2" id="12i2"><label for="12i2">2</label>
+   		<input type="radio" name="12i" value="3" id="12i3"><label for="12i3">3</label>
+   		<input type="radio" name="12i" value="4" id="12i4"><label for="12i4">4</label>
+   		<input type="radio" name="12i" value="5" id="12i5"><label for="12i5">5</label>
+   		</div><br><br>
+   		<div><input type="radio" name="13i" value="1" id="13i1"><label for="13i1">1</label>
+   		<input type="radio" name="13i" value="2" id="13i2"><label for="13i2">2</label>
+   		<input type="radio" name="13i" value="3" id="13i3"><label for="13i3">3</label>
+   		<input type="radio" name="13i" value="4" id="13i4"><label for="13i4">4</label>
+   		<input type="radio" name="13i" value="5" id="13i5"><label for="13i5">5</label>
+   		</div><br><br>
+   		<div><input type="radio" name="14i" value="1" id="14i1"><label for="14i1">1</label>
+   		<input type="radio" name="14i" value="2" id="14i2"><label for="14i2">2</label>
+   		<input type="radio" name="14i" value="3" id="14i3"><label for="14i3">3</label>
+   		<input type="radio" name="14i" value="4" id="14i4"><label for="14i4">4</label>
+   		<input type="radio" name="14i" value="5" id="14i5"><label for="14i5">5</label>
+   		</div><br><br>
+   		<div><input type="radio" name="15i" value="1" id="15i1"><label for="15i1">1</label>
+   		<input type="radio" name="15i" value="2" id="15i2"><label for="15i2">2</label>
+   		<input type="radio" name="15i" value="3" id="15i3"><label for="15i3">3</label>
+   		<input type="radio" name="15i" value="4" id="15i4"><label for="15i4">4</label>
+   		<input type="radio" name="15i" value="5" id="15i5"><label for="15i5">5</label>
+   		</div><br><br>
+   		<div><input type="radio" name="16i" value="1" id="16i1"><label for="16i1">1</label>
+   		<input type="radio" name="16i" value="2" id="16i2"><label for="16i2">2</label>
+   		<input type="radio" name="16i" value="3" id="16i3"><label for="16i3">3</label>
+   		<input type="radio" name="16i" value="4" id="16i4"><label for="16i4">4</label>
+   		<input type="radio" name="16i" value="5" id="16i5"><label for="16i5">5</label>
+   		</div><br><br>
+   		<div><input type="radio" name="17i" value="1" id="17i1"><label for="17i1">1</label>
+   		<input type="radio" name="17i" value="2" id="17i2"><label for="17i2">2</label>
+   		<input type="radio" name="17i" value="3" id="17i3"><label for="17i3">3</label>
+   		<input type="radio" name="17i" value="4" id="17i4"><label for="17i4">4</label>
+   		<input type="radio" name="17i" value="5" id="17i5"><label for="17i5">5</label>
+   		</div><br><br>
+   		<div><input type="radio" name="18i" value="1" id="18i1"><label for="18i1">1</label>
+   		<input type="radio" name="18i" value="2" id="18i2"><label for="18i2">2</label>
+   		<input type="radio" name="18i" value="3" id="18i3"><label for="18i3">3</label>
+   		<input type="radio" name="18i" value="4" id="18i4"><label for="18i4">4</label>
+   		<input type="radio" name="18i" value="5" id="18i5"><label for="18i5">5</label>
+   		</div><br><br>
+   		<div><input type="radio" name="19i" value="1" id="19i1"><label for="19i1">1</label>
+   		<input type="radio" name="19i" value="2" id="19i2"><label for="19i2">2</label>
+   		<input type="radio" name="19i" value="3" id="19i3"><label for="19i3">3</label>
+   		<input type="radio" name="19i" value="4" id="19i4"><label for="19i4">4</label>
+   		<input type="radio" name="19i" value="5" id="19i5"><label for="19i5">5</label>
+   		</div><br><br>
+   		<div><input type="radio" name="20i" value="1" id="20i1"><label for="20i1">1</label>
+   		<input type="radio" name="20i" value="2" id="20i2"><label for="20i2">2</label>
+   		<input type="radio" name="20i" value="3" id="20i3"><label for="20i3">3</label>
+   		<input type="radio" name="20i" value="4" id="20i4"><label for="20i4">4</label>
+   		<input type="radio" name="20i" value="5" id="20i5"><label for="20i5">5</label>
+   		</div><br><br></div>
+	    </div>
+	    </div>
+	    </section>
+
+	    <section id="tab3">
+	    <h2><a href="#tab3">Sección 3</a></h2>
+	    <div class="tabella">
+	    <div class="riga">
+	    <div class="colonna">
+	    <ol><li><div class="inciso">Busco el significado de algunas palabras descomponiéndolas</div></li><br>
+    			<li><div class="inciso">Procuro no traducir palabra por palabra </div></li><br>
+    			<li><div class="inciso">Hago resúmenes de las informaciones que escuche o leí (inglés)</div></li><br>
+    			<li><div class="inciso">Intento adivinar el significado de las palabras extrañas</div></li><br>
+    			<li><div class="inciso">Me ayudo de los gestos cuando no me sale una palabra</div></li><br>
+    			<li><div class="inciso">Me invento palabras nuevas cuando estoy bloqueado</div></li><br>
+    			<li><div class="inciso">Leo sin buscar el significado de todas las palabras</div></li><br>
+    			<li><div class="inciso">Intento adivinar lo que otra persona dice</div></li><br>
+    			<li><div class="inciso">Uso sinónimos o perífrasis al expresarme</div></li><br>
+    			<li><div class="inciso">Busco nuevas formas de aprender el inglés</div></li><br>
+    	</ol></div>
+    	<div class="colonna"><div><input type="radio" name="21i" value="1" id="21i1"><label for="21i1">1</label>
+    			<input type="radio" name="21i" value="2" id="21i2"><label for="21i2">2</label>
+    			<input type="radio" name="21i" value="3" id="21i3"><label for="21i3">3</label>
+    			<input type="radio" name="21i" value="4" id="21i4"><label for="21i4">4</label>
+    			<input type="radio" name="21i" value="5" id="21i5"><label for="21i5">5</label>
+    			</div><br><br>
+    			<div><input type="radio" name="22i" value="1" id="22i1"><label for="22i1">1</label>
+    			<input type="radio" name="22i" value="2" id="22i2"><label for="22i2">2</label>
+    			<input type="radio" name="22i" value="3" id="22i3"><label for="22i3">3</label>
+    			<input type="radio" name="22i" value="4" id="22i4"><label for="22i4">4</label>
+    			<input type="radio" name="22i" value="5" id="22i5"><label for="22i5">5</label>
+    			</div><br><br>
+    			<div><input type="radio" name="23i" value="1" id="23i1"><label for="23i1">1</label>
+    			<input type="radio" name="23i" value="2" id="23i2"><label for="23i2">2</label>
+    			<input type="radio" name="23i" value="3" id="23i3"><label for="23i3">3</label>
+    			<input type="radio" name="23i" value="4" id="23i4"><label for="23i4">4</label>
+    			<input type="radio" name="23i" value="5" id="23i5"><label for="23i5">5</label>
+    			</div><br><br>
+    			<div><input type="radio" name="24i" value="1" id="24i1"><label for="24i1">1</label>
+    			<input type="radio" name="24i" value="2" id="24i2"><label for="24i2">2</label>
+    			<input type="radio" name="24i" value="3" id="24i3"><label for="24i3">3</label>
+    			<input type="radio" name="24i" value="4" id="24i4"><label for="24i4">4</label>
+    			<input type="radio" name="24i" value="5" id="24i5"><label for="24i5">5</label>
+    			</div><br><br>
+    			<div><input type="radio" name="25i" value="1" id="25i1"><label for="25i1">1</label>
+    			<input type="radio" name="25i" value="2" id="25i2"><label for="25i2">2</label>
+    			<input type="radio" name="25i" value="3" id="25i3"><label for="25i3">3</label>
+    			<input type="radio" name="25i" value="4" id="25i4"><label for="25i4">4</label>
+    			<input type="radio" name="25i" value="5" id="25i5"><label for="25i5">5</label>
+    			</div><br><br>
+    			<div><input type="radio" name="26i" value="1" id="26i1"><label for="26i1">1</label>
+    			<input type="radio" name="26i" value="2" id="26i2"><label for="26i2">2</label>
+    			<input type="radio" name="26i" value="3" id="26i3"><label for="26i3">3</label>
+    			<input type="radio" name="26i" value="4" id="26i4"><label for="26i4">4</label>
+    			<input type="radio" name="26i" value="5" id="26i5"><label for="26i5">5</label>
+    			</div><br><br>
+    			<div><input type="radio" name="27i" value="1" id="27i1"><label for="27i1">1</label>
+    			<input type="radio" name="27i" value="2" id="27i2"><label for="27i2">2</label>
+    			<input type="radio" name="27i" value="3" id="27i3"><label for="27i3">3</label>
+    			<input type="radio" name="27i" value="4" id="27i4"><label for="27i4">4</label>
+    			<input type="radio" name="27i" value="5" id="27i5"><label for="27i5">5</label>
+    			</div><br><br>
+    			<div><input type="radio" name="28i" value="1" id="28i1"><label for="28i1">1</label>
+    			<input type="radio" name="28i" value="2" id="28i2"><label for="28i2">2</label>
+    			<input type="radio" name="28i" value="3" id="28i3"><label for="28i3">3</label>
+    			<input type="radio" name="28i" value="4" id="28i4"><label for="28i4">4</label>
+    			<input type="radio" name="28i" value="5" id="28i5"><label for="28i5">5</label>
+    			</div><br><br>
+    			<div><input type="radio" name="29i" value="1" id="29i1"><label for="29i1">1</label>
+    			<input type="radio" name="29i" value="2" id="29i2"><label for="29i2">2</label>
+    			<input type="radio" name="29i" value="3" id="29i3"><label for="29i3">3</label>
+    			<input type="radio" name="29i" value="4" id="29i4"><label for="29i4">4</label>
+    			<input type="radio" name="29i" value="5" id="29i5"><label for="29i5">5</label>
+    			</div><br><br>
+    			<div><input type="radio" name="30i" value="1" id="30i1"><label for="30i1">1</label>
+    			<input type="radio" name="30i" value="2" id="30i2"><label for="30i2">2</label>
+    			<input type="radio" name="30i" value="3" id="30i3"><label for="30i3">3</label>
+    			<input type="radio" name="30i" value="4" id="30i4"><label for="30i4">4</label>
+    			<input type="radio" name="30i" value="5" id="30i5"><label for="30i5">5</label>
+    			</div><br><br></div>
+    	</div>
+    	</div>
+    	</section>
+
+	    <section id="tab4">
+	    <h2><a href="#tab4">Sección 4</a></h2>
+	    <div class="tabella">
+	    <div class="riga">
+	    <div class="colonna">
+	    <ol><li><div class="inciso">Anoto mis errores e intento hacerlo mejor</div></li><br>
+    			<li><div class="inciso">Presto atención a quien esté hablando </div></li><br>
+    			<li><div class="inciso">Reflexiono sobre cómo se aprende otro idioma </div></li><br>
+    			<li><div class="inciso">Planifico mis estudios para tener suficiente tiempo</div></li><br>
+    			<li><div class="inciso">Busco a otras personas para practicar mi inglés</div></li><br>
+    			<li><div class="inciso">Busco oportunidades para leer en inglés</div></li><br>
+    			<li><div class="inciso">Sé lo que tengo que hacer para mejorar mis habilidades en el inglés</div></li><br>
+    			<li><div class="inciso">Reflexiono sobre mi progreso en el estudio</div></li><br>
+    			<li><div class="inciso">Procuro relajarme cuando estoy tenso por el uso del inglés</div></li><br>
+    			<li><div class="inciso">Me doy ánimos para hablar en inglés cuando estoy tenso</div></li><br>
+    	</ol></div>
+    	<div class="colonna">
+    	<div><input type="radio" name="31i" value="1" id="31i1"><label for="31i1">1</label>
+    	    			<input type="radio" name="31i" value="2" id="31i2"><label for="31i2">2</label>
+    	    			<input type="radio" name="31i" value="3" id="31i3"><label for="31i3">3</label>
+    	    			<input type="radio" name="31i" value="4" id="31i4"><label for="31i4">4</label>
+    	    			<input type="radio" name="31i" value="5" id="31i5"><label for="31i5">5</label>
+    	    			</div><br><br>
+    	    			<div><input type="radio" name="32i" value="1" id="32i1"><label for="32i1">1</label>
+    	    			<input type="radio" name="32i" value="2" id="32i2"><label for="32i2">2</label>
+    	    			<input type="radio" name="32i" value="3" id="32i3"><label for="32i3">3</label>
+    	    			<input type="radio" name="32i" value="4" id="32i4"><label for="32i4">4</label>
+    	    			<input type="radio" name="32i" value="5" id="32i5"><label for="32i5">5</label>
+    	    			</div><br><br>
+    	    			<div><input type="radio" name="33i" value="1" id="33i1"><label for="33i1">1</label>
+    	    			<input type="radio" name="33i" value="2" id="33i2"><label for="33i2">2</label>
+    	    			<input type="radio" name="33i" value="3" id="33i3"><label for="33i3">3</label>
+    	    			<input type="radio" name="33i" value="4" id="33i4"><label for="33i4">4</label>
+    	    			<input type="radio" name="33i" value="5" id="33i5"><label for="33i5">5</label>
+    	    			</div><br><br>
+    	    			<div><input type="radio" name="34i" value="1" id="34i1"><label for="34i1">1</label>
+    	    			<input type="radio" name="34i" value="2" id="34i2"><label for="34i2">2</label>
+    	    			<input type="radio" name="34i" value="3" id="34i3"><label for="34i3">3</label>
+    	    			<input type="radio" name="34i" value="4" id="34i4"><label for="34i4">4</label>
+    	    			<input type="radio" name="34i" value="5" id="34i5"><label for="34i5">5</label>
+    	    			</div><br><br>
+    	    			<div><input type="radio" name="35i" value="1" id="35i1"><label for="35i1">1</label>
+    	    			<input type="radio" name="35i" value="2" id="35i2"><label for="35i2">2</label>
+    	    			<input type="radio" name="35i" value="3" id="35i3"><label for="35i3">3</label>
+    	    			<input type="radio" name="35i" value="4" id="35i4"><label for="35i4">4</label>
+    	    			<input type="radio" name="35i" value="5" id="35i5"><label for="35i5">5</label>
+    	    			</div><br><br>
+    	    			<div><input type="radio" name="36i" value="1" id="36i1"><label for="36i1">1</label>
+    	    			<input type="radio" name="36i" value="2" id="36i2"><label for="36i2">2</label>
+    	    			<input type="radio" name="36i" value="3" id="36i3"><label for="36i3">3</label>
+    	    			<input type="radio" name="36i" value="4" id="36i4"><label for="36i4">4</label>
+    	    			<input type="radio" name="36i" value="5" id="36i5"><label for="36i5">5</label>
+    	    			</div><br><br>
+    	    			<div><input type="radio" name="37i" value="1" id="37i1"><label for="37i1">1</label>
+    	    			<input type="radio" name="37i" value="2" id="37i2"><label for="37i2">2</label>
+    	    			<input type="radio" name="37i" value="3" id="37i3"><label for="37i3">3</label>
+    	    			<input type="radio" name="37i" value="4" id="37i4"><label for="37i4">4</label>
+    	    			<input type="radio" name="37i" value="5" id="37i5"><label for="37i5">5</label>
+    	    			</div><br><br>
+    	    			<div><input type="radio" name="38i" value="1" id="38i1"><label for="38i1">1</label>
+    	    			<input type="radio" name="38i" value="2" id="38i2"><label for="38i2">2</label>
+    	    			<input type="radio" name="38i" value="3" id="38i3"><label for="38i3">3</label>
+    	    			<input type="radio" name="38i" value="4" id="38i4"><label for="38i4">4</label>
+    	    			<input type="radio" name="38i" value="5" id="38i5"><label for="38i5">5</label>
+    	    			</div><br><br>
+    	    			<div><input type="radio" name="39i" value="1" id="39i1"><label for="39i1">1</label>
+    	    			<input type="radio" name="39i" value="2" id="39i2"><label for="39i2">2</label>
+    	    			<input type="radio" name="39i" value="3" id="39i3"><label for="39i3">3</label>
+    	    			<input type="radio" name="39i" value="4" id="39i4"><label for="39i4">4</label>
+    	    			<input type="radio" name="39i" value="5" id="39i5"><label for="39i5">5</label>
+    	    			</div><br><br>
+    	    			<div><input type="radio" name="40i" value="1" id="40i1"><label for="40i1">1</label>
+    	    			<input type="radio" name="40i" value="2" id="40i2"><label for="40i2">2</label>
+    	    			<input type="radio" name="40i" value="3" id="40i3"><label for="40i3">3</label>
+    	    			<input type="radio" name="40i" value="4" id="40i4"><label for="40i4">4</label>
+    	    			<input type="radio" name="40i" value="5" id="40i5"><label for="40i5">5</label>
+    	    			</div><br><br></div>
+    	</div>
+    	</div>
+    	</section>
+	    <section id="tab5">
+	    <h2><a href="#tab5">Sección 5</a></h2>
+	    <div class="tabella">
+	    <div class="riga">
+	    <div class="colonna">
+	    <ol><li><div class="inciso">Me recompenso a mí mismo cuando lo hago bien</div></li><br>
+    			<li><div class="inciso">Noto cuando estoy tenso y me pongo nervioso cuando estudio o hago uso del inglés</div></li><br>
+    			<li><div class="inciso">Anoto en un diario mis sentimientos sobre el inglés</div></li><br>
+    			<li><div class="inciso">Comparto mis sentimientos con otras personas cuando estoy aprendiendo inglés</div></li><br>
+    			<li><div class="inciso">Le pido a la otra persona que repita o hable más lento</div></li><br>
+    			<li><div class="inciso">Pido que me corrijan cuando hablo</div></li><br>
+    			<li><div class="inciso">Práctico el inglés con otros estudiantes</div></li><br>
+    			<li><div class="inciso">Solicito la ayuda de los profesores</div></li><br>
+    			<li><div class="inciso">Hago preguntas en inglés</div></li><br>
+    			<li><div class="inciso">Intento comprender la cultura de los hablantes del inglés</div></li><br>
+    	</ol></div>
+    	<div class="colonna">
+    	<div><input type="radio" name="41i" value="1" id="41i1"><label for="41i1">1</label>
+    	    	    			<input type="radio" name="41i" value="2" id="41i2"><label for="41i2">2</label>
+    	    	    			<input type="radio" name="41i" value="3" id="41i3"><label for="41i3">3</label>
+    	    	    			<input type="radio" name="41i" value="4" id="41i4"><label for="41i4">4</label>
+    	    	    			<input type="radio" name="41i" value="5" id="41i5"><label for="41i5">5</label>
+    	    	    			</div><br><br>
+    	    	    			<div><input type="radio" name="42i" value="1" id="42i1"><label for="42i1">1</label>
+    	    	    			<input type="radio" name="42i" value="2" id="42i2"><label for="42i2">2</label>
+    	    	    			<input type="radio" name="42i" value="3" id="42i3"><label for="42i3">3</label>
+    	    	    			<input type="radio" name="42i" value="4" id="42i4"><label for="42i4">4</label>
+    	    	    			<input type="radio" name="42i" value="5" id="42i5"><label for="42i5">5</label>
+    	    	    			</div><br><br>
+    	    	    			<div><input type="radio" name="43i" value="1" id="43i1"><label for="43i1">1</label>
+    	    	    			<input type="radio" name="43i" value="2" id="43i2"><label for="43i2">2</label>
+    	    	    			<input type="radio" name="43i" value="3" id="43i3"><label for="43i3">3</label>
+    	    	    			<input type="radio" name="43i" value="4" id="43i4"><label for="43i4">4</label>
+    	    	    			<input type="radio" name="43i" value="5" id="43i5"><label for="43i5">5</label>
+    	    	    			</div><br><br>
+    	    	    			<div><input type="radio" name="44i" value="1" id="44i1"><label for="44i1">1</label>
+    	    	    			<input type="radio" name="44i" value="2" id="44i2"><label for="44i2">2</label>
+    	    	    			<input type="radio" name="44i" value="3" id="44i3"><label for="44i3">3</label>
+    	    	    			<input type="radio" name="44i" value="4" id="44i4"><label for="44i4">4</label>
+    	    	    			<input type="radio" name="44i" value="5" id="44i5"><label for="44i5">5</label>
+    	    	    			</div><br><br>
+    	    	    			<div><input type="radio" name="45i" value="1" id="45i1"><label for="45i1">1</label>
+    	    	    			<input type="radio" name="45i" value="2" id="45i2"><label for="45i2">2</label>
+    	    	    			<input type="radio" name="45i" value="3" id="45i3"><label for="45i3">3</label>
+    	    	    			<input type="radio" name="45i" value="4" id="45i4"><label for="45i4">4</label>
+    	    	    			<input type="radio" name="45i" value="5" id="45i5"><label for="45i5">5</label>
+    	    	    			</div><br><br>
+    	    	    			<div><input type="radio" name="46i" value="1" id="46i1"><label for="46i1">1</label>
+    	    	    			<input type="radio" name="46i" value="2" id="46i2"><label for="46i2">2</label>
+    	    	    			<input type="radio" name="46i" value="3" id="46i3"><label for="46i3">3</label>
+    	    	    			<input type="radio" name="46i" value="4" id="46i4"><label for="46i4">4</label>
+    	    	    			<input type="radio" name="46i" value="5" id="46i5"><label for="46i5">5</label>
+    	    	    			</div><br><br>
+    	    	    			<div><input type="radio" name="47i" value="1" id="47i1"><label for="47i1">1</label>
+    	    	    			<input type="radio" name="47i" value="2" id="47i2"><label for="47i2">2</label>
+    	    	    			<input type="radio" name="47i" value="3" id="47i3"><label for="47i3">3</label>
+    	    	    			<input type="radio" name="47i" value="4" id="47i4"><label for="47i4">4</label>
+    	    	    			<input type="radio" name="47i" value="5" id="47i5"><label for="47i5">5</label>
+    	    	    			</div><br><br>
+    	    	    			<div><input type="radio" name="48i" value="1" id="48i1"><label for="48i1">1</label>
+    	    	    			<input type="radio" name="48i" value="2" id="48i2"><label for="48i2">2</label>
+    	    	    			<input type="radio" name="48i" value="3" id="48i3"><label for="48i3">3</label>
+    	    	    			<input type="radio" name="48i" value="4" id="48i4"><label for="48i4">4</label>
+    	    	    			<input type="radio" name="48i" value="5" id="48i5"><label for="48i5">5</label>
+    	    	    			</div><br><br>
+    	    	    			<div><input type="radio" name="49i" value="1" id="49i1"><label for="49i1">1</label>
+    	    	    			<input type="radio" name="49i" value="2" id="49i2"><label for="49i2">2</label>
+    	    	    			<input type="radio" name="49i" value="3" id="49i3"><label for="49i3">3</label>
+    	    	    			<input type="radio" name="49i" value="4" id="49i4"><label for="49i4">4</label>
+    	    	    			<input type="radio" name="49i" value="5" id="49i5"><label for="49i5">5</label>
+    	    	    			</div><br><br>
+    	    	    			<div><input type="radio" name="50i" value="1" id="50i1"><label for="50i1">1</label>
+    	    	    			<input type="radio" name="50i" value="2" id="50i2"><label for="50i2">2</label>
+    	    	    			<input type="radio" name="50i" value="3" id="50i3"><label for="50i3">3</label>
+    	    	    			<input type="radio" name="50i" value="4" id="50i4"><label for="50i4">4</label>
+    	    	    			<input type="radio" name="50i" value="5" id="50i5"><label for="50i5">5</label>
+    	    	    			</div></div>
+    	</div>
+    	</div>
+    	</section>
+    	</div>
+    	<button class="btn" id="enviar">Enviar respuestas</button>     <div id="result"></div><br><br>
+    	<div id="popupR"><div class="interpretacion">
+    	<div class="title2">RESULTADOS</div><br><br>
+    	    	<div class="title2">Cómo interpretar tus promedios</div><br>
+    	    		<div class="tabella">
+    	    			<div class="riga">
+    	    				<div class="colonna">
+    	    					Alto
+    	    				</div>
+    	    				<div class="colonna">
+    	    					Se usa siempre o casi siempre.<br>
+    	    					Se usa a menudo.
+    	    				</div>
+    	    				<div class="colonna">
+    	    					4.5 to 5.0<br>
+    	    					3.4 to 4.4<br>
+    	    				</div>
+    	    			</div>
+    	    			<div class="riga">
+    	    				<div class="colonna">
+    	    					Medio
+    	    				</div>
+    	    				<div class="colonna">
+    	    					Se utiliza a veces.
+    	    				</div>
+    	    				<div class="colonna">
+    	    					2.4 to 3.4
+    	    				</div>
+    	    			</div>
+    	    			<div class="colonna">
+    	    				Bajo
+    	    			</div>
+    	    			<div class="colonna">
+    	    				Por lo general no se usa.<br>
+    	    				No se usa nunca o casi nunca.
+    	    			</div>
+    	    			<div class="colonna">
+    	    				1.5 to 2.4<br>
+    	    				1.0 to 1.4
+    	    			</div>
+    	    		</div><br>
+    	    	<div class="title2">Qué significan estos promedios para ti</div><br>
+    	
+    	    	<p>El promedio global dice qué tan seguido utilizas estas estrategias para aprender inglés. Cada parte de este test representa un grupo de estrategias de aprendizaje. Los promedios para cada parte del test muestran qué grupos de estrategias utilizas más.<br>
+    	    	    	    	La mejor manera de utilizar estas estrategias depende de tu edad, personalidad y de por qué estás aprendiendo inglés. Si tuviste promedios muy bajos en uno o más de los grupos de estrategias, puede que haya estrategias de esos grupos que te serviría conocer.</p>
+    	    	</div>
+    		    
+    		    <div id="resultados">
+    		    </div>
+    		    <div id="grafica"></div></div>
+</form>
+    	
+
+  		<!-- <textarea id="texto"></textarea>
+  		<input type="button" onclick="makeInciso()" > -->
+    </body>
+
+</html>
