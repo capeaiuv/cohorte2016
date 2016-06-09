@@ -28,7 +28,7 @@ jQuery( document ).ready(function( $ ) {
 		$('#result').text('Enviando datos...');
 		// enviar los datos con ajax a google
 		request = $.ajax({
-			url: "https://script.google.com/macros/s/AKfycbz9cHz0KBecOI35E6q5NUOxTINdMaKfRKzuGtDdq7vdTQ0Wdg/exec",
+			url: "https://script.google.com/macros/s/AKfycby35-KwuG6kmaoARn2vLYr5cGSsysgMxuDWRo9wGlF-Cdb0LNhT/exec",
 			type: "post",
 			data: serializedData
 		});
