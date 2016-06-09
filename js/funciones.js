@@ -28,7 +28,10 @@ jQuery( document ).ready(function( $ ) {
 		$('#result').text('Enviando datos...');
 		// enviar los datos con ajax a google
 		request = $.ajax({
-			url: "https://script.google.com/macros/s/AKfycby35-KwuG6kmaoARn2vLYr5cGSsysgMxuDWRo9wGlF-Cdb0LNhT/exec",
+			//SAML
+			url: "https://script.google.com/macros/s/AKfycbz9cHz0KBecOI35E6q5NUOxTINdMaKfRKzuGtDdq7vdTQ0Wdg/exec",
+			//CAPEAI
+			//url: "https://script.google.com/macros/s/AKfycby35-KwuG6kmaoARn2vLYr5cGSsysgMxuDWRo9wGlF-Cdb0LNhT/exec",
 			type: "post",
 			data: serializedData
 		});
@@ -55,7 +58,6 @@ jQuery( document ).ready(function( $ ) {
 		//event.preventDefault();
 	};
     function calificar() {
-    	$("#popupR").show();
     	//For testing purposes
     	for (var i=1; i<=50; i++){
     		var azar = Math.floor((Math.random() * 5) + 1);
@@ -70,14 +72,15 @@ jQuery( document ).ready(function( $ ) {
 		}
 		memoria /= 9, cognitiva/=14, compensacion/=6,metacognitiva/=9,afectiva/=6,social/=6,overall/=50;
     	memoria= Number(memoria.toFixed(1)),cognitiva= Number(cognitiva.toFixed(1)),compensacion= Number(compensacion.toFixed(1)),metacognitiva= Number(metacognitiva.toFixed(1)),afectiva= Number(afectiva.toFixed(1)),social= Number(social.toFixed(1)),overall= Number(overall.toFixed(1));
-    	console.log("memoria:" + memoria + "\n" +"cognitiva:" + cognitiva + "\n" + "compensacion:" + compensacion + "\n" +"metacognitiva:" + metacognitiva + "\n" +"afectiva:" + afectiva + "\n" +"social:" + social + "\n" +"overall:" + overall + "\n");
-    	var totales = "<div class=\"tabella\"><div class=\"riga prima\"><div class=\"colonna\">Estrategias cubiertas</div><div class=\"colonna\">Tu promedio</div></div><div class=\"riga\"><div class=\"colonna\">Recordar de manera efectiva.</div><div class=\"colonna\">" + memoria + "</div></div><div class=\"riga\"><div class=\"colonna\">Usar todos tus procesos mentales.</div><div class=\"colonna\">"	+ cognitiva + "	</div></div><div class=\"riga\"><div class=\"colonna\">	Compensar la información faltante.</div><div class=\"colonna\">"+ compensacion + "</div></div><div class=\"riga\"><div class=\"colonna\">	Organizar y evaluar tu aprendizaje.</div><div class=\"colonna\">"+metacognitiva + "</div></div><div class=\"riga\"><div class=\"colonna\">	Regular tus emociones.</div><div class=\"colonna\">"+afectiva + "</div></div><div class=\"riga\"><div class=\"colonna\">	Aprender con otros.</div><div class=\"colonna\">"+social + "</div></div><div class=\"riga\"><div class=\"colonna\">	TOTAL GLOBAL</div><div class=\"colonna\">"+overall + "</div></div></div>";
-    	$("#resultados").innerHTML = totales;
+    	//console.log("memoria:" + memoria + "\n" +"cognitiva:" + cognitiva + "\n" + "compensacion:" + compensacion + "\n" +"metacognitiva:" + metacognitiva + "\n" +"afectiva:" + afectiva + "\n" +"social:" + social + "\n" +"overall:" + overall + "\n");
+    	var totales = "<div class=\"tabla\"><div class=\"fila prima\"><div class=\"celda\">Estrategias cubiertas</div><div class=\"celda\">Tu promedio</div></div><div class=\"fila\"><div class=\"celda\">Recordar de manera efectiva.</div><div class=\"celda\">" + memoria + "</div></div><div class=\"fila\"><div class=\"celda\">Usar todos tus procesos mentales.</div><div class=\"celda\">"	+ cognitiva + "	</div></div><div class=\"fila\"><div class=\"celda\">	Compensar la información faltante.</div><div class=\"celda\">"+ compensacion + "</div></div><div class=\"fila\"><div class=\"celda\">	Organizar y evaluar tu aprendizaje.</div><div class=\"celda\">"+metacognitiva + "</div></div><div class=\"fila\"><div class=\"celda\">	Regular tus emociones.</div><div class=\"celda\">"+afectiva + "</div></div><div class=\"fila\"><div class=\"celda\">	Aprender con otros.</div><div class=\"celda\">"+social + "</div></div><div class=\"fila\"><div class=\"celda\">	TOTAL GLOBAL</div><div class=\"celda\">"+overall + "</div></div></div>";
+    	$("#promedios").html(totales);
+    	$("#interpretacion").show();
 	
 	//gráfico
 	var chart = new CanvasJS.Chart("grafica", {
 		title:{
-			text: "Cómo interpretar tus promedios"              
+			text: "Promedios"              
 		},
 		axisY: {
 			interval: 0.5,

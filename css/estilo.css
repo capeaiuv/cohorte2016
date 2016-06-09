@@ -1,7 +1,51 @@
-	#result {
-		display: inline-block;
+	/*Generales*/
+	html {
+    	background-image:url(../imgs/fondo-investigación-13.png);
+		font-family: sans-serif;
+    }
+    body {
+    	display: block;
+    	background-color: white;
+    	width: 60em;
+    	margin-right: auto;
+    	margin-left: auto;
+    	margin-top: 3em;
+    }
+    .tabla {
+		display: table;
+		margin: auto;
+		border-collapse: collapse;
 	}
-	.datos {
+	.fila {
+		display: table-row;
+		padding: 5px;
+	}
+	.celda {
+		display: table-cell;
+		padding: 5px;
+	}
+	.celda div {
+    	display: inline-block;
+    }
+	.orden {
+    	font-size: 20px;
+    	text-align: justify;
+    	width: 90%;
+    	margin: 0 auto;
+    }
+    h1 {
+    	color: #3a3a3a;
+    	/*font-size: 3em;*/
+    	text-align: center;
+    	margin: 1em;
+    }
+    h2 {
+    	color: #3a3a3a;
+    	font-weight: bold;
+    	/*font-size: 2em;*/
+    	text-align: center;
+    }
+    .datos {
 		position: relative;
 		display:block;
 		margin: auto auto auto 5em;
@@ -9,31 +53,8 @@
 	p {
     	text-align: justify;
     }
-    #popupR {
-    	display:none;
-    }
-    .title2 {
-    	color: #3a3a3a;
-    	font-weight: bold;
-    	font-size: 2em;
-    	text-align: center;
-    }
-    .interpretacion .riga {
-    	border-bottom: 1px solid gray;
-    	
-    }
-    #resultados .riga.prima {
-    	background-color: #94adce;
-    	color: white;
-    }
-    #resultados .riga:hover {
-    	background-color: #d4d3e2;
-    }
-    html {
-    	background-image:url(../imgs/fondo-investigación-13.png);
-		font-family: sans-serif;
-    }
-    div.tabs .riga {
+    /*Pestañas*/    
+    div.tabs .fila {
     	display:none;
     }
     div.tabs
@@ -82,7 +103,7 @@
 	}
     div.tabs section:target,
 	div.tabs section:target h2,
-	div.tabs section:target .riga
+	div.tabs section:target .fila
 	{
 		display:block;
 		color: #333;
@@ -121,20 +142,7 @@
 	{
 		left: 498px;
 	}
-    
-    .tabella {
-		display: table;
-		margin: auto;
-		border-collapse: collapse;
-	}
-	.riga {
-		display: table-row;
-		padding: 5px;
-	}
-	.colonna {
-		display: table-cell;
-		padding: 5px;
-	}
+	/*radios*/    
 	input[type=radio] {
 	position:absolute; 
 	z-index:-1000; 
@@ -161,7 +169,6 @@
 	cursor:pointer;
 
 	}
-
 	input[type=radio]:checked + label {
 		background-position: 0 -15px;
 		}
@@ -174,34 +181,25 @@
 	-ms-user-select: none;
 	user-select: none;
 	}
-    body {
-    	display: block;
-    	background-color: white;
-    	width: 60em;
-    	margin-right: auto;
-    	margin-left: auto;
-    	margin-top: 3em;
+	/*Resultados e interpretación*/
+	#result {
+		display: inline-block;
+	}
+	#interpretacion {
+		display:none;
+	}
+    #int-SILL .fila{
+    	border-bottom: 1px solid gray;
     }
-    .orden {
-    	font-size: 20px;
-    	text-align: justify;
-    	width: 90%;
-    	margin: 0 auto;
+    #promedios .fila.prima {
+    	background-color: #94adce;
+    	color: white;
     }
-    .colonna div {
-    	display: inline-block;
+    #promedios .fila:hover {
+    	background-color: #d4d3e2;
     }
-    textarea {
-    	width: 500;
-    	width: 500;
-    }
-    .title {
-    	color: #3a3a3a;
-    	font-size: 3em;
-    	text-align: center;
-    	margin: 1em;
-    }
-    .btn {
+    /*Enviar btn*/
+    #enviar {
     	position: relative;
     	margin: 0 auto auto 6em;
 	  background: #3498db;
@@ -220,7 +218,7 @@
 	  text-decoration: none;
 	}
 
-	.btn:hover {
+	#enviar:hover {
 	  background: #3cb0fd;
 	  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
 	  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
