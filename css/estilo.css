@@ -141,6 +141,7 @@
 	  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
 	  text-decoration: none;
 	}
+<<<<<<< HEAD
 
 	/*Speech bubble*/
 	#advertencia {
@@ -286,3 +287,5 @@
   transform: scaleY(1);
 }
 	
+=======
+>>>>>>> origin/gh-pages
