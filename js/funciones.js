@@ -1,8 +1,22 @@
 jQuery( document ).ready(function( $ ) {
+	$(generarRadios);
+	function generarRadios() {
+		var i=1;
+	$(".radioBtns").each(function(){
+		var radioCodigo =" ";
+		for (var j=1; j<=5; j++) {
+			radioCodigo += "<input type=\"radio\" name=\""+i+"i\" value=\""+j+"\" id=\""+i+"i"+j+"\"><label for=\""+i+"i"+j+"\">"+j+"</label>\n";
+		}
+		$(this).html(radioCodigo);
+		i++;
+		});
+	}
+
+
 	$('#enviar').click(function () {
-		//revisarCampos();
-    	calificar();
-    	enviarDatos();
+		revisarCampos();
+    	//calificar();
+    	//enviarDatos();
     });
 	//variable para el request
 	var request;
@@ -60,10 +74,6 @@ jQuery( document ).ready(function( $ ) {
 	};
     function calificar() {
     	//For testing purposes
-    	/*for (var i=1; i<=50; i++){
-    		var azar = Math.floor((Math.random() * 5) + 1);
-    		$("input:radio[name=\""+i+"i\"]:checked").val(azar);
-    	}*/
     	//cálculo de resultados
     	var overall = 0, memoria = 0, cognitiva = 0, compensacion = 0, metacognitiva = 0, afectiva = 0, social = 0;
 		for (var i=1; i<= 50; i++) {
@@ -108,17 +118,115 @@ jQuery( document ).ready(function( $ ) {
 	});
 	chart.render();
 	};
+	$("input:text").focus(function(){
+		var campo = $(this), izq, adv;
+		switch (campo.index()) {
+			case 0:
+			izq="300px";
+			adv="Escribe tu <b>nombre completo</b>, por favor (:";
+			break;
+			case 1:
+			izq="480px";
+			adv="Por favor, verifica que sea un <b>correo válido</b>.";
+			break;
+			case 2:
+			izq="660px";
+			adv="Por favor, verifica que tu <b>matrícula</b> esté correcta y completa (:";
+			break;
+			case 3:
+			izq="840px";
+			adv="Por favor, verifica que tu <b>sección</b> sea correcta (:";
+			break;
+		}
+		$("#advertencia").html(adv);
+		$("#advertencia").css({
+			"display": "inline-block",
+			"left": izq,
+			"z-index": "10",
+		})
+
+	})
+	$("input:text").blur(function(){
+		$("#advertencia").css({
+			"display": "none",
+			"left": "",
+			"z-index": "",
+		})
+	})
+	$("ul#tabs li").click(function(e){
+        if (!$(this).hasClass("active")) {
+            var tabNum = $(this).index();
+            var nthChild = tabNum+1;
+            $("ul#tabs li.active").removeClass("active");
+            $(this).addClass("active");
+            $("#tab section.active").removeClass("active");
+            $("#tab section:nth-child("+nthChild+")").addClass("active");
+        }
+    });
 	function revisarCampos() {
 	  var completo = true;
-	  var campoVacio = '';
+	  $("input:text").
+	  var value= $("#nombre").val();
+	  if (value.length < 15) {
+  		completo = false;
+  		$("#nombre").css ({
+  			"border":"2px solid red"
+  		})
+	  } else {
+	  	$("#nombre").css ({
+  			"border":""
+  		})
+	  }
+	    var filtro = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+	    if (filtro.test($("#correo").val())) {
+	        $("#correo").css ({
+  			"border":"2px solid red"
+  		})
+	    }
+	    else {
+	    	$("#correo").css ({
+  			"border":""
+  		})
+	    }
+	   value= $("#matricula").val();
+	  if (value.length < 20) {
+  		completo = false;
+  		$("#matricula").css ({
+  			"border":"2px solid red"
+  		})
+	  } else {
+	  	$("#matricula").css ({
+  			"border":""
+  		})
+	  }
+	   value= $("#seccion").val();
+	  if (value.length < 20) {
+  		completo = false;
+  		$("#seccion").css ({
+  			"border":"2px solid red"
+  		})
+	  } else {
+	  	$("#seccion").css ({
+  			"border":""
+  		})
+	  }
 	$("input:radio").each(function(){
 	  var name = $(this).attr("name");
 	  if($("input:radio[name="+name+"]:checked").length == 0)
 	  {
 	    completo = false;
+	    $(this).parent().parent().css({
+	    	"border": "1px solid red",
+	    	"background" : "#FFCECE"
+	    });
+	  } else {
+	  	$(this).parent().parent().css({
+	    	"border": "",
+	    	"background" : ""
+	    })
 	  }
 	});
-	alert(completo);
+	//alert(completo);
 	  /*for (i=1;i<=50;i++) {
 	  	if ($.trim($("input:radio[name=\""+i+"i\"]").val()) == '') {
 			completo = false;

@@ -10,10 +10,10 @@
     </head>
     <body>
     <article>
-    <h1>Así aprendo yo inglés.</h1><br>
+    <h1>Así aprendo yo inglés.</h1>
     	<p class="orden">Valora con 1, 2, 3, 4, 5 cada uno de los siguientes enunciados: 1= nunca, 2= ocasionalmente,  3 =  de vez en cuando,  4 =  a menudo,  5 =  siempre.  Selecciona la opción que corresponda</p><br><br>
             <div class="datos"><input type="text" id="nombre" placeholder="Nombre Completo">
-                  <input type="text" id="correo" placeholder="Correo electrónico">
+                  <input type="email" id="correo" placeholder="Correo electrónico">
                   <input type="text" id="matricula" placeholder="Matrícula">
                   <input type="text" id="seccion" placeholder="Sección"></div>
                 <div id="advertencia"></div>
@@ -24,9 +24,8 @@
                   <li>Sección 4</li>
                   <li>Sección 5</li>
                 </ul>
-            <div id="wrapper">
             <div id="tab">
-              <section class="active">
+              <section id="tab1" class="active">
               <div class="tabla">
                 <ol>
                   <div class="fila">
@@ -73,7 +72,8 @@
             </div> <!--tabla-->
             </section>
       
-          <section>
+          <section id="tab2">
+          
           <div class="tabla">
           <ol>
             <div class="fila">
@@ -120,7 +120,7 @@
           </div> <!--tabla-->
           </section>
       
-            <section>
+            <section id="tab3">
             <div class="tabla">
             <ol>
               <div class="fila">
@@ -167,7 +167,8 @@
             </div> <!--tabla-->
             </section>
       
-            <section>
+            <section id="tab4">
+            
             <div class="tabla">
             <ol>
               <div class="fila">
@@ -213,7 +214,8 @@
             </ol>
             </div> <!--tabla-->
             </section>
-            <section>
+            <section id="tab5">
+            
             <div class="tabla">
             <ol>
               <div class="fila">
@@ -250,8 +252,8 @@
             </ol>
             </div> <!--tabla-->
             </section>
-                        </div></div></p>
-    	<button id="enviar" >Enviar respuestas</button>     <div id="result"></div><br><br>
+            </div></p>
+    	<button id="enviar">Enviar respuestas</button>     <div id="result"></div><br><br>
     	<article id="interpretacion">
     	<h1>RESULTADOS</h1>
       <div id="promedios"></div>
