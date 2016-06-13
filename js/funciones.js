@@ -165,7 +165,6 @@ jQuery( document ).ready(function( $ ) {
     });
 	function revisarCampos() {
 	  var completo = true;
-	  $("input:text").
 	  var value= $("#nombre").val();
 	  if (value.length < 15) {
   		completo = false;
