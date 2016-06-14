@@ -1,4 +1,5 @@
 jQuery( document ).ready(function( $ ) {
+	var completo=0, incompleto=0;;
 	$(generarRadios);
 	function generarRadios() {
 		var i=1;
@@ -11,12 +12,15 @@ jQuery( document ).ready(function( $ ) {
 		i++;
 		});
 	}
-
-
 	$('#enviar').click(function () {
 		revisarCampos();
-    	//calificar();
-    	//enviarDatos();
+		if (completo < 54) {
+			$("#fondo-opaco").show();
+		} else {
+			calificar();
+			enviarDatos();
+		}
+    	
     });
 	//variable para el request
 	var request;
@@ -86,9 +90,9 @@ jQuery( document ).ready(function( $ ) {
 		memoria /= 9, cognitiva/=14, compensacion/=6,metacognitiva/=9,afectiva/=6,social/=6,overall/=50;
     	memoria= Number(memoria.toFixed(1)),cognitiva= Number(cognitiva.toFixed(1)),compensacion= Number(compensacion.toFixed(1)),metacognitiva= Number(metacognitiva.toFixed(1)),afectiva= Number(afectiva.toFixed(1)),social= Number(social.toFixed(1)),overall= Number(overall.toFixed(1));
     	console.log("memoria:" + memoria + "\n" +"cognitiva:" + cognitiva + "\n" + "compensacion:" + compensacion + "\n" +"metacognitiva:" + metacognitiva + "\n" +"afectiva:" + afectiva + "\n" +"social:" + social + "\n" +"overall:" + overall + "\n");
-    	var totales = "<div class=\"tabla\"><div class=\"fila prima\"><div class=\"celda\">Estrategias cubiertas</div><div class=\"celda\">Tu promedio</div></div><div class=\"fila\"><div class=\"celda\">Recordar de manera efectiva.</div><div class=\"celda\">" + memoria + "</div></div><div class=\"fila\"><div class=\"celda\">Usar todos tus procesos mentales.</div><div class=\"celda\">"	+ cognitiva + "	</div></div><div class=\"fila\"><div class=\"celda\">	Compensar la información faltante.</div><div class=\"celda\">"+ compensacion + "</div></div><div class=\"fila\"><div class=\"celda\">	Organizar y evaluar tu aprendizaje.</div><div class=\"celda\">"+metacognitiva + "</div></div><div class=\"fila\"><div class=\"celda\">	Regular tus emociones.</div><div class=\"celda\">"+afectiva + "</div></div><div class=\"fila\"><div class=\"celda\">	Aprender con otros.</div><div class=\"celda\">"+social + "</div></div><div class=\"fila\"><div class=\"celda\">	TOTAL GLOBAL</div><div class=\"celda\">"+overall + "</div></div></div>";
+    	var totales = "<div class=\"tabla\"><div class=\"fila prima\"><div class=\"celda\">Estrategias cubiertas</div><div class=\"celda\">Tu promedio</div></div><div class=\"fila\"><div class=\"celda\">Recordar de manera efectiva.</div><div class=\"celda\">" + memoria + "</div></div><div class=\"fila\"><div class=\"celda\">Usar todos tus procesos mentales.</div><div class=\"celda\">"	+ cognitiva + "	</div></div><div class=\"fila\"><div class=\"celda\">	Compensar la información faltante.</div><div class=\"celda\">"+ compensacion + "</div></div><div class=\"fila\"><div class=\"celda\">	Organizar y evaluar tu aprendizaje.</div><div class=\"celda\">"+metacognitiva + "</div></div><div class=\"fila\"><div class=\"celda\">	Regular tus emociones.</div><div class=\"celda\">"+afectiva + "</div></div><div class=\"fila\"><div class=\"celda\">	Aprender con otros.</div><div class=\"celda\">"+social + "</div></div><div class=\"fila blue\"><div class=\"celda\">	TOTAL GLOBAL</div><div class=\"celda\">"+overall + "</div></div></div>";
     	$("#promedios").html(totales);
-    	$("#interpretacion").show();
+    	$("#interpretacion").addClass("mostrar");
 	
 	//gráfico
 	var chart = new CanvasJS.Chart("grafica", {
@@ -120,6 +124,7 @@ jQuery( document ).ready(function( $ ) {
 	};
 	$("input:text").focus(function(){
 		var campo = $(this), izq, adv;
+		if (campo.hasClass("incompleto")) {
 		switch (campo.index()) {
 			case 0:
 			izq="300px";
@@ -144,7 +149,7 @@ jQuery( document ).ready(function( $ ) {
 			"left": izq,
 			"z-index": "10",
 		})
-
+	}
 	})
 	$("input:text").blur(function(){
 		$("#advertencia").css({
@@ -163,77 +168,45 @@ jQuery( document ).ready(function( $ ) {
             $("#tab section:nth-child("+nthChild+")").addClass("active");
         }
     });
+    function hacerIncompleto(field){
+	  		field.addClass("incompleto");
+	  	}
+	  	function quitarIncompleto(field) {
+	  		field.removeClass("incompleto");
+	  	}
 	function revisarCampos() {
-	  var completo = true;
-	  var value= $("#nombre").val();
-	  if (value.length < 15) {
-  		completo = false;
-  		$("#nombre").css ({
-  			"border":"2px solid red"
-  		})
-	  } else {
-	  	$("#nombre").css ({
-  			"border":""
-  		})
-	  }
-	    var filtro = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
-	    if (filtro.test($("#correo").val())) {
-	        $("#correo").css ({
-  			"border":"2px solid red"
-  		})
-	    }
-	    else {
-	    	$("#correo").css ({
-  			"border":""
-  		})
-	    }
-	   value= $("#matricula").val();
-	  if (value.length < 20) {
-  		completo = false;
-  		$("#matricula").css ({
-  			"border":"2px solid red"
-  		})
-	  } else {
-	  	$("#matricula").css ({
-  			"border":""
-  		})
-	  }
-	   value= $("#seccion").val();
-	  if (value.length < 20) {
-  		completo = false;
-  		$("#seccion").css ({
-  			"border":"2px solid red"
-  		})
-	  } else {
-	  	$("#seccion").css ({
-  			"border":""
-  		})
-	  }
+	  $("input:text").each(function(){
+	  	var campo = $(this);
+	  	var value= campo.val(), largo = campo.val().length, num=campo.index(), filtro = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+	  	switch (num) {
+	  		case 0:
+	  		(largo < 12) ? hacerIncompleto(campo) : quitarIncompleto(campo);
+	  		break;
+	  		case 1:
+	  		(filtro.test(value)) ? quitarIncompleto(campo) : hacerIncompleto(campo);
+	  		break;
+	  		case 2:
+	  		(largo < 9) ? hacerIncompleto(campo) : quitarIncompleto(campo);
+	  		break;
+	  		case 3:
+			(largo < 3) ? hacerIncompleto(campo) : quitarIncompleto(campo);
+	  	}
+	  })
 	$("input:radio").each(function(){
-	  var name = $(this).attr("name");
+		var radio = $(this), name = radio.attr("name"), wrapper = radio.parent().parent();
 	  if($("input:radio[name="+name+"]:checked").length == 0)
 	  {
-	    completo = false;
-	    $(this).parent().parent().css({
-	    	"border": "1px solid red",
-	    	"background" : "#FFCECE"
-	    });
+	  	hacerIncompleto(wrapper);
 	  } else {
-	  	$(this).parent().parent().css({
-	    	"border": "",
-	    	"background" : ""
-	    })
+	  	quitarIncompleto(wrapper);
 	  }
 	});
-	//alert(completo);
-	  /*for (i=1;i<=50;i++) {
-	  	if ($.trim($("input:radio[name=\""+i+"i\"]").val()) == '') {
-			completo = false;
-			campoVacio = "R"+i;
-			break;
-		}
-	  }
-	  console.log(completo + "\nRespuesta vacía:" + campoVacio);
-	  return completo;*/
+	completo=55;
+	$(".incompleto").each(function(){
+		completo--;
+	})
 }
+$("#fondo-opaco").click(function(){
+		$(this).hide();
+	})
 });

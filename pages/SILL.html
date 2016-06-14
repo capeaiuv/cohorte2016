@@ -11,6 +11,61 @@
     <body>
     <article>
     <h1>Así aprendo yo inglés.</h1><br>
+    <div id="fondo-opaco" class="mostrar"><article id="alerta"><img id="exclamation" src="../imgs/exclamation.png"></img><p>Algunos de los campos no han sido llenados o están incompletos. Por favor, verifica cualquier campo que esté marcado con un <span class="incompleto">contorno rojo</span></p></article></div>
+    <article id="interpretacion" >
+    <h2>¡Gracias por contestar!</h2><br>
+      <h2>RESULTADOS</h2><br>
+      <div id="promedios"></div>
+            <h3>Cómo interpretar tus promedios</h3><br>
+              <div class="tabla" id="int-SILL">
+                <div class="fila prima green">
+                  <div class="celda">Categoría</div>
+                  <div class="celda">Explicación</div>
+                  <div class="celda">Promedio</div>
+                </div>
+                <div class="fila">
+                  <div class="celda">
+                    Alto
+                  </div>
+                  <div class="celda">
+                    Se usa siempre o casi siempre.<br>
+                    Se usa a menudo.
+                  </div>
+                  <div class="celda">
+                    4.5 to 5.0<br>
+                    3.4 to 4.4<br>
+                  </div>
+                </div>
+                <div class="fila">
+                  <div class="celda">
+                    Medio
+                  </div>
+                  <div class="celda">
+                    Se utiliza a veces.
+                  </div>
+                  <div class="celda">
+                    2.4 to 3.4
+                  </div>
+                </div>
+                <div class="fila">
+                <div class="celda">
+                    Bajo
+                  </div>
+                  <div class="celda">
+                    Por lo general no se usa.<br>
+                    No se usa nunca o casi nunca.
+                  </div>
+                  <div class="celda">
+                    1.5 to 2.4<br>
+                    1.0 to 1.4
+                  </div></div>
+              </div><br>
+            <h3>Qué significan estos promedios para ti</h3>
+            <p>El promedio global dice qué tan seguido utilizas estas estrategias para aprender inglés. Cada parte de este test representa un grupo de estrategias de aprendizaje. Los promedios para cada parte del test muestran qué grupos de estrategias utilizas más.<br>
+                La mejor manera de utilizar estas estrategias depende de tu edad, personalidad y de por qué estás aprendiendo inglés. Si tuviste promedios muy bajos en uno o más de los grupos de estrategias, puede que haya estrategias de esos grupos que te serviría conocer.</p>
+            
+            <div id="grafica"></div>
+            </article>
     	<p class="orden">Valora con 1, 2, 3, 4, 5 cada uno de los siguientes enunciados: 1= nunca, 2= ocasionalmente,  3 =  de vez en cuando,  4 =  a menudo,  5 =  siempre.  Selecciona la opción que corresponda</p><br><br>
             <div class="datos"><input type="text" id="nombre" placeholder="Nombre Completo">
                   <input type="text" id="correo" placeholder="Correo electrónico">
@@ -24,7 +79,7 @@
                   <li>Sección 4</li>
                   <li>Sección 5</li>
                 </ul>
-            <div id="wrapper">
+            <div class="wrapper">
             <div id="tab">
               <section class="active">
               <div class="tabla">
@@ -255,7 +310,7 @@
     	<article id="interpretacion">
     	<h1>RESULTADOS</h1>
       <div id="promedios"></div>
-    	    	<h2>Cómo interpretar tus promedios</h2><br>
+    	    	<div class="wrapper"><h2>Cómo interpretar tus promedios</h2></div><br>
     	    		<div class="tabla" id="int-SILL">
     	    			<div class="fila">
     	    				<div class="celda">
