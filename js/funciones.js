@@ -105,7 +105,6 @@ jQuery( document ).ready(function( $ ) {
 	//enitaim
 	$('#enviar').click(function () {
 	revisarCampos();
-	completo=true;
 	if (completo) { calificar();enviarDatos(); } else { 	alerta(); }
 	});
 	$("input[type=text]").focus(function(){
