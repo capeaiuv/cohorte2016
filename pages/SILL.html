@@ -3,75 +3,20 @@
   <head>
     <meta content="text/html; charset=UTF-8" http-equiv="content-type">
     <link rel="stylesheet" type="text/css" href="../css/estilo.css">
-    <script src="../js/canvasjs.min.js"></script>
-    <script src="../js/jquery-3.0.0.min.js"></script>
-    <script src="../js/funciones.js"></script>
     <title>Así aprendo yo inglés</title>
+    <div id="identi">test01</div>
     </head>
     <body>
-    <article>
+    <article id="main">
     <h1>Así aprendo yo inglés.</h1><br>
-    <div id="fondo-opaco" class="mostrar"><article id="alerta"><img id="exclamation" src="../imgs/exclamation.png"></img><p>Algunos de los campos no han sido llenados o están incompletos. Por favor, verifica cualquier campo que esté marcado con un <span class="incompleto">contorno rojo</span></p></article></div>
-    <article id="interpretacion" >
+    <article id="interpretacion">
     <h2>¡Gracias por contestar!</h2><br>
       <h2>RESULTADOS</h2><br>
-      <div id="promedios"></div>
-            <h3>Cómo interpretar tus promedios</h3><br>
-              <div class="tabla" id="int-SILL">
-                <div class="fila prima green">
-                  <div class="celda">Categoría</div>
-                  <div class="celda">Explicación</div>
-                  <div class="celda">Promedio</div>
-                </div>
-                <div class="fila">
-                  <div class="celda">
-                    Alto
-                  </div>
-                  <div class="celda">
-                    Se usa siempre o casi siempre.<br>
-                    Se usa a menudo.
-                  </div>
-                  <div class="celda">
-                    4.5 to 5.0<br>
-                    3.4 to 4.4<br>
-                  </div>
-                </div>
-                <div class="fila">
-                  <div class="celda">
-                    Medio
-                  </div>
-                  <div class="celda">
-                    Se utiliza a veces.
-                  </div>
-                  <div class="celda">
-                    2.4 to 3.4
-                  </div>
-                </div>
-                <div class="fila">
-                <div class="celda">
-                    Bajo
-                  </div>
-                  <div class="celda">
-                    Por lo general no se usa.<br>
-                    No se usa nunca o casi nunca.
-                  </div>
-                  <div class="celda">
-                    1.5 to 2.4<br>
-                    1.0 to 1.4
-                  </div></div>
-              </div><br>
-            <h3>Qué significan estos promedios para ti</h3>
-            <p>El promedio global dice qué tan seguido utilizas estas estrategias para aprender inglés. Cada parte de este test representa un grupo de estrategias de aprendizaje. Los promedios para cada parte del test muestran qué grupos de estrategias utilizas más.<br>
-                La mejor manera de utilizar estas estrategias depende de tu edad, personalidad y de por qué estás aprendiendo inglés. Si tuviste promedios muy bajos en uno o más de los grupos de estrategias, puede que haya estrategias de esos grupos que te serviría conocer.</p>
-            
-            <div id="grafica"></div>
-            </article>
-    	<p class="orden">Valora con 1, 2, 3, 4, 5 cada uno de los siguientes enunciados: 1= nunca, 2= ocasionalmente,  3 =  de vez en cuando,  4 =  a menudo,  5 =  siempre.  Selecciona la opción que corresponda</p><br><br>
+    </article>
             <div class="datos"><input type="text" id="nombre" placeholder="Nombre Completo">
                   <input type="text" id="correo" placeholder="Correo electrónico">
                   <input type="text" id="matricula" placeholder="Matrícula">
                   <input type="text" id="seccion" placeholder="Sección"></div>
-                <div id="advertencia"></div>
                 <ul id="tabs">
                   <li class="active">Sección 1</li>
                   <li>Sección 2</li>
@@ -82,280 +27,240 @@
             <div class="wrapper">
             <div id="tab">
               <section class="active">
-              <div class="tabla">
+              <div class="orden">Valora con 1, 2, 3, 4, 5 cada uno de los siguientes enunciados: <br><div class="wrapper">1= nunca,<br> 2= ocasionalmente,<br>  3 =  de vez en cuando,<br>  4 =  a menudo,<br>  5 =  siempre<br>.</div></div>
+              <div class="caja"><table>
                 <ol>
-                  <div class="fila">
-                    <div class="celda inciso"><li>Relaciono los contenidos nuevos con lo que ya sé</li></div>
-                    <div class="celda radioBtns"></div>
-                  </div>
-                  <div class="fila">
-                    <div class="celda inciso"><li>Utilizo palabras nuevas en las frases que construyo</li></div>
-                    <div class="celda radioBtns"></div>
-                  </div>
-                  <div class="fila">
-                    <div class="celda inciso"><li>Relaciono el sonido de una palabra con una imagen o dibujo</li></div>
-                    <div class="celda radioBtns"></div>
-                  </div>
-                  <div class="fila">
-                    <div class="celda inciso"><li>Asocio una palabra a una situación o imagen mental</li></div>
-                    <div class="celda radioBtns"></div>
-                  </div>
-                  <div class="fila">
-                    <div class="celda inciso"><li>Utilizo rimas para recordar palabras nuevas</li></div>
-                    <div class="celda radioBtns"></div>
-                    </div>
-                  <div class="fila">
-                    <div class="celda inciso"><li>Utilizo láminas o fichas para recordar nuevas palabras</li></div>
-                    <div class="celda radioBtns"></div>
-                  </div>
-                  <div class="fila">
-                    <div class="celda inciso"><li>Utilizo gestos físicos para aprender nuevas palabras</li></div>
-                    <div class="celda radioBtns"></div>
-                  </div>
-                  <div class="fila">
-                    <div class="celda inciso"><li>Repaso las lecciones a menudo</li></div>
-                    <div class="celda radioBtns"></div>
-                  </div>
-                  <div class="fila">
-                    <div class="celda inciso"><li>Relaciono las palabras nuevas con el lugar en el que aparecen</li></div>
-                    <div class="celda radioBtns"></div>
-                  </div>
-                  <div class="fila">
-                    <div class="celda inciso"><li>Pronuncio o escribo las palabras nuevas varias veces</li></div>
-                    <div class="celda radioBtns"></div>
-                  </div>
+                  <tr>
+                    <td class="inciso"><li>Relaciono los contenidos nuevos con lo que ya sé</li></td>
+                    <td class="radio radioBtns"></td>
+                  </tr>
+                  <tr>
+                    <td class="inciso"><li>Utilizo palabras nuevas en las frases que construyo</li></td>
+                    <td class="radio radioBtns"></td>
+                  </tr>
+                  <tr>
+                    <td class="inciso"><li>Relaciono el sonido de una palabra con una imagen o dibujo</li></td>
+                    <td class="radio radioBtns"></td>
+                  </tr>
+                  <tr>
+                    <td class="inciso"><li>Asocio una palabra a una situación o imagen mental</li></td>
+                    <td class="radio radioBtns"></td>
+                  </tr>
+                  <tr>
+                    <td class="inciso"><li>Utilizo rimas para recordar palabras nuevas</li></td>
+                    <td class="radio radioBtns"></td>
+                    </tr>
+                  <tr>
+                    <td class="inciso"><li>Utilizo láminas o fichas para recordar nuevas palabras</li></td>
+                    <td class="radio radioBtns"></td>
+                  </tr>
+                  <tr>
+                    <td class="inciso"><li>Utilizo gestos físicos para aprender nuevas palabras</li></td>
+                    <td class="radio radioBtns"></td>
+                  </tr>
+                  <tr>
+                    <td class="inciso"><li>Repaso las lecciones a menudo</li></td>
+                    <td class="radio radioBtns"></td>
+                  </tr>
+                  <tr>
+                    <td class="inciso"><li>Relaciono las palabras nuevas con el lugar en el que aparecen</li></td>
+                    <td class="radio radioBtns"></td>
+                  </tr>
+                  <tr>
+                    <td class="inciso"><li>Pronuncio o escribo las palabras nuevas varias veces</li></td>
+                    <td class="radio radioBtns"></td>
+                  </tr>
                  </ol>
-            </div> <!--tabla-->
+            </table></div> <!--tabla-->
             </section>
       
           <section>
-          <div class="tabla">
+          <div class="orden">Valora con 1, 2, 3, 4, 5 cada uno de los siguientes enunciados: <div class="wrapper">1= nunca, 2= ocasionalmente,  3 =  de vez en cuando,  4 =  a menudo,  5 =  siempre.  Selecciona la opción que corresponda</div></div>
+          <div class="caja"><table>
           <ol>
-            <div class="fila">
-              <div class="celda inciso"><li>Practico los sonidos del inglés</li></div>
-              <div class="celda radioBtns"></div>
-            </div>
-            <div class="fila">
-              <div class="celda inciso"><li>Intento hablar como un nativo o el profesor</li></div>
-              <div class="celda radioBtns"></div>
-            </div>
-            <div class="fila">
-              <div class="celda inciso"><li>Utilizo las palabras (en inglés) que conozco en contextos diferentes</li></div>
-              <div class="celda radioBtns"></div>
-            </div>
-            <div class="fila">
-              <div class="celda inciso"><li>Empiezo conversaciones en inglés</li></div>
-              <div class="celda radioBtns"></div>
-            </div>
-            <div class="fila">
-              <div class="celda inciso"><li>Veo la tele o vídeos y escucho música en inglés</li></div>
-              <div class="celda radioBtns"></div>
-            </div>
-            <div class="fila">
-              <div class="celda inciso"><li>Leo por placer en inglés</li></div>
-              <div class="celda radioBtns"></div>
-            </div>
-            <div class="fila">
-              <div class="celda inciso"><li>Escribo mensajes, notas, cartas, etc. en inglés</li></div>
-              <div class="celda radioBtns"></div>
-            </div>
-            <div class="fila">
-              <div class="celda inciso"><li>Antes de leer un texto compruebo de qué trata</li></div>
-              <div class="celda radioBtns"></div>
-            </div>
-            <div class="fila">
-              <div class="celda inciso"><li>Busco palabras en mi idioma parecidas a las del inglés</li></div>
-              <div class="celda radioBtns"></div>
-            </div>
-            <div class="fila">
-              <div class="celda inciso"><li>Intento encontrar normas o reglas que me faciliten el estudio del inglés</li></div>
-              <div class="celda radioBtns"></div>
-            </div>
+            <tr>
+              <td class="inciso"><li>Practico los sonidos del inglés</li></td>
+              <td class="radio radioBtns"></td>
+            </tr>
+            <tr>
+              <td class="inciso"><li>Intento hablar como un nativo o el profesor</li></td>
+              <td class="radio radioBtns"></td>
+            </tr>
+            <tr>
+              <td class="inciso"><li>Utilizo las palabras (en inglés) que conozco en contextos diferentes</li></td>
+              <td class="radio radioBtns"></td>
+            </tr>
+            <tr>
+              <td class="inciso"><li>Empiezo conversaciones en inglés</li></td>
+              <td class="radio radioBtns"></td>
+            </tr>
+            <tr>
+              <td class="inciso"><li>Veo la tele o vídeos y escucho música en inglés</li></td>
+              <td class="radio radioBtns"></td>
+            </tr>
+            <tr>
+              <td class="inciso"><li>Leo por placer en inglés</li></td>
+              <td class="radio radioBtns"></td>
+            </tr>
+            <tr>
+              <td class="inciso"><li>Escribo mensajes, notas, cartas, etc. en inglés</li></td>
+              <td class="radio radioBtns"></td>
+            </tr>
+            <tr>
+              <td class="inciso"><li>Antes de leer un texto compruebo de qué trata</li></td>
+              <td class="radio radioBtns"></td>
+            </tr>
+            <tr>
+              <td class="inciso"><li>Busco palabras en mi idioma parecidas a las del inglés</li></td>
+              <td class="radio radioBtns"></td>
+            </tr>
+            <tr>
+              <td class="inciso"><li>Intento encontrar normas o reglas que me faciliten el estudio del inglés</li></td>
+              <td class="radio radioBtns"></td>
+            </tr>
             </ol>
-          </div> <!--tabla-->
+          </table></div> <!--tabla-->
           </section>
       
             <section>
-            <div class="tabla">
+            <div class="orden">Valora con 1, 2, 3, 4, 5 cada uno de los siguientes enunciados: <div class="wrapper">1= nunca, 2= ocasionalmente,  3 =  de vez en cuando,  4 =  a menudo,  5 =  siempre.  Selecciona la opción que corresponda</div></div>
+            <div class="caja"><table>
             <ol>
-              <div class="fila">
-                <div class="celda inciso"><li>Busco el significado de algunas palabras descomponiéndolas</li></div>
-                <div class="celda radioBtns"></div>
-              </div>
-              <div class="fila">
-                <div class="celda inciso"><li>Procuro no traducir palabra por palabra </li></div>
-                <div class="celda radioBtns"></div>
-              </div>
-              <div class="fila">
-                <div class="celda inciso"><li>Hago resúmenes de las informaciones que escuche o leí (inglés)</li></div>
-                <div class="celda radioBtns"></div>
-              </div>
-              <div class="fila">
-                <div class="celda inciso"><li>Intento adivinar el significado de las palabras extrañas</li></div>
-                <div class="celda radioBtns"></div>
-              </div>
-              <div class="fila">
-                <div class="celda inciso"><li>Me ayudo de los gestos cuando no me sale una palabra</li></div>
-                <div class="celda radioBtns"></div>
-              </div>
-              <div class="fila">
-                <div class="celda inciso"><li>Me invento palabras nuevas cuando estoy bloqueado</li></div>
-                <div class="celda radioBtns"></div>
-              </div>
-              <div class="fila">
-                <div class="celda inciso"><li>Leo sin buscar el significado de todas las palabras</li></div>
-                <div class="celda radioBtns"></div>
-              </div>
-              <div class="fila">
-                <div class="celda inciso"><li>Intento adivinar lo que otra persona dice</li></div>
-                <div class="celda radioBtns"></div>
-              </div>
-              <div class="fila">
-                <div class="celda inciso"><li>Uso sinónimos o perífrasis al expresarme</li></div>
-                <div class="celda radioBtns"></div>
-              </div>
-              <div class="fila">
-                <div class="celda inciso"><li>Busco nuevas formas de aprender el inglés</li></div>
-                <div class="celda radioBtns"></div>
-              </div>
+              <tr>
+                <td class="inciso"><li>Busco el significado de algunas palabras descomponiéndolas</li></td>
+                <td class="radio radioBtns"></td>
+              </tr>
+              <tr>
+                <td class="inciso"><li>Procuro no traducir palabra por palabra </li></td>
+                <td class="radio radioBtns"></td>
+              </tr>
+              <tr>
+                <td class="inciso"><li>Hago resúmenes de las informaciones que escuche o leí (inglés)</li></td>
+                <td class="radio radioBtns"></td>
+              </tr>
+              <tr>
+                <td class="inciso"><li>Intento adivinar el significado de las palabras extrañas</li></td>
+                <td class="radio radioBtns"></td>
+              </tr>
+              <tr>
+                <td class="inciso"><li>Me ayudo de los gestos cuando no me sale una palabra</li></td>
+                <td class="radio radioBtns"></td>
+              </tr>
+              <tr>
+                <td class="inciso"><li>Me invento palabras nuevas cuando estoy bloqueado</li></td>
+                <td class="radio radioBtns"></td>
+              </tr>
+              <tr>
+                <td class="inciso"><li>Leo sin buscar el significado de todas las palabras</li></td>
+                <td class="radio radioBtns"></td>
+              </tr>
+              <tr>
+                <td class="inciso"><li>Intento adivinar lo que otra persona dice</li></td>
+                <td class="radio radioBtns"></td>
+              </tr>
+              <tr>
+                <td class="inciso"><li>Uso sinónimos o perífrasis al expresarme</li></td>
+                <td class="radio radioBtns"></td>
+              </tr>
+              <tr>
+                <td class="inciso"><li>Busco nuevas formas de aprender el inglés</li></td>
+                <td class="radio radioBtns"></td>
+              </tr>
             </ol>
-            </div> <!--tabla-->
+            </table></div> <!--tabla-->
             </section>
       
             <section>
-            <div class="tabla">
+            <div class="orden">Valora con 1, 2, 3, 4, 5 cada uno de los siguientes enunciados: <div class="wrapper">1= nunca, 2= ocasionalmente,  3 =  de vez en cuando,  4 =  a menudo,  5 =  siempre.  Selecciona la opción que corresponda</div></div>
+            <div class="caja"><table>
             <ol>
-              <div class="fila">
-                <div class="celda inciso"><li>Anoto mis errores e intento hacerlo mejor</li></div>
-                <div class="celda radioBtns"></div>
-              </div>
-              <div class="fila">
-                <div class="celda inciso"><li>Presto atención a quien esté hablando </li></div>
-                <div class="celda radioBtns"></div>
-              </div>
-              <div class="fila">
-                <div class="celda inciso"><li>Reflexiono sobre cómo se aprende otro idioma </li></div>
-                <div class="celda radioBtns"></div>
-              </div>
-              <div class="fila">
-                <div class="celda inciso"><li>Planifico mis estudios para tener suficiente tiempo</li></div>
-                <div class="celda radioBtns"></div>
-              </div>
-              <div class="fila">
-                <div class="celda inciso"><li>Busco a otras personas para practicar mi inglés</li></div>
-                <div class="celda radioBtns"></div>
-              </div>
-              <div class="fila">
-                <div class="celda inciso"><li>Busco oportunidades para leer en inglés</li></div>
-                <div class="celda radioBtns"></div>
-              </div>
-              <div class="fila">
-                <div class="celda inciso"><li>Sé lo que tengo que hacer para mejorar mis habilidades en el inglés</li></div>
-                <div class="celda radioBtns"></div>
-              </div>
-              <div class="fila">
-                <div class="celda inciso"><li>Reflexiono sobre mi progreso en el estudio</li></div>
-                <div class="celda radioBtns"></div>
-              </div>
-              <div class="fila">
-                <div class="celda inciso"><li>Procuro relajarme cuando estoy tenso por el uso del inglés</li></div>
-                <div class="celda radioBtns"></div>
-              </div>
-              <div class="fila">
-                <div class="celda inciso"><li>Me doy ánimos para hablar en inglés cuando estoy tenso</li></div>
-                <div class="celda radioBtns"></div>
-              </div>
+              <tr>
+                <td class="inciso"><li>Anoto mis errores e intento hacerlo mejor</li></td>
+                <td class="radio radioBtns"></td>
+              </tr>
+              <tr>
+                <td class="inciso"><li>Presto atención a quien esté hablando </li></td>
+                <td class="radio radioBtns"></td>
+              </tr>
+              <tr>
+                <td class="inciso"><li>Reflexiono sobre cómo se aprende otro idioma </li></td>
+                <td class="radio radioBtns"></td>
+              </tr>
+              <tr>
+                <td class="inciso"><li>Planifico mis estudios para tener suficiente tiempo</li></td>
+                <td class="radio radioBtns"></td>
+              </tr>
+              <tr>
+                <td class="inciso"><li>Busco a otras personas para practicar mi inglés</li></td>
+                <td class="radio radioBtns"></td>
+              </tr>
+              <tr>
+                <td class="inciso"><li>Busco oportunidades para leer en inglés</li></td>
+                <td class="radio radioBtns"></td>
+              </tr>
+              <tr>
+                <td class="inciso"><li>Sé lo que tengo que hacer para mejorar mis habilidades en el inglés</li></td>
+                <td class="radio radioBtns"></td>
+              </tr>
+              <tr>
+                <td class="inciso"><li>Reflexiono sobre mi progreso en el estudio</li></td>
+                <td class="radio radioBtns"></td>
+              </tr>
+              <tr>
+                <td class="inciso"><li>Procuro relajarme cuando estoy tenso por el uso del inglés</li></td>
+                <td class="radio radioBtns"></td>
+              </tr>
+              <tr>
+                <td class="inciso"><li>Me doy ánimos para hablar en inglés cuando estoy tenso</li></td>
+                <td class="radio radioBtns"></td>
+              </tr>
             </ol>
-            </div> <!--tabla-->
+            </table></div> <!--tabla-->
             </section>
             <section>
-            <div class="tabla">
+            <div class="orden">Valora con 1, 2, 3, 4, 5 cada uno de los siguientes enunciados: <div class="wrapper">1= nunca, 2= ocasionalmente,  3 =  de vez en cuando,  4 =  a menudo,  5 =  siempre.  Selecciona la opción que corresponda</div></div>
+            <div class="caja"><table>
             <ol>
-              <div class="fila">
-                <div class="celda inciso"><li>Me recompenso a mí mismo cuando lo hago bien</li></div>
-                <div class="celda radioBtns"></div></div>
-              <div class="fila">
-                <div class="celda inciso"><li>Noto cuando estoy tenso y me pongo nervioso cuando estudio o hago uso del inglés</li></div>
-                <div class="celda radioBtns"></div></div>
-              <div class="fila">
-                <div class="celda inciso"><li>Anoto en un diario mis sentimientos sobre el inglés</li></div>
-                <div class="celda radioBtns"></div></div>
-              <div class="fila">
-                <div class="celda inciso"><li>Comparto mis sentimientos con otras personas cuando estoy aprendiendo inglés</li></div>
-                <div class="celda radioBtns"></div></div>
-              <div class="fila">
-                <div class="celda inciso"><li>Le pido a la otra persona que repita o hable más lento</li></div>
-                <div class="celda radioBtns"></div></div>
-              <div class="fila">
-                <div class="celda inciso"><li>Pido que me corrijan cuando hablo</li></div>
-                <div class="celda radioBtns"></div></div>
-              <div class="fila">
-                <div class="celda inciso"><li>Práctico el inglés con otros estudiantes</li></div>
-                <div class="celda radioBtns"></div></div>
-              <div class="fila">
-                <div class="celda inciso"><li>Solicito la ayuda de los profesores</li></div>
-                <div class="celda radioBtns"></div></div>
-              <div class="fila">
-                <div class="celda inciso"><li>Hago preguntas en inglés</li></div>
-                <div class="celda radioBtns"></div></div>
-              <div class="fila">
-                <div class="celda inciso"><li>Intento comprender la cultura de los hablantes del inglés</li></div>
-                <div class="celda radioBtns"></div>
-              </div>
+              <tr>
+                <td class="inciso"><li>Me recompenso a mí mismo cuando lo hago bien</li></td>
+                <td class="radio radioBtns"></td></tr>
+              <tr>
+                <td class="inciso"><li>Noto cuando estoy tenso y me pongo nervioso cuando estudio o hago uso del inglés</li></td>
+                <td class="radio radioBtns"></td></tr>
+              <tr>
+                <td class="inciso"><li>Anoto en un diario mis sentimientos sobre el inglés</li></td>
+                <td class="radio radioBtns"></td></tr>
+              <tr>
+                <td class="inciso"><li>Comparto mis sentimientos con otras personas cuando estoy aprendiendo inglés</li></td>
+                <td class="radio radioBtns"></td></tr>
+              <tr>
+                <td class="inciso"><li>Le pido a la otra persona que repita o hable más lento</li></td>
+                <td class="radio radioBtns"></td></tr>
+              <tr>
+                <td class="inciso"><li>Pido que me corrijan cuando hablo</li></td>
+                <td class="radio radioBtns"></td></tr>
+              <tr>
+                <td class="inciso"><li>Práctico el inglés con otros estudiantes</li></td>
+                <td class="radio radioBtns"></td></tr>
+              <tr>
+                <td class="inciso"><li>Solicito la ayuda de los profesores</li></td>
+                <td class="radio radioBtns"></td></tr>
+              <tr>
+                <td class="inciso"><li>Hago preguntas en inglés</li></td>
+                <td class="radio radioBtns"></td></tr>
+              <tr>
+                <td class="inciso"><li>Intento comprender la cultura de los hablantes del inglés</li></td>
+                <td class="radio radioBtns"></td>
+              </tr>
             </ol>
-            </div> <!--tabla-->
+            </table></div> <!--tabla-->
             </section>
                         </div></div></p>
-    	<button id="enviar" >Enviar respuestas</button>     <div id="result"></div><br><br>
-    	<article id="interpretacion">
-    	<h1>RESULTADOS</h1>
-      <div id="promedios"></div>
-    	    	<div class="wrapper"><h2>Cómo interpretar tus promedios</h2></div><br>
-    	    		<div class="tabla" id="int-SILL">
-    	    			<div class="fila">
-    	    				<div class="celda">
-    	    					Alto
-    	    				</div>
-    	    				<div class="celda">
-    	    					Se usa siempre o casi siempre.<br>
-    	    					Se usa a menudo.
-    	    				</div>
-    	    				<div class="celda">
-    	    					4.5 to 5.0<br>
-    	    					3.4 to 4.4<br>
-    	    				</div>
-    	    			</div>
-    	    			<div class="fila">
-    	    				<div class="celda">
-    	    					Medio
-    	    				</div>
-    	    				<div class="celda">
-    	    					Se utiliza a veces.
-    	    				</div>
-    	    				<div class="celda">
-    	    					2.4 to 3.4
-    	    				</div>
-    	    			</div>
-    	    			<div class="celda">
-    	    				Bajo
-    	    			</div>
-    	    			<div class="celda">
-    	    				Por lo general no se usa.<br>
-    	    				No se usa nunca o casi nunca.
-    	    			</div>
-    	    			<div class="celda">
-    	    				1.5 to 2.4<br>
-    	    				1.0 to 1.4
-    	    			</div>
-    	    		</div><br>
-    	    	<h2>Qué significan estos promedios para ti</h2>
-    	    	<p>El promedio global dice qué tan seguido utilizas estas estrategias para aprender inglés. Cada parte de este test representa un grupo de estrategias de aprendizaje. Los promedios para cada parte del test muestran qué grupos de estrategias utilizas más.<br>
-    	    	    La mejor manera de utilizar estas estrategias depende de tu edad, personalidad y de por qué estás aprendiendo inglés. Si tuviste promedios muy bajos en uno o más de los grupos de estrategias, puede que haya estrategias de esos grupos que te serviría conocer.</p>
-    	    	
-    		    <div id="grafica"></div>
-            </article>
+    	<div class="wrapper"><button id="enviar" >Enviar respuestas</button></div><br><br>
   		<!-- <textarea id="texto"></textarea>
   		<input type="button" onclick="makeInciso()" > -->
     </body>
-
+<script src="../js/canvasjs.min.js"></script>
+    <script src="../js/jquery-3.0.0.min.js"></script>
+    <script src="../js/funciones.js"></script>
 </html>
