@@ -12,6 +12,7 @@ jQuery(document).ready(function($) {
     console.log(ID);
     //NAVEGACION
     if (ID != "test00") {
+        if (TID >= 4 && TID <= 5 || ID == "test10") {
             $("body").append("<div id='fondo-opaco'><div class='alerta'><img id='exclamation' src='../imgs/exclamation.png'/><p>Lo sentimos, pero este test no está disponible por el momento.</p></div></div>");
         } else {
             if (ID != "test99") {
