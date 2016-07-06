@@ -266,7 +266,7 @@
 	  position:absolute;
 	  border-width:0.938em 0.938em 0; /* vary these values to change the angle of the vertex */
 	  border-style:solid;
-	  border-color:#f3961c transparent;
+	  border-color:#d4d3e2 transparent;
 	  /* reduce the damage in FF3.0 */
 	  display:block;
 	  width:0;
@@ -275,7 +275,7 @@
 	  bottom:auto;
 	  left:auto;
 	  border-width:0 0.938em 0.938em; /* vary these values to change the angle of the vertex */
-	  border-color:#f3961c transparent;
+	  border-color:#d4d3e2 transparent;
 	}
 	ul#tabs {
 	    list-style-type: none;

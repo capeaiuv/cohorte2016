@@ -228,11 +228,9 @@ jQuery(document).ready(function($) {
     };
     //enitaim
     $('#enviar').click(function() {
-        calificar();
-        enviarDatos();
-        /*revisarCampos();
+        revisarCampos();
         if (completo) { calificar();
-            enviarDatos(); } else { alerta(); }*/
+            enviarDatos(); } else { alerta(); }
     });
     $("input[type=text]").focus(function() {
         var campo = $(this);
@@ -377,6 +375,7 @@ jQuery(document).ready(function($) {
             }]
         });
         chart.render();
+        DIAGNOS = "Así aprendo yo inglés, Memoria: " + D["memoria"][0] + ", Cognitiva: " +D["cognitiva"][0] + ", Compensación: "  + D["compensacion"][0] + ", Metacognitiva: "+ D["metacognitiva"][0] + ", Afectiva: " + D["afectiva"][0] + ", Social: " + D["social"][0] + ", Promedio global: " + D["overall"][0] ;
     }
 
     function calTest02() {
