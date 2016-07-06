@@ -12,7 +12,6 @@ jQuery(document).ready(function($) {
     console.log(ID);
     //NAVEGACION
     if (ID != "test00") {
-        if (TID >= 4 && TID <= 5 || ID == "test06B") {
             $("body").append("<div id='fondo-opaco'><div class='alerta'><img id='exclamation' src='../imgs/exclamation.png'/><p>Lo sentimos, pero este test no está disponible por el momento.</p></div></div>");
         } else {
             if (ID != "test99") {
@@ -635,8 +634,7 @@ jQuery(document).ready(function($) {
         ], "center blue");
         add(0, 2);
         lug.append(con2);
-        DIAGNOS = r[0] + ", " + r[1] + ", " + r[2];
-
+        DIAGNOS = r[0] + ", " + r[1] + ", " + r[2]; 
     }
 
     function calTest11() {
