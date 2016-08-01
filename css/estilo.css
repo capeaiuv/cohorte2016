@@ -61,10 +61,12 @@
 	#main {
     	display: block;
     	background-color: white;
-    	width: 60em;
+    	width: 70%;
     	margin-right: auto;
     	margin-left: auto;
-    	margin-top: 4em;
+    	margin-top: 5%;
+    	padding-bottom:2em;
+    	margin-bottom:2em;
     }
 	/*Generales*/
 	html {
@@ -79,10 +81,20 @@
     table {
     	border-collapse: collapse;
     }
+    table td {
+    	text-align:justify;
+    }
+    table tr td:first-child {
+    	padding-left:1em;
+    }
+    table tr td:last-child {
+    	padding-right:1em;
+    }
     table.center {
     	margin-left: auto;
     	margin-right: auto;
     	font-size: 1.3em;
+    	max-width:80%;
     }
     
 	.fila {
@@ -104,27 +116,27 @@
     /*Títulos*/
     h1 {width:100%; text-align: center; padding: 0.5em 0; font-size: 2.6em; background: #0088AA; color: #fff;text-shadow: 0.063em 0.063em 0em #1A5D6E; box-shadow: 0 0 0.625em #AAA; top: 0; margin-bottom: 0em;}
 	/*Títulos nivel 2*/
-	h2 {width: 32.4em; text-align: center; padding: 0.3em 0; position: relative; margin: 0 -1.2em; font-size: 2em; background: #3cb0fd; color: #FFF; text-shadow: 0.063em 0.063em 0em #1A5D6E; box-shadow: 0 0 0.625em #AAA;}
+	h2 {width: 100% + 2.4em; text-align: center; padding: 0.3em 0; position: relative; margin: 0 -1.2em; font-size: 2em; background: #3cb0fd; color: #FFF; text-shadow: 0.063em 0.063em 0em #1A5D6E; box-shadow: 0 0 0.625em #AAA;}
 	h2:after,
 	h2:before {content: ""; display: block; position: absolute; bottom: -1.2em; width: 0; height: 0; border-style: solid; border-color: #1A5D6E transparent;}
 	h2:before {border-width: 1.2em 0 0 1.2em; left: 0;}
 	h2:after  {border-width: 1.2em 1.2em 0 0; right: 0;}
 	/*Títulos nivel 3*/
-	h3 {width: 45.2em; text-align: center; padding: 0.625em 0; position: relative; margin: 0 -1.2em; font-size: 1.4em; background: #9c90cc; color: #FFF; text-shadow: 0.063em 0.063em 0em #1A5D6E; box-shadow: 0 0 0.625em #AAA;}
+	h3 {width: 100% + 2.4em; text-align: center; padding: 0.625em 0; position: relative; margin: 0 -1.2em; font-size: 1.4em; background: #9c90cc; color: #FFF; text-shadow: 0.063em 0.063em 0em #1A5D6E; box-shadow: 0 0 0.625em #AAA;}
 	h3:after,
 	h3:before {content: ""; display: block; position: absolute; bottom: -1.1em; width: 0; height: 0; border-style: solid; border-color: #1A5D6E transparent;}
 	h3:before {border-width: 1.2em 0 0 1.2em; left: 0;}
 	h3:after  {border-width: 1.2em 1.2em 0 0; right: 0;}
-	h4 {text-align: center; border: solid 2px #62E911; display: inline-block;}
+	h4 {text-align: center; display: inline-block;}
     .datos {
 		position: relative;
 		display:block;
 		text-align: center;
 		z-index:4;
 	}
-	p {
+	p, .expli {
     	text-align: justify;
-    	padding: 0 2em 0 2em;
+    	padding: 0 4em 0 4em;
     }
     .incompleto {
     	border:0.063em solid red;
@@ -133,6 +145,7 @@
     .incompleto .black {
     	color: black;
     }
+
 	/*radios*/  
 	input[type=radio] {
 	position:absolute; 
@@ -149,10 +162,8 @@
 	input[type=radio] + label {
 	padding-left:1.25em;
 	padding-right:1em;
-	height:16.5px; 
-	
+	height:15.5px; 	
 	display:inline-block;
-	line-height:15px;
 	background-repeat:no-repeat;
 	background-position: 0 0;
 	font-size:0.938em;
@@ -165,9 +176,10 @@
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
+		margin: .5em 0;
 	}
 	input[type=radio]:checked + label {
-		background-position: 0 -1em;
+		background-position: 0 -15px;
 		}
 	input[type=checkbox] {
 	position:absolute; 
@@ -207,13 +219,42 @@
 	/*Resultados e interpretación*/
 	#interpretacion {
 		display:none;
+		padding-bottom:2em;
+    	margin-bottom:2em;
 	}
 	#interpretacion.mostrar {
 		display: inline-block;
-		position: absolute;
+		position:absolute;
 		background-color: #fff;
 		width: inherit;
 		z-index: 50;
+	}
+	#interpretacion td:hover {
+		background-color:#2FB3F7;
+	}
+	#info {
+		display:none;
+		background-color:#FFC107;
+		position: absolute;
+    	z-index: 1;
+		padding:.5em;
+		margin-top:.5em;
+	}
+#info p {
+	text-align:left;
+	margin:0;
+	padding:.1em .5em;
+	
+}
+	#info::after {
+		content: " ";
+    position: absolute;
+		left:.6em;
+    bottom: 100%;
+    margin-left: -.6em;
+    border-width: .6em;
+    border-style: solid;
+    border-color: transparent transparent #FFC107 transparent;
 	}
     tr {
   	background: #f6f6f6; }
@@ -231,7 +272,7 @@
 	}
     /*Enviar btn*/
 	#enviar {
-		margin: 0;
+		margin: .5em;
 		border-radius: 2px;
 		outline: 0;
 		padding: 0 2rem;
@@ -278,18 +319,22 @@
 	  border-color:#d4d3e2 transparent;
 	}
 	ul#tabs {
+		max-width:70%;
 	    list-style-type: none;
 	    padding: 0;
 	    text-align: center;
+		margin:.5em;
+		margin-left:auto;
+		margin-right:auto;
 	}
 	ul#tabs li {
 	    display: inline-block;
 	    background-color: #1976d2;
 	    border-bottom: solid 0.313em #0d47a1;
 	    padding: 0.313em 1.25em;
-	    margin-bottom:  0.250em;
 	    color: #fff;
 	    cursor: pointer;
+		margin:.15em;
 	}
 	
 	ul#tabs li:hover {
@@ -304,8 +349,9 @@
     padding: 0;
 	}
 	#tab section .caja{
+		max-width:90%;
 		display:inline-block;
-		text-align: left;
+		text-align: center;
 		top: 1.8em;
 		left: 0;
 		padding: 0.625em 1.25em;
@@ -451,7 +497,8 @@
 #identi {
 	display: none;
 }
-.RABCD, .R12345, .R54321, .R1234, .R0123, .RENG  {
+
+.radioBtns, .RABCD, .R12345, .R54321, .R1234, .R0123, .RENG,.R4321 {
 	display: inline-flex;
 }
 .RENG {
@@ -463,21 +510,167 @@
 .RCABCD {
 	width: 40px;
 }
-.container img {
-	width: 25%;
-	margin-top: 2em;
-	margin-bottom: 2em;
+.left, .right {
+	margin: 2rem;
+	font-size:5em;
+	color:black;
+	cursor:pointer;
+	position: fixed;
+	top: 50%;
+	-webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* Internet Explorer/Edge */
+  user-select: none;  
 }
-.caja a {
+.left:hover, .right:hover {
+	color:white;
+}
+.left{
+	left:0;
+}
+.right {
+	right:0;
+}
+.container {
+	max-width: 80%;
+	text-align:left;
+	margin:auto;
+	margin-bottom:2em;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.12), 0 2px 3px rgba(0,0,0,0.24);
+}
+.mini {
+	width:20%;
+	cursor: pointer;
+	display:inline-block;
+	margin:.5em;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.12), 0 2px 3px rgba(0,0,0,0.24);
+}
+.mini:hover {
+	box-shadow: 0 4px 8px rgba(0,0,0,0.16), 0 4px 8px rgba(0,0,0,0.23);
+}
+.links {
+	display:block;
 	text-decoration: none;
-	background-color: #5883FD;
+	background-color: #311B92;
 	color: white;
 	padding: .5em;
-	margin: auto;
+	text-align:left;
+	cursor: pointer;
+	left: 0;
 }
-.caja a:hover {
-	box-shadow: .3em .3em 1px #2A56F8;
+.links.especial {
+	display:inline-block;
 }
+.links:hover {
+	background-color: #AB47BC;
+}
+.links.especial {
+	margin:0;
+
+}
+h5 {
+	font-size: 2.5em;
+	margin:1em;
+}
+.name {
+	font-weight:bold;
+	text-align: center;
+}
+.BigImgs img {
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	width:100%;
+}
+.sitio {
+	max-width:1366px;
+	width:100%;
+    overflow:hidden;
+    position:relative;
+    margin:0px auto;
+    display:block;
+}
+.trans {
+    width:100%;
+    height:auto;
+    display:block;
+    margin:0;
+    padding:0;
+}
+.sprite {
+    position:absolute;
+    top:0;
+    max-height:none;
+    max-width:100%;
+    display:block;
+}
+.sprite.s1 {
+	top:0;
+}
+.sprite.s2 {
+	top:-62.4%;
+}
+.sprite.s3 {
+	top:-260%;
+}
+.sitio_001{
+background-position: 0 0;
+width: 1366px;
+height: 643px;
+}
+.sitio_003{
+background-position: 0 -644px;
+width: 1366px;
+height: 1030px;
+}
+.sitio_004{
+background-position: 0 -1680.0000610351562px;
+width: 1366px;
+height: 643px;
+}
+.sitio_005{
+background-position: 0 -2327.0000610351562px;
+width: 1366px;
+height: 643px;
+}
+.modal {
+    display:none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.modal-content {
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 1.5em;
+    border-radius:8px;
+    width: 80%;
+}
+.modal-content p {
+	padding:.5em .5em;
+	border-left: 3px solid #B0BEC5;
+}
+.close {
+	padding:0;
+	margin:0;
+	float:right;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    cursor: pointer;
+}
+
 
 /*Luke peters http://codepen.io/lukepeters/pen/bfFur tables red, blue and green*/
 =======

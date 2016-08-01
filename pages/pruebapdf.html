@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <link rel="stylesheet" type="text/css" href="../css/estilo.css">
+
+    </head>
+    <script src="../js/jquery-3.0.0.min.js"></script>
+    <script src="../js/xepOnline.jqPlugin.js"></script>
+    <body>
+    <article id="main">
+    <div id="prueba">
+    <header style="display:none; margin-top:24px;">
+    <table width="100%">
+        <tr>
+            <td>Resultados</td>
+            <td style="text-align:right">Cohorte 2016</td>
+        </tr>
+    </table>
+</header>
+<footer style="display:none">
+    <p class="foot">Página <pagenum/> de <totpages/></p>
+</footer>
+   	<h2>Resultados</h2>
+   	<h3>Eres introvertido y extrovertido</h3>
+   	<table class="center green"><tbody><tr><th>Extrovertido</th><th>Introvertido</th></tr><tr><td>0</td><td>0</td></tr></tbody></table>
+    </div>
+          <a href="#" onclick="$('#interpretacion').addClass('mostrar');">Mostrar interpretación</a>
+       </article>
+       <div id="taco" style="float:right;top:0">
+        <a href="#" onclick="return xepOnline.Formatter.Format('prueba', {render:'download'});">            Click aquí para guardar como pdf.        </a></div>
+</body>
+</html>
