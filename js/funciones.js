@@ -11,9 +11,6 @@ jQuery(document).ready(function($) {
     //console logs
     console.log(ID);
     //NAVEGACION
-     if (TID >= 4 && TID <= 5 || ID == "test10") {
-            $("body").append("<div id='fondo-opaco'><div class='alerta'><img id='exclamation' src='../imgs/exclamation.png'/><p>Lo sentimos, pero este test no está disponible por el momento.</p></div></div>");
-        }
     if (ID != "test00") {
             if (ID != "test99") {
                 load.load('../pages/template.html #' + ID, function(result) {
@@ -27,8 +24,7 @@ jQuery(document).ready(function($) {
                     })
                 }
                  
-        }
-        if (ID == "test99") {
+        } else {
             $("body").append("<div id='fondo-opaco'><div class='alerta'><img id='exclamation' src='../imgs/exclamation.png'/><p>Lo sentimos, pero los sitios recomendados aún no están listos (: regresa pronto.</p></div></div>");
             }
 
