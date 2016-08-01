@@ -214,9 +214,10 @@ jQuery(document).ready(function($) {
     };
     //enitaim
     $('#enviar').click(function() {
-        revisarCampos();
+        calificar();
+        /*revisarCampos();
         if (completo) { calificar();
-            enviarDatos(); } else { alerta(); }
+            enviarDatos(); } else { alerta(); }*/
     });
     $("input[type=text]").focus(function() {
         var campo = $(this);
@@ -714,7 +715,7 @@ jQuery(document).ready(function($) {
     }
 
     function calTest11() {
-        var resp = {}, clave = ["2", "0", "1", "2", "2", "0", "2", "2", "2", "2", "2", "2", "3", "0", "1", "2", "2", "3", "2", "1", "2", "1", "0", "2", "1", "3", "2", "1", "2", "1", "3", "0", "2", "2", "3", "2", "2", "1", "1", "3", "2", "2", "0", "2", "2", "2", "2", "3", "1", "1", "1", "0", "2", "2", "2", "1", "1", "1", "1", "1", "0", "0", "1", "1", "1", "1", "2", "2", "0", "2", "2", "1", "1", "1", "1", "1", "1", "1", "1", "0", "2", "0", "1", "2", "1", "2", "1", "1", "1", "2", "2", "2", "1", "2", "1", "2", "2", "2", "1"], suma=0, M='', bien=[], mal=[];
+        var resp = {}, clave = ["2", "0", "1", "2", "2", "0", "2", "2", "2", "2", "2", "2", "3", "0", "1", "2", "2", "3", "2", "1", "2", "1", "0", "2", "1", "3", "2", "1", "2", "1", "3", "0", "2", "2", "3", "2", "2", "1", "1", "3", "2", "2", "0", "2", "2", "2", "2", "3", "1", "1", "1", "0", "2", "2", "2", "1", "1", "1", "1", "1", "0", "0", "1", "1", "1", "1", "2", "2", "0", "2", "2", "1", "1", "1", "1", "1", "1", "1", "1", "0", "2", "0", "1", "2", "1", "2", "1", "1", "1", "2", "2", "2", "1", "2", "1", "2", "2", "2", "1"], suma=0, M='', bien=[], mal=[],malas=[];
         $("input[type=radio]:checked").each(function(){
             resp[this.name] = Number(this.value);
         })
@@ -725,6 +726,7 @@ jQuery(document).ready(function($) {
                 bien.push(num+1);
             } else {
                 mal.push(num+1);
+                malas.push($("label[for='"+num+"i"+clave[num]+"'").text());
             }
         }
         (suma <= 20) ? M="elementary" : (suma > 20 && suma <= 50) ? M="lower intermediate" : (suma > 50 && suma <= 60) ?  M="intermediate" : (suma > 60 && suma <= 80) ? M="upper intermediate": M="advanced";
@@ -753,10 +755,11 @@ jQuery(document).ready(function($) {
             for (i in mal) {
             if ( contenido2 == mal[i]) {
                 incorrecta = $("label[for='"+contenido+"i"+marcado+"'").text();
-                correcta = $("label[for='"+contenido+"i"+clave[i]+"'").text();
+                correcta = malas[i];
                 $("#info").append("<p>Tu respuesta fue: <span style='color:red'>"+incorrecta+"</span></p><p>La respuesta correcta era: <span style='color:green'>"+correcta+"</span></p>");
                 }
             }
+            console.log(malas);
             $("#info").show();
                     }, function() {
                         $("#info").hide();
