@@ -26,9 +26,10 @@ jQuery(document).ready(function($) {
                         con2 = $(load2.html())[0].children;
                     })
                 }
-                 if (ID == "test99") {
-            $("body").append("<div id='fondo-opaco'><div class='alerta'><img id='exclamation' src='../imgs/exclamation.png'/><p>Lo sentimos, pero los sitios recomendados aún no están listos (: regresa pronto.</p></div></div>");
+                 
         }
+        if (ID == "test99") {
+            $("body").append("<div id='fondo-opaco'><div class='alerta'><img id='exclamation' src='../imgs/exclamation.png'/><p>Lo sentimos, pero los sitios recomendados aún no están listos (: regresa pronto.</p></div></div>");
             }
 
         nav.load('../pages/template.html #nav', function(result) {
@@ -217,10 +218,9 @@ jQuery(document).ready(function($) {
     };
     //enitaim
     $('#enviar').click(function() {
-        calificar();
-        /*revisarCampos();
+        revisarCampos();
         if (completo) { calificar();
-            enviarDatos(); } else { alerta(); }*/
+            enviarDatos(); } else { alerta(); }
     });
     $("input[type=text]").focus(function() {
         var campo = $(this);
