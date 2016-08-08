@@ -234,12 +234,11 @@ jQuery(document).ready(function($) {
             "test12": function() { calTest12(); }
         };
         funciones[ID]();
-        //console.log(DIAGNOS);
     };
     $("#more-info").click(function(){
     var creditoTexto;
     if (TID == 1) {
-        creditoTexto = '<p>Este instrumento es una adaptación al español del Strategy Inventory for Language Learning</p><p>Una copia de este instrumento puede encontrarse <a href="https://drive.google.com/file/d/0B08aswbBqBFFLWpDU0xfNUg4djl0TmtnSFBtWjAzSHRzcFA4/view?usp=sharing" target="_blank">aquí</a>.</p>'
+        creditoTexto = '<p>Este instrumento es una adaptación al español del Strategy Inventory for Language Learning que se incluye en el libro <span id="titulo-libro">Language Learning Strategies: What every Teacher should know</span>.</p><p id="referencia">Oxford, R. (1990). Language learning strategies: What every teacher should know. New York: Newbury House.</p><p>Una copia de este instrumento puede encontrarse <a href="https://drive.google.com/file/d/0B08aswbBqBFFLWpDU0xfNUg4djl0TmtnSFBtWjAzSHRzcFA4/view?usp=sharing" target="_blank">aquí</a>.</p>'
     }
     if (TID >= 2 && TID <= 5) {
         creditoTexto = '<p>Estos instrumentos fueron tomados del libro <span id="titulo-libro">Strategies for Success: A Practical Guide to Learning English</span>.</p> <p id="referencia">Brown, H. D. (2002). <i>Strategies for success: A practical guide to learning English</i>. White Plains, NY: Longman.</p> <p>Traducidos y adaptados al español por <b>María Fernanda Rodríguez González</b></p> <p>Adaptación electrónica y base de datos por <b>Sara Ariadna Marcial León</b></p>'
@@ -251,6 +250,7 @@ jQuery(document).ready(function($) {
     else if (TID == 12) {
         creditoTexto = '<p>Este instrumento fue tomado de <span id="titulo-libro">Técnicas de estudio y estrategias de aprendizaje para el estudiante universitario</span>.</p><p id="referencia">Campero N, Díaz GM, Díaz SH. <i>Diagnóstico de los hábitos de estudio en alumnos de la Unidad Académica Profesional AMECAMECA UAEM.</i> Documento del Congreso Internacional Retos y Expectativas de la Universidad; 2002 nov 6-9; Toluca, Estado de México.</p><p>Una copia del instrumento puede encontrarse <a href="http://fcf.unse.edu.ar/archivos/ingresantes/Tecnicas%20de%20estudio%20y%20estrategias%20de%20aprendizaje%20para%20el%20estudiante%20universitario.pdf">aquí</a></p><p>Adaptación electrónica y base de datos por <b>Sara Ariadna Marcial León</b></p>'
     } 
+    creditoTexto += "<p>¿Tienes sugerencias o comentarios? ¿Encontraste un error en el sitio? ¿No recibiste el correo con tu diagnóstico? <a href='https://goo.gl/forms/VQjY9qEIcEuLfksv1' target='_blank'>Infórmanos</a>.</p>"
     $("body").append("<div id='fondo-opaco'><div class='alerta creditos'>"+creditoTexto+"<p></p><p class='acciones'>Clic para cerrar</p></div></div>");
     $(".creditos a").click(function(e){
         e.stopPropagation();
@@ -265,9 +265,10 @@ jQuery(document).ready(function($) {
     });
     //enitaim
     $('#enviar').click(function() {
-        revisarCampos();
+        calificar();addSpace();
+        /*revisarCampos();
         if (completo) { calificar();addSpace();
-            enviarDatos(); } else { alerta(); }
+            enviarDatos(); } else { alerta(); }*/
     });
     function addSpace() {
     $("<br>").insertAfter("h3");
@@ -317,17 +318,15 @@ jQuery(document).ready(function($) {
             })
             //convertir el array en un url
         var serializedData = jQuery.param(info);
-        //console.log(serializedData);
         // seleccionar todos los campos de tipo input
         var $inputs = $(":input");
         //desactivar los campos de tipo input y mandar el mensaje de carga
         $inputs.prop("disabled", true);
+        $("body").append("<div id='fondo-opaco'><div class='alerta'><p id='carga'>Enviando datos...</p></div></div>");
         // enviar los datos con ajax a google
         request = $.ajax({
-            //SAML
-            url: "https://script.google.com/macros/s/AKfycbz9cHz0KBecOI35E6q5NUOxTINdMaKfRKzuGtDdq7vdTQ0Wdg/exec",
-            //CAPEAI
-            //url: "https://script.google.com/macros/s/AKfycby35-KwuG6kmaoARn2vLYr5cGSsysgMxuDWRo9wGlF-Cdb0LNhT/exec",
+            //url: "https://script.google.com/macros/s/AKfycbz9cHz0KBecOI35E6q5NUOxTINdMaKfRKzuGtDdq7vdTQ0Wdg/exec",
+            url: "https://script.google.com/macros/s/AKfycbwr57WQFCEoHGkazjrVGP4Xk0K6JAH9nGLRB2UGiN3jwpfcg1Q/exec",
             type: "post",
             data: serializedData
         });
@@ -335,6 +334,10 @@ jQuery(document).ready(function($) {
         request.done(function(response, textStatus, jqXHR) {
             // log a message to the console
             console.log("Se envió");
+            $(".alerta").html("<p style='padding:0 1em;'>Tus resultados se enviaron correctamente.</p><p style='padding:0 1em;'>Tu diagnóstico se envió al correo "+$("#correo").val()+"</p><p class='acciones'>Clic para cerrar</p>");
+            $("#fondo-opaco").click(function() {
+            $(this).remove();
+        })
         });
         // se regresa cuando no se pudo hacer la transferencia
         request.fail(function(jqXHR, textStatus, errorThrown) {
@@ -343,6 +346,10 @@ jQuery(document).ready(function($) {
                 "The following error occured: " +
                 textStatus, errorThrown
             );
+            $(".alerta").append("<p>Ha ocurrido el error "+textStatus+" "+errorThrown+"</p><p class='acciones'>Clic para cerrar</p>");
+            $("#fondo-opaco").click(function() {
+            $(this).remove();
+        })
         });
         // regresa independientemente de si se logró o no el envío
         request.always(function() {
@@ -819,8 +826,7 @@ jQuery(document).ready(function($) {
                         $("#info").hide();
                     })
         DIAGNOS = "Nivel: "+ M + ", " + suma;
-        resultadoHTML = '<p>Tu nivel es '+M+', y tu puntaje fue <b>'+suma+'</b></p>'; 
-        console.log(resultadoHTML);
+        resultadoHTML = '<p>Tu nivel es '+M+', y tu puntaje fue <b>'+suma+'</b></p>';
         } //Fin de la función
     function calTest12() {
         var resp = {}, suma=[0,0,0,0,0,0,0], num2 = 0;
@@ -835,6 +841,7 @@ jQuery(document).ready(function($) {
         }
         add(0,1);
         haTa(lug, datos = [["Categoría","Resultado","Puntaje ideal"], ["Estudio independiente", suma[0],"55"], ["Habilidades de lectura",suma[1], "50"], ["Administración de tiempo",suma[2], "50"], ["Concentración",suma[3], "25"], ["Lugar de estudio",suma[4], "20"], ["Habilidades para procesar la información",suma[5], "50"], ["Total",suma[6], "250"]],"center");
+        DIAGNOS = "Estudio independiente: "+suma[0]+", Habilidades de lectura: "+suma[1]+", Administración de tiempo: "+suma[2]+", Concentración: "+suma[3]+", Lugar de estudio: " +suma[4] +", Habilidades para procesar la información: "+suma[5]+", Total: "+suma[6];
 resultadoHTML = '<table> <tr><th>Categoría</th><th>Puntaje</th></tr> <tr><td>Estudio independiente</td><td>'+suma[0]+'</td></tr> <tr><td>Habilidades de lectura</td><td>'+suma[1]+'</td></tr> <tr><td>Administración de tiempo</td><td>'+suma[2]+'</td></tr> <tr><td>Concentración</td><td>'+suma[3]+'</td></tr> <tr><td>Lugar de estudio</td><td>'+suma[4]+'</td></tr> <tr><td>Habilidades para procesar la información</td><td>'+suma[5]+'</td></tr> <tr><td>Total</td><td>'+suma[6]+'</td></tr> </table>';
 
     } //Fin de la función
