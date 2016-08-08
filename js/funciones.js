@@ -265,10 +265,9 @@ jQuery(document).ready(function($) {
     });
     //enitaim
     $('#enviar').click(function() {
-        calificar();addSpace();
-        /*revisarCampos();
+        revisarCampos();
         if (completo) { calificar();addSpace();
-            enviarDatos(); } else { alerta(); }*/
+            enviarDatos(); } else { alerta(); }
     });
     function addSpace() {
     $("<br>").insertAfter("h3");
@@ -619,7 +618,7 @@ jQuery(document).ready(function($) {
         $(".special2 tr:nth-child(" + h2 + ")").css({ "background-color": "#2FB3F7" })
         var di2 = $(".special2 tr:nth-child(" + h2 + ") td:nth-child(2)").html();
         add(5,6);
-        DIAGNOS = "Siete tipos de inteligencia: " + suma + "; Pronunciación: " + di + ", "+ suma2 + "; Diferencias culturales: " + di2 +", " +suma3; 
+        DIAGNOS = "Siete tipos de inteligencia: " + suma + "; Pronunciación: " + di + ", "+ suma2 + "; Diferencias culturales: " + di2 +", " +suma3+"; países: "+$("#mi-pais").val()+" y "+$("#pais-ingles").val(); 
         resultadoHTML = '<h1>Siete tipos de inteligencia</h1> <table> <tr><th></th><th>Puntaje</th></tr> <tr><td>Inteligencia lingüística</td><td>'+suma[0]+'</td></tr> <tr><td>inteligencia lógico-matemático</td><td>'+suma[1]+'</td></tr> <tr><td>inteligencia espacial</td><td>'+suma[2]+'</td></tr> <tr><td>inteligencia kinestésica</td><td>'+suma[3]+'</td></tr> <tr><td>inteligencia musical</td><td>'+suma[4]+'</td></tr> <tr><td>inteligencia interpersonal</td><td>'+suma[5]+'</td></tr> <tr><td>inteligencia intrapersonal</td><td>'+suma[6]+'</td></tr> </table> <h1>Pronunciación</h1> <p>Tu puntaje fue <b>'+suma2+'</b>, por lo tanto '+di+'</p> <h1>Diferencias culturales</h1> <p>Tu puntaje fue <b>'+suma3+'</b>, así que entre tu cultura y la del país hablante de inglés que seleccionaste hay '+di2+'</p>';    }
     function calTest05() {
         var resp ={}, suma=0, suma2=0, suma3=0;
@@ -752,10 +751,10 @@ jQuery(document).ready(function($) {
     }
 
     function calTest09() {
-        var r = diag("#cerrado", "#abierto", true);
-        lug.append("<h3>Eres " + r[0] + ".</h3>");
+        var r = diag("actitud cerrada", "actitud receptiva", true);
+        lug.append("<h3>Tienes una " + r[0] + ".</h3>");
         haTa(lug, datos = [
-            ["#cerrado", "#abierto"],
+            ["actitud cerrada", "actitud receptiva"],
             [r[1], r[2]]
         ], "center blue");
         add(0, 2);
