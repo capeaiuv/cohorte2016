@@ -265,11 +265,9 @@ jQuery(document).ready(function($) {
     });
     //enitaim
     $('#enviar').click(function() {
-        calificar();
-        addSpace();
-        /*revisarCampos();
-        if (completo) { calificar();
-            enviarDatos(); } else { alerta(); }*/
+        revisarCampos();
+        if (completo) { calificar();addSpace();
+            enviarDatos(); } else { alerta(); }
     });
     function addSpace() {
     $("<br>").insertAfter("h3");
