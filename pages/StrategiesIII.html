@@ -8,15 +8,14 @@
     </head>
     <body>
     <article id="main">
-    <h1>Strategies for success</h1><br>
+    <h1>Strategies for success</h1>
     <article id="interpretacion" >
-    <h2>¡Gracias por contestar!</h2><br>
-      <h2>RESULTADOS</h2><br>
+    <h2>¡Gracias por contestar!</h2>
+      <h2>RESULTADOS</h2>
             </article>
-            <div class="datos"><input type="text" id="nombre" placeholder="Nombre Completo">
-                  <input type="text" id="correo" placeholder="Correo electrónico">
-                  <input type="text" id="matricula" placeholder="Matrícula">
-                  <input type="text" id="seccion" placeholder="Sección"></div>
+            <div class="datos"><input type="text" list="nombre-lista" id="nombre" placeholder="Nombre Completo">
+            <input type="text" list="matricula-lista" id="matricula" placeholder="Matrícula">
+            <input type="text" id="correo" placeholder="Correo electrónico"></div>
                 <ul id="tabs"><!--Pestañas-->
                   <li class="active">Siete tipos de inteligencia</li>
                   <li>Pronunciación</li>
@@ -25,11 +24,14 @@
             <div class="wrapper">
             <div id="tab">
               <section class="active"> <!--Sección 1-->
-            <div class="orden">Encierra el número que mejor te describa. Elige solo un número por cada sección usando la siguiente escala:
-            <div class="wrapper">4   Definitivamente, ¡así es!
-            3   Sí
-            2   No en verdad
-            1   ¡Definitivamente no! </div></div>
+            <div class="orden"><p>Selecciona el número que mejor te describa de acuerdo a la <span class="escala-link">escala</span>.</p>
+            <ol class="escala" reversed>
+            <li>Definitivamente, ¡así es!</li>
+            <li>Sí</li>
+            <li>No en verdad</li>
+            <li>¡Definitivamente no!</li>
+            </ol>
+            </div>
               <div class="caja"><table>
                 <tr>
                   <td>Me gusta memorizar palabras. </td>
@@ -90,11 +92,14 @@
               </table></div>
             </section>
             <section> <!--Sección 2-->
-            <div class="orden">Encierra el número que mejor describa tu habilidad en el inglés actualmente. Elige solo un número para cada sección usando la siguiente escala:
-            <div class="wrapper">4  Soy muy bueno en esto, no necesito volver practicarlo.
-            3  Estoy bien, pero podría mejorar.
-            2  No soy tan bueno aquí y necesito trabajar un poco en esto.
-            1  Soy pésimo y necesito trabajar mucho en esto.</div></div>
+            <div class="orden"><p>Selecciona el número que mejor describa tu habilidad en el inglés actualmente de acuerdo a a la <span class="escala-link">escala</span>.</p>
+            <ol class="escala" reversed>
+            <li>Soy muy bueno en esto, no necesito volver practicarlo.</li>
+            <li>Estoy bien, pero podría mejorar.</li>
+            <li>No soy tan bueno en esto y necesito trabajar un poco.</li>
+            <li>Soy pésimo y necesito trabajar mucho en esto.</li>
+            </ol>
+            </div>
               <div class="caja"><table>
                 <tr>
                   <td>Pronunciando las palabras seat y sit  </td>
@@ -164,18 +169,78 @@
             </section>
 
             <section> <!--Sección 3-->
-            <div class="orden">Para todas las secciones de este cuestionario, para referirte a tu país, está la etiqueta “mi país” (MP) y para un “país de habla inglesa” (PHI) de tu elección. Escribe los nombres de los dos países:
-            MP:____________________                        PHI:__________________________
-            En cada sección del cuestionario encierra el número que mejor describa a tu país (MP) y otro número que mejor describa al país de habla inglesa (PHI).</div>
+            <div class="orden"><p>Para todas las secciones de este cuestionario, para referirte a tu país, está la etiqueta “mi país” (MP) y para un “país de habla inglesa” (PHI) de tu elección.</p> <p>Escribe los nombres de los dos países:</p>
+            <p>MP:<input type="text" id="mi-pais"> PHI:<input type="text" id="pais-ingles" list="phi-lista"></p>
+            <p>En cada sección del cuestionario selecciona el número que mejor describa a tu país (MP) y otro número que mejor describa al país de habla inglesa (PHI).</p>
+            <datalist id="phi-lista">
+            <option>Antigua y Barbuda</option>
+            <option>Australia</option>
+            <option>Bahamas</option>
+            <option>Barbados</option>
+            <option>Belice</option>
+            <option>Botsuana</option>
+            <option>Camerún</option>
+            <option>Canadá</option>
+            <option>Dominica</option>
+            <option>Estados Unidos</option>
+            <option>Filipinas</option>
+            <option>Fiyi</option>
+            <option>Gambia</option>
+            <option>Ghana</option>
+            <option>Granada</option>
+            <option>Guayana</option>
+            <option>India</option>
+            <option>Irlanda</option>
+            <option>Islas Marshall</option>
+            <option>Islas Salomón</option>
+            <option>Jamaica</option>
+            <option>Kenia</option>
+            <option>Kiribati</option>
+            <option>Lesoto</option>
+            <option>Liberia</option>
+            <option>Malasia</option>
+            <option>Malaui</option>
+            <option>Malta</option>
+            <option>Mauricio</option>
+            <option>Micronesia</option>
+            <option>Nauru</option>
+            <option>Nigeria</option>
+            <option>Nueva Zelanda</option>
+            <option>Pakistán</option>
+            <option>Palaos</option>
+            <option>Papúa Nueva Guinea</option>
+            <option>Reino Unido</option>
+            <option>Ruanda</option>
+            <option>Samoa</option>
+            <option>San Cristóbal y Nieves</option>
+            <option>San Vicente y las Granadinas</option>
+            <option>Santa Lucía</option>
+            <option>Seychelles</option>
+            <option>Sierra Leona</option>
+            <option>Singapur</option>
+            <option>Suazilandia</option>
+            <option>Sudáfrica</option>
+            <option>Sudán</option>
+            <option>Sudán del Sur</option>
+            <option>Tanzania</option>
+            <option>Tonga</option>
+            <option>Trinidad y Tobago</option>
+            <option>Tuvalu</option>
+            <option>Uganda</option>
+            <option>Vanuatu</option>
+            <option>Zambia</option>
+            <option>Zimbabue</option>
+            </datalist>
+            </div>
               <div class="caja"><table>
-                <tr class="prima"><td colspan="3">TRENES</td></tr>
+                <tr><th colspan="3">TRENES</th></tr>
                 <tr><td>MP: Eficiente</td>
                 <td class="radio R4321"></td>
                 <td>Deficiente</td></tr>
                 <tr><td>PHI: Eficiente  </td>
                 <td class="radio R4321"></td>
                 <td>Deficiente</td></tr>
-                <tr class="prima"><td colspan="3">FUMAR</td></tr>
+                <tr><th colspan="3" class="blue">FUMAR</th></tr>
                 <tr>
                 <td>MP: Muchos lo hacen</td>
                 <td class="radio R4321"></td>
@@ -186,7 +251,7 @@
                 <td class="radio R4321"></td>
                 <td>Pocos lo hacen</td>
                 </tr>
-                <tr class="prima"><td colspan="3">DIVORCIO</td></tr>
+                <tr><th colspan="3" class="green">DIVORCIO</th></tr>
                 <tr>
                 <td>MP: No es aceptable</td>
                 <td class="radio R4321"></td>
@@ -197,7 +262,7 @@
                 <td class="radio R4321"></td>
                 <td>Aceptable</td>
                 </tr>
-                <tr class="prima"><td colspan="3">HAMBURGUESAS</td></tr>
+                <tr><th colspan="3">HAMBURGUESAS</th></tr>
                 <tr>
                 <td>MP: no es popular</td>
                 <td class="radio R4321"></td>
@@ -208,7 +273,7 @@
                 <td class="radio R4321"></td>
                 <td>Popular</td>
                 </tr>
-                <tr class="prima"><td colspan="3">ABUELOS</td></tr>
+                <tr><th colspan="3" class="blue">ABUELOS</th></tr>
                 <tr>
                 <td>MP: Respetados</td>
                 <td class="radio R4321"></td>
@@ -219,18 +284,18 @@
                 <td class="radio R4321"></td>
                 <td>No son respetados</td>
                 </tr>
-                <tr class="prima"><td colspan="3">FAMILIAS</td></tr>
+                <tr><th colspan="3" class="green">FAMILIAS</th></tr>
                 <tr>
                 <td>MP: Muchos hijos</td>
                 <td class="radio R4321"></td>
                 <td>Pocos hijos</td>
                 </tr>
                 <tr>
-                <td>PHI: Muchos hijo</td>
+                <td>PHI: Muchos hijos</td>
                 <td class="radio R4321"></td>
                 <td>Pocos hijos</td>
                 </tr>
-                <tr class="prima"><td colspan="3">PADRES</td></tr>
+                <tr><th colspan="3">PADRES</th></tr>
                 <tr>
                 <td>MP: Importantes</td>
                 <td class="radio R4321"></td>
@@ -241,7 +306,7 @@
                 <td class="radio R4321"></td>
                 <td>No son importantes</td>
                 </tr>
-                <tr class="prima"><td colspan="3">SOCIEDAD</td></tr>
+                <tr><th colspan="3" class="blue">SOCIEDAD</th></tr>
                 <tr>
                 <td>MP: Amistosa con los extraños</td>
                 <td class="radio R4321"></td>
@@ -252,7 +317,7 @@
                 <td class="radio R4321"></td>
                 <td>Antipática</td>
                 </tr>
-                <tr class="prima"><td colspan="3">GENTE</td></tr>
+                <tr><th colspan="3" class="green">GENTE</th></tr>
                 <tr>
                 <td>MP: Se parecen</td>
                 <td class="radio R4321"></td>
@@ -263,7 +328,7 @@
                 <td class="radio R4321"></td>
                 <td>No se parecen</td>
                 </tr>
-                <tr class="prima"><td colspan="3">EMPLEADOS</td></tr>
+                <tr><th colspan="3">EMPLEADOS</th></tr>
                 <tr>
                 <td>MP: Trabajadores</td>
                 <td class="radio R4321"></td>
@@ -281,7 +346,6 @@
     	<!-- <textarea id="texto"></textarea>
   		<input type="button" onclick="makeInciso()" > -->
     </body>
-<script src="../js/canvasjs.min.js"></script>
     <script src="../js/jquery-3.0.0.min.js"></script>
     <script src="../js/funciones.js"></script>
 </html>

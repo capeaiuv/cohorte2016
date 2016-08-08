@@ -1,18 +1,21 @@
 jQuery(document).ready(function($) {
     $.ajaxSetup({ cache: false });
     //All the variables
+    $(generarInput);
     var ID = $("#identi").html(),
         load = $('<div>'),
         TID = Number(ID.split('test')[1]),
         nav = $("<nav>"),
         con, length2,
-        co, completo = true, DIAGNOS = 'prueba';
+        co, completo = true, DIAGNOS = 'prueba', resultadoHTML='';
         lug = $("#interpretacion");
+        var preguntas;
     //console logs
     console.log(ID);
     //NAVEGACION
     if (ID != "test00") {
-            if (ID != "test99") {
+            if (TID < 97) {
+                $('<img id="more-info" src="../imgs/info-white.png"></img>').appendTo("h1");
                 load.load('../pages/template.html #' + ID, function(result) {
                     con = $(load.html())[0].children;
                     length2 = con.length;
@@ -23,18 +26,32 @@ jQuery(document).ready(function($) {
                         con2 = $(load2.html())[0].children;
                     })
                 }
-                 
-        } else {
-            $("body").append("<div id='fondo-opaco'><div class='alerta'><img id='exclamation' src='../imgs/exclamation.png'/><p>Lo sentimos, pero los sitios recomendados aún no están listos (: regresa pronto.</p></div></div>");
-            }
-
+                var nombres = ["ABAD-GARCIA ADRIAN", "ACOSTA-GUILLEN BARBARA GISELLE", "ACOSTA-TORRES BERAME", "AGUILAR-CARCAMO DANIEL", "AGUILAR-MORALES JOSE ANGEL", "ALAVEZ-APARICIO CARLA SIMONE", "ALVAREZ-MAYO TANYA TRINIDAD", "AMBROCIO-GONZALEZ ROXETTE DEL CARMEN", "ANG-SANCHEZ AMAIRANI", "ANTUNEZ-PIÑA JACOBO", "ARAGON-CERVANTES STEFFANYA", "ARENAS-LOPEZ ERICK", "ARIAS-LANDA MONSERRAT", "ARTIGAS-SANCHEZ YELITZA GUADALUPE", "AYALA-FRANCESCHY ANGEL LUIS", "BAEZ-GUZMAN SONYA ALEXA", "BAHENA-SANTANDER SHARON CRISTINA", "BALTAZAR-PEÑA ABRIL DE JESUS", "BARRADAS-MORA LIZZETH", "BELLIDO-LANDA KAREN ANDREA", "BELLI-ZAPOT CINTHIA PATRICIA", "BLANCAS-RAMIREZ LIZETH", "BORJA-SANCHEZ JUAN LUIS", "BRISEÑO-AGUILAR SINTIQUE", "CABAÑAS-HERNANDEZ KARLA DANIELA", "CABRERA-SOLANO LUIS ANGEL DE JESUS", "CAMPOS-PALAFOX ISAAC", "CAMPOS-PEREZ KAREN GUADALUPE", "CANSECO-TIRADO RICARDO", "CARMONA-VAZQUEZ SERGIO", "CASTELLANOS-RAMIREZ EDUARDO", "CEBALLOS-SANCHEZ DIEGO ALEXIS", "CENTENO-MATUS EDGAR DANIEL", "CHACON-JIMENEZ VALERIA", "CID-ALVAREZ LILIANA", "CIENFUEGOS-ZAMUDIO MARIBEL", "CORTES-DIAZ IRAIS", "CORTES-GONZALEZ OLIVIA JANET", "CORTES-SANCHEZ LUIS ANDRES", "CRUZ-HERNANDEZ FERNANDO", "CUCURACHI-ORTEGA ITALO", "CUEVAS-CASTILLO YESENIA", "CUEVAS-CRUZ ROXANA", "DELGADO-SUAREZ GABRIELA GRISEL", "DIAZ-DIAZ QUETZALLI", "DOLORES-GARCIA PABLO", "DOMINGUEZ-CAMACHO ANTONIO DE JESUS", "DOMINGUEZ-DOMINGUEZ KAREN YAMILET", "DURAN-CASTILLO OMAR ESAU", "DURAN-GAMBOA IRVING", "DURAN-LUNA MARIA ELIZABETH", "ESPAÑA-FLORES ANGEL DE JESUS", "ESPINOSA-MARCELO SUSANA", "ESTUDILLO-CASTILLO PERLA MARINA", "FERNANDEZ-ESCOBAR JOSE ANTONY", "GALVAN-GALVAN MARIA DEL ROSARIO", "GARCIA-ESPINOBARRO JULIO EVER", "GARCIA-RAMIREZ KATIA LISSET", "GARCIA-RIVERA DANIELA", "GARCIA-SARMIENTO MARIA DE LA LUZ", "GARCIA-VELASQUEZ SAMUEL", "GOMEZ-DOMINGUEZ JOSUE", "GONZALEZ-BADILLO IRVIN ALBERTO", "GONZALEZ-CAMACHO MARIA FERNANDA", "GONZALEZ-GOMEZ LEONEL", "GONZALEZ-GONZALEZ JOSE ENRIQUE", "GONZALEZ-VALLEJO ALMA", "GRANADOS-BARRALES ERICK GABRIEL", "GUZMAN-VALENCIA PAULINA", "HERBERT-ALVARADO JOSE DE JESUS", "HEREDIA-ESTRADA BRYAN MISAEL", "HERNANDEZ-AGUIRRE JOSE DE JESUS", "HERNANDEZ-ALTAMIRANO MONSERRAT", "HERNANDEZ-ALVAREZ ALFREDO", "HERNANDEZ-BELTRAN ADOLFO DE JESUS", "HERNANDEZ-CASTILLO MIRIAM BRENDA", "HERNANDEZ-CERVANTES JORGE ARMANDO", "HERNANDEZ-GALVAN ANGEL DE JESUS", "HERNANDEZ-GONZALEZ OMAR", "HERNANDEZ-HERNANDEZ NICOLAS ALFONSO", "HERNANDEZ-JIMENEZ JANETH", "HERNANDEZ-LOPEZ RAUL URIEL", "HERNANDEZ-MERINO AYAX DE JESUS", "HERNANDEZ-ROMAN MARLENE", "IBARRA-CAPISTRAN MIGUEL ALFONSO", "IBARRA-ROJO JUAN JESUS", "JACOME-ORDOÑEZ LIA ITZEL", "JIMENEZ-HERNANDEZ ROSALIA ANGELICA", "JUAREZ-GONZALEZ EDNA MICHELLE", "LAGUNES-PRIETO JOSE ALFREDO", "LANDA-HERNANDEZ MARTHA PATRICIA", "LANDA-PEREZ YURIDIA ALEJANDRA", "LIMA-MARTINEZ GERARDO", "LIMA-RODRIGUEZ ANAHI", "LIMON-CASTILLO LISSETE", "LOPEZ-LOPEZ KARLA SILVINA", "LOPEZ-PARRA EDSON ALY", "LOPEZ-VILLATORO FATIMA ESTEFANI", "LORENZO-ESPINOSA CRUZ JANETT", "LORENZO-RIVERA DANIELA", "MACHORRO-GARCIA TANIA MARIBEL", "MARTINEZ-CABRERA DANIEL", "MARTINEZ-GUTIERREZ ALDO MICHEL", "MARTINEZ-MARIN SANDY SAMARA", "MARTINEZ-RAMIREZ ESTEFANIA BERENICE", "MARTINEZ-YEDRA JOSUE ISAI", "MEDRANO-FERRAL KEREN", "MENDEZ-HERNANDEZ KARLA MARIA", "MENDOZA-HERNANDEZ MAURICIO ANTONIO", "MENESES-BUSTAMANTE MARIA DE LOS SANTOS", "MERODIO-LOPEZ DEISY", "MEZA-HERNANDEZ OSIRIS LIZBETH", "MOLINA-CARBAJAL MARIA GUADALUPE", "MOLINA-RODRIGUEZ DANIEL", "MONFIL-CRUZ JOSE FRANCISCO", "MORALES-GERONIMO JULIANA", "MORALES-HERNANDEZ EDNA MONSERRAT", "MORALES-RODRIGUEZ DANIEL EDUARDO", "MORA-MENDOZA FABIAN", "MUÑOZ-MORALES ILEANA", "NIETO-SANCHEZ ROCIO LISSET", "NUÑEZ-GARCIA VICENTE", "OCHOA-MARTINEZ DANIEL", "OLMOS-CORTES JOSE MARCOS", "ORTEGA-ELOS EMELY YAMIL", "ORTEGA-VAZQUEZ GUADALUPE DE JESUS", "ORTIZ-ARGUIJO FRANCISCO JAVIER", "PACHECO-NAVARRETE VANESSA", "PALACIOS-MARCELO MILAGROS", "PALMA-MONCADA MARIBEL", "PANES-HERNANDEZ DAPHNE", "PAVA-PALMA DIANA YOSHIRA", "PEREDO-GONZALEZ JUAN JESUS", "PEREZ-CORZAS ROBERTO", "PEREZ-MARTINEZ ARMANDO", "PEREZ-MORAN JOSE MANASES", "PEREZ-PEREZ ALAN ADAIR", "PORTILLA-ORELLAN MARIELA YAMILET", "QUIÑONEZ-ARRIETA XIMENA ODEMARIS", "QUIROZ-GOMEZ SABRINHA MARIA", "RAMIREZ-BARBOSA JULIA LUCERO", "RAMIREZ-MARTINEZ METSTLI XIOMARA", "RAMIREZ-OCAMPO NANCY IOKEBETH", "RAMIREZ-RIVERA BRIAN ALBERTO", "RAMOS-ALVARADO ANA LAURA", "REBOLLEDO-MARTINEZ MARIA FERNANDA", "REYES-GALINDO CAROLINA", "REYES-LEZAMA MELANIE", "REYES-RAMIREZ SERGIO ALBERTO", "REYES-RUIZ YECSUBELI", "RIVERA-MARTINEZ CLAUDIA AMANKAY", "RODRIGUEZ-HERNANDEZ PAOLA", "RODRIGUEZ-VASQUEZ MARCO ANTONIO", "ROJAS-FUERTES MIRIAM LIZBETH", "ROJAS-VILLAR MARGARITA", "ROMAN-DURAN EDGAR", "RUIZ-GUILLEN MARIA ANNETTE", "RUIZ-HOYOS ALBERTO URIEL", "SALAS-VALDERRABANO SARAI", "SANCHEZ-FLORES QUETZALLI", "SANCHEZ-KU OSCAR", "SANCHEZ-SALDAÑA VICTOR ALBERTO", "SANCHEZ-SANCHEZ JESUS", "SAUCEDO-PORTILLA MISAEL", "SAYAGO-ORDUÑA MARCO ALONSO", "SOLORZANO-CONTRERAS MAXIMILIANO", "SOSA-CARREON MARTHA GUADALUPE", "SOSA-HERMENEGILDO NOEMI", "SOSA-RUIZ ANGELA JANAI", "SUAREZ-CORONA JUAN MANUEL", "SUAREZ-MESSA ANDREA CRISTINA", "TELLEZ-BRAVO GEORGETTE", "TORRES-SANCHEZ KUTZANDY", "VALERA-PORTILLA NURIA ITZEL", "VAZQUEZ-AGUIRRE HANNIA", "VAZQUEZ-ALONSO SERGI", "VAZQUEZ-DIAZ VIANEY", "VENANCIO-LOZANO ALEJANDRO", "VIDAL-CORTES CRISTHIAN DANIEL", "VILLANUEVA-ANGELES ANA LILIA", "VILLA-ROSAS EDUARDO DANIEL", "VILLEGAS-MORALES OSCAR"];
+                var matriculas = ["S16012015", "S16012009", "S16011921", "S16012042", "S16011936", "S16011865", "S16011829", "S16011992", "S16011991", "S16011943", "S16011958", "S16011867", "S16011914", "S16011860", "S16011838", "S16011884", "S16012012", "S16012011", "S16011920", "S16011983", "S16011841", "S16011990", "S16011978", "S16011825", "S16011875", "S16011924", "S16011962", "S16011877", "S16011915", "S16012038", "S16011891", "S16011996", "S16011931", "S16011855", "S16011988", "S16011967", "S16011932", "S16012025", "S16011879", "S16011961", "S16012029", "S16011953", "S16011828", "S16011950", "S16011852", "S16011928", "S16011964", "S16012045", "S16012023", "S16011981", "S16011949", "S16011840", "S16012024", "S16011900", "S16012018", "S16012033", "S16011977", "S16012022", "S16011923", "S16011885", "S16011997", "S16012000", "S16011861", "S16011945", "S16011938", "S16012008", "S16011933", "S16011870", "S16011826", "S16011853", "S16012044", "S16012013", "S16012041", "S16011957", "S16012007", "S16011846", "S16011969", "S16012027", "S16011982", "S16012006", "S16012019", "S16011998", "S16011966", "S16011888", "S16012043", "S16011863", "S16011850", "S16011973", "S16011880", "S16012036", "S16011827", "S16011995", "S16011848", "S16011862", "S16011833", "S16011951", "S16012001", "S16011929", "S16011994", "S16012031", "S16011919", "S16012040", "S16012026", "S16011925", "S16011866", "S16011847", "S16011876", "S16011878", "S16011890", "S16011939", "S16011894", "S16011979", "S16011830", "S16011960", "S16011918", "S16011954", "S16011869", "S16011858", "S16011893", "S16011934", "S16011902", "S16011897", "S16011910", "S16011948", "S16011845", "S16011883", "S16011956", "S16011836", "S16011889", "S16011940", "S16011906", "S16011937", "S16011872", "S16011881", "S16011896", "S16011974", "S16011837", "S16011944", "S16011968", "S16011854", "S16012032", "S16011851", "S16011909", "S16011999", "S16012034", "S16011971", "S16011930", "S16011987", "S16012002", "S16011952", "S16011901", "S16011972", "S16011976", "S16012010", "S16011835", "S16012037", "S16011856", "S16011895", "S16012004", "S16012017", "S16011980", "S16012014", "S16011907", "S16011873", "S16011908", "S16011946", "S16011917", "S16011959", "S16011984", "S16011886", "S16011842", "S16011868", "S16011942", "S16011887", "S16011941", "S16011993", "S16011986", "S16011970", "S16011985", "S16011916", "S16011831", "S16012021"];
+                var senombres = $("<datalist id='nombre-lista'></datalist>"), sematriculas = $("<datalist id='matricula-lista'></datalist>");
+                for (i in nombres) {
+                    senombres.append($("<option name='"+i+"'' value='"+nombres[i]+"'>"+nombres[i]+"</option>"))
+                }
+                for (i in matriculas) {
+                    sematriculas.append($("<option name='"+i+"'' value='"+matriculas[i]+"'>"+matriculas[i]+"</option>"))
+                }
+                $("body").append(senombres)
+                .append(sematriculas);
+                $("#nombre").on("select",function(){
+                    var matriculaIndex = $("#nombre-lista option[value='" + $('#nombre').val() + "']").attr('name');
+                    $("#matricula").val($("#matricula-lista")[0].options[matriculaIndex].value);
+                });
+                $("#matricula").on("select",function(){
+                    var nombreIndex = $("#matricula-lista option[value='" + $('#matricula').val() + "']").attr('name');
+                    $("#nombre").val($("#nombre-lista")[0].options[nombreIndex].value);
+                })
+        } 
         nav.load('../pages/template.html #nav', function(result) {
             co = $(nav)[0].children;
             $("body").append(co);
             $('#nav a[href="../pages/' + location.pathname.split("pages/")[1] + '"]').addClass("active");
         })
     }
-    $(generarInput);
     //FUNCIONES BASICAS
     function HC(place, number, string) {
         if (number == 3) {
@@ -114,18 +131,7 @@ jQuery(document).ready(function($) {
 
     function generarInput() {
         var RG = { "RABCD": ["A", "B", "C", "D"], "R4321": [4, 3, 2, 1], "R12345": [1, 2, 3, 4, 5], "R1234": [1, 2, 3, 4], "R54321": [5, 4, 3, 2, 1], "radioBtns": [1, 2, 3, 4, 5], "R0123": [0, 1, 2, 3], "RCABCD": ["A", "B", "C", "D"] };
-        var RAB = {
-"0i": ["Trabajar con otras personas","Trabajar solo",],
-"1i": ["Fácil de tratar","De alguna manera tímido(a)",],
-"2i": ["Cuando estoy con otras personas","Cuando estoy solo",],
-"3i": ["Comienzo conversaciones con personas que no conozco","Espero a que alguien converse conmigo",],
-"4i": ["Hablando con otras personas acerca de ello","Analizando todo por mi cuenta",],
-"5i": ["Salir con otras personas","Quedarme solo en casa ",],
-"6i": ["Es emocionante e interesante","Es difícil y me es tedioso",],
-"7i": ["Solo y ansioso","En paz y en calma",],
-"8i": ["Trabajar en grupo con otros estudiantes","Trabajar de manera individual"]
-        };
-        var n = 0, n2=0;
+        var RAB = {"0i": ["Trabajar con otras personas","Trabajar solo",], "1i": ["Fácil de tratar","De alguna manera tímido(a)",], "2i": ["Cuando estoy con otras personas","Cuando estoy solo",], "3i": ["Comienzo conversaciones con personas que no conozco","Espero a que alguien converse conmigo",], "4i": ["Hablando con otras personas acerca de ello","Analizando todo por mi cuenta",], "5i": ["Salir con otras personas","Quedarme solo en casa ",], "6i": ["Es emocionante e interesante","Es difícil y me es tedioso",], "7i": ["Solo y ansioso","En paz y en calma",], "8i": ["Trabajar en grupo con otros estudiantes","Trabajar de manera individual"] }; var n = 0, n2=0;
         var RENG = { "0i" :["an", "the", "a", "one"], "1i" :["Does", "Has", "Is", "Do"], "2i" :["writing", "writes", "write", "is writes"], "3i" :["What", "Who’s", "Whose", "Which"], "4i" :["She does", "She", "She’ll", "She’s"], "5i" :["went", "goes", "has gone", "has been"], "6i" :["works", "has been working", "is working", "work"], "7i" :["any", "all", "some", "lots"], "8i" :["works", "is working", "has been working", "worked"], "9i" :["You hurry", "Be hurrying", "Hurry", "Hurry you"], "10i" :["more good", "most good", "better", "gooder"], "11i" :["doesn’t", "don’t smoke", "don’t", "am not smoking"], "12i" :["get", "got", "getting", "‘ve got"], "13i" :["your", "yours", "you", "a"], "14i" :["on", "in", "at", "into"], "15i" :["the", "a", "–", "an"], "16i" :["Is", "Do", "Are", "Be"], "17i" :["are starting", "starts", "have starting", "start"], "18i" :["Why", "Where", "What", "Who"], "19i" :["will rain", "is going to rain", "rains", "rain"], "20i" :["eat", "am eating", "ate", "eated"], "21i" :["trys", "am trying", "have been trying", "tried"], "22i" :["some", "any", "all", "few"], "23i" :["Had he", "Is he", "Has he", "Did he"], "24i" :["Stopping", "Stop", "Stops", "You stop"], "25i" :["bad", "badest", "worse", "worst"], "26i" :["Yes, I does", "Yes, I am a student too", "Yes, I am", "Yes I’m"], "27i" :["have you", "have you got", "got you", "do you"], "28i" :["their", "theirs", "them", "they"], "29i" :["by foot", "on foot", "with foot", "walk"], "30i" :["the", "an", "–", "a"], "31i" :["Have you been", "Be you", "Are you", "Went you"], "32i" :["are closing", "closes", "close", "closed"], "33i" :["Who’s", "What", "Whose", "Which"], "34i" :["flies", "am going to fly", "have flown", "am flying"], "35i" :["do", "have", "did", "are"], "36i" :["run", "have been running", "are running", "ran"], "37i" :["anything", "something", "neither", "either"], "38i" :["lost", "has lost", "has been losing", "loses"], "39i" :["Gets", "Be getting", "You get", "Get"], "40i" :["most", "much", "more", "–"], "41i" :["am happy", "‘m", "am", "be happy"], "42i" :["have got", "got", "have get", "gets"], "43i" :["he’s", "him", "his", "his’"], "44i" :["on, at", "with, on,", "at, on", "at, in"], "45i" :["May", "Would", "Could", "Will"], "46i" :["Do", "Have", "Did", "Are"], "47i" :["can", "might", "would", "could"], "48i" :["fastly", "fast", "quick", "hard"], "49i" :["have", "had", "will have", "would have"], "50i" :["have", "will have", "–", "am going to"], "51i" :["of", "from", "in", "–"], "52i" :["is made", "made", "are made", "make"], "53i" :["is gone", "be gone", "had gone", "was gone"], "54i" :["was to", "has been to", "had been to", "I don’t know"], "55i" :["for", "since", "now", "I don’t know"], "56i" :["what", "who", "which", "I don’t know"], "57i" :["myself", "mine", "me", "I don’t know"], "58i" :["To jog", "Jogging", "Jog", "I don’t know"], "59i" :["us", "each other", "ourselves", "I don’t know"], "60i" :["was cooking", "cooked", "has cooked", "I don’t know"], "61i" :["that", "what", "who", "I don’t know"], "62i" :["could", "would", "will", "I don’t know"], "63i" :["flied", "flew", "has flown", "I don’t know"], "64i" :["Will", "Can", "Could", "I don’t know"], "65i" :["hardily", "hard", "very much", "I don’t know"], "66i" :["will", "would", "should", "I don’t know"], "67i" :["be lying", "am lying", "will be lying", "I don’t know"], "68i" :["into", "onto", "at", "I don’t know"], "69i" :["is", "was", "has been", "I don’t know"], "70i" :["tell", "have told", "told", "I don’t know"], "71i" :["visits", "had visited", "was visiting", "I don’t know"], "72i" :["since...", "for...", "... years", "I don’t know"], "73i" :["who", "that", "what", "I don’t know"], "74i" :["Him", "Himself", "He", "I don’t know"], "75i" :["to like", "liking", "like", "I don’t know"], "76i" :["myself", "me", "I", "I don’t know"], "77i" :["did you do", "were you doing", "did you", "I don’t know"], "78i" :["That", "What", "Which", "I don’t know"], "79i" :["will", "would", "could", "I don’t know"], "80i" :["has written", "had written", "wrote", "I don’t know"], "81i" :["should", "could", "would", "I don’t know"], "82i" :["day", "daily", "everyday", "I don’t know"], "83i" :["would know", "know", "knew", "I don’t know"], "84i" :["will", "am going to", "-", "I don’t know"], "85i" :["in", "to", "into", "I don’t know"], "86i" :["gives", "is given", "has given", "I don’t know"], "87i" :["will", "would", "can", "I don’t know"], "88i" :["was swimming", "had been swimming", "swim", "I don’t know"], "89i" :["since", "during", "for", "I don’t know"], "90i" :["which", "who", "whose", "I don’t know"], "91i" :["them", "theirselves", "themselves", "I don’t know"], "92i" :["to introduce", "introducing", "to be introducing", "I don’t know"], "93i" :["she", "he", "it", "I don’t know"], "94i" :["was breaking, played", "broke, was playing", "breaks, is playing", "I don’t know"], "95i" :["whose", "that", "who", "which"], "96i" :["Might", "Could", "May", "I don’t know"], "97i" :["had stolen", "have stolen", "stole", "I don’t know"], "98i" :["could", "managed to", "Can", "I don’t know."]
         }
         $(".radio").each(function() {
@@ -142,22 +148,39 @@ jQuery(document).ready(function($) {
                         } else {for (i in RG[clase]) {
                             interno += "<input type='radio' name='" + n + "i' id='" + n + "i" + i + "' value='" + RG[clase][i] + "'><label for='" + n + "i" + i + "'>" + RG[clase][i] + "</label>";
                         }}
-           /* if (clase != "RAB" || clase != "RENG") {for (i in RG[clase]) {
-                            interno += "<input type='radio' name='" + n + "i' id='" + n + "i" + i + "' value='" + RG[clase][i] + "'><label for='" + n + "i" + i + "'>" + RG[clase][i] + "</label>";
-                        }} else if (clase == "RENG") {
-                        		for (i in RENG[n+"i"]) {
-                        			interno += "<input type='radio' name='" + n + "i' id='" + n + "i" + i + "' value='" + RENG[n+"i"][i] + "'><label for='" + n + "i" + i + "'>" + RENG[n+"i"][i] + "</label>";
-                        		}
-                        } else {
-                            console.log("success!");
-                            for (i in RAB[n+"i"]) {
-                                interno += "<input type='radio' name='" + n + "i' id='" + n + "i" + i + "' value='" + RAB[n+"i"][i] + "'><label for='" + n + "i" + i + "'>" + RAB[n+"i"][i] + "</label>";
-                            }
-                        }*/
             $(this).html(interno);
             n++;
         })
-    }
+        if (TID == 11) {
+            preguntas=$(".pregunta");
+            function shuffle2() {
+                var Preguntas = $(".pregunta").get();
+                var Radios = $(".radio").get();
+                var randoms = [];
+                var revueltos = $.map(Preguntas, function() {
+                    var random = Math.floor(Math.random() * Preguntas.length);
+                    randoms.push(random);
+                    var randomElemento = $(Preguntas[random]).clone(true)[0];
+                    Preguntas.splice(random,1);
+                    return randomElemento;
+                });
+                var i=0;
+                var revueltos2 = $.map(Radios, function(){
+                    var randomElemento = $(Radios[randoms[i]]).clone(true)[0];
+                    Radios.splice(randoms[i],1);
+                    i++;
+                    return randomElemento;
+                })
+                $(".pregunta").each(function(i){
+                    $(this).replaceWith($(revueltos[i]));
+                })
+                $(".radio").each(function(i){
+                    $(this).replaceWith($(revueltos2[i]));
+                })
+            }
+            shuffle2();
+        }
+            }
 
     function revisarCampos() {
         function hacInc(field) { field.addClass("incompleto"); }
@@ -207,14 +230,43 @@ jQuery(document).ready(function($) {
             "test08": function() { calTest08(); },
             "test09": function() { calTest09(); },
             "test10": function() { calTest10(); },
-            "test11": function() { calTest11(); }
+            "test11": function() { calTest11(); },
+            "test12": function() { calTest12(); }
         };
         funciones[ID]();
         //console.log(DIAGNOS);
     };
+    $("#more-info").click(function(){
+    var creditoTexto;
+    if (TID == 1) {
+        creditoTexto = '<p>Este instrumento es una adaptación al español del Strategy Inventory for Language Learning</p><p>Una copia de este instrumento puede encontrarse <a href="https://drive.google.com/file/d/0B08aswbBqBFFLWpDU0xfNUg4djl0TmtnSFBtWjAzSHRzcFA4/view?usp=sharing" target="_blank">aquí</a>.</p>'
+    }
+    if (TID >= 2 && TID <= 5) {
+        creditoTexto = '<p>Estos instrumentos fueron tomados del libro <span id="titulo-libro">Strategies for Success: A Practical Guide to Learning English</span>.</p> <p id="referencia">Brown, H. D. (2002). <i>Strategies for success: A practical guide to learning English</i>. White Plains, NY: Longman.</p> <p>Traducidos y adaptados al español por <b>María Fernanda Rodríguez González</b></p> <p>Adaptación electrónica y base de datos por <b>Sara Ariadna Marcial León</b></p>'
+    } else if (TID >= 6 && TID <= 10) {
+        creditoTexto = '<p>Estos instrumentos fueron tomados del libro <span id="titulo-libro">Learning Styles in the ESL/EFL Classroom</span></p><p id="referencia">Reid J. M. (ed.). 1995 Learning Styles in the ESL/EFL Classroom. Boston, MA: Heinle & Heinle.</p><p>Traducción y adaptación al español por <b>Sara Ariadna Marcial León</b></p><p>Adaptación electrónica y base de datos por <b>Sara Ariadna Marcial León</b></p>'
+    } else if (TID==11) {
+        creditoTexto='<p>Este examen fue tomado del sitio de la <span id="titulo-libro">Universidad de Maastricht</span></p><p id="referencia">Maastricht University Language Centre, English Department. (2002). <i>English Diagnostic Test – version two (standard)</i>.</p><p>El test puede encontrarse <a href="https://www.maastrichtuniversity.nl/sites/default/files/englishtest.pdf">aquí</a>.</p><p>Adaptación electrónica y base de datos por <b>Sara Ariadna Marcial León</b></p>'
+    }
+    else if (TID == 12) {
+        creditoTexto = '<p>Este instrumento fue tomado de <span id="titulo-libro">Técnicas de estudio y estrategias de aprendizaje para el estudiante universitario</span>.</p><p id="referencia">Campero N, Díaz GM, Díaz SH. <i>Diagnóstico de los hábitos de estudio en alumnos de la Unidad Académica Profesional AMECAMECA UAEM.</i> Documento del Congreso Internacional Retos y Expectativas de la Universidad; 2002 nov 6-9; Toluca, Estado de México.</p><p>Una copia del instrumento puede encontrarse <a href="http://fcf.unse.edu.ar/archivos/ingresantes/Tecnicas%20de%20estudio%20y%20estrategias%20de%20aprendizaje%20para%20el%20estudiante%20universitario.pdf">aquí</a></p><p>Adaptación electrónica y base de datos por <b>Sara Ariadna Marcial León</b></p>'
+    } 
+    $("body").append("<div id='fondo-opaco'><div class='alerta creditos'>"+creditoTexto+"<p></p><p class='acciones'>Clic para cerrar</p></div></div>");
+    $(".creditos a").click(function(e){
+        e.stopPropagation();
+    })
+        $("#titulo-libro").click(function(e){
+            e.stopPropagation();
+            $("#referencia").toggle();
+        })
+        $("#fondo-opaco").click(function() {
+            $(this).remove();
+        })
+    });
     //enitaim
     $('#enviar').click(function() {
         calificar();
+        enviarDatos();
         /*revisarCampos();
         if (completo) { calificar();
             enviarDatos(); } else { alerta(); }*/
@@ -257,7 +309,7 @@ jQuery(document).ready(function($) {
         }
         //Hacer el array con el contenido de todos los campos.
         var info = [];
-        info = [{ name: "Hoja", value: ID }, { name: "Hora", value: new Date() }, { name: "nombre", value: $("#nombre").val() }, { name: "correo", value: $("#correo").val() }, { name: "matricula", value: $("#matricula").val() }, { name: "seccion", value: $("#seccion").val() }, {name:"diagnóstico", value: DIAGNOS}];
+        info = [{ name: "Hoja", value: ID }, { name: "Hora", value: new Date() }, { name: "nombre", value: $("#nombre").val() }, { name: "correo", value: $("#correo").val() }, { name: "matricula", value: $("#matricula").val() }, { name: "seccion", value: $("#seccion").val() }, {name:"diagnóstico", value: DIAGNOS},{name:"resultadoHTML", value:resultadoHTML}];
         $("input:radio:checked").each(function() {
                 info.push({ name: this.name, value: this.value });
             })
@@ -330,12 +382,11 @@ jQuery(document).ready(function($) {
             ["Recordar de manera efectiva:", D["memoria"][0]],
             ["Usar todos tus procesos mentales:", D["cognitiva"][0]],
             ["Compensar la información faltante:", D["compensacion"][0]],
-            ["Organizar y evaluar tu aprendizaje", D["metacognitiva"][0]],
+            ["Organizar y evaluar tu aprendizaje:", D["metacognitiva"][0]],
             ["Regular tus emociones:", D["afectiva"][0]],
             ["Aprender con otros:", D["social"][0]],
             ["TOTAL GLOBAL:", D["overall"][0]]
         ], "center");
-        lug.append("<br><br>");
         add(0, 1);
         lug.append("<div id='grafica'></div>");
         //gráfico
@@ -362,7 +413,8 @@ jQuery(document).ready(function($) {
             }]
         });
         chart.render();
-        DIAGNOS = "Así aprendo yo inglés, Memoria: " + D["memoria"][0] + ", Cognitiva: " +D["cognitiva"][0] + ", Compensación: "  + D["compensacion"][0] + ", Metacognitiva: "+ D["metacognitiva"][0] + ", Afectiva: " + D["afectiva"][0] + ", Social: " + D["social"][0] + ", Promedio global: " + D["overall"][0] ;
+        DIAGNOS = "Así aprendo yo inglés, Memoria: " + D["memoria"][0] + ", Cognitiva: " +D["cognitiva"][0] + ", Compensación: "  + D["compensacion"][0] + ", Metacognitiva: "+ D["metacognitiva"][0] + ", Afectiva: " + D["afectiva"][0] + ", Social: " + D["social"][0] + ", Promedio global: " + D["overall"][0];
+        resultadoHTML = '<table><tr><th>Estrategias cubiertas</th><th>Tus promedios</th></tr> <tr><td>Recordar de manera efectiva:</td><td>'+D["memoria"][0]+'</td></tr> <tr><td>Usar todos tus procesos mentales:</td><td>'+D["cognitiva"][0]+'</td></tr> <tr><td>Compensar la información faltante:</td><td>'+D["compensacion"][0]+'</td></tr> <tr><td>Organizar y evaluar tu aprendizaje:</td><td>'+D["metacognitiva"][0]+'</td></tr> <tr><td>Regular tus emociones:</td><td>'+D["afectiva"][0]+'</td></tr> <tr><td>Aprender con otros:</td><td>'+D["social"][0]+'</td></tr> <tr><td>TOTAL GLOBAL:</td><td>'+D["overall"][0]+'</td></tr> </table>';
     }
 
     function calTest02() {
@@ -394,27 +446,27 @@ jQuery(document).ready(function($) {
             for (i in der) { datos.push([izq[i], der[i]]); }
         }
         HC(lug, 3, "Preferencias del estudiante");
-        add(lug, 0, 1);
+        add(0, 1);
         haTa(lug, datos, "center");
         lug.append("<br><br>");
         //Sección 2
         HC(lug, 3, "¿Rápido o lento?");
         HC(lug, 4, suma);
-        add(lug, 2, 2);
+        add(2, 2);
         (suma >= 30) ? add(3, 3): add(4, 4);
         (suma >= 30) ? di="reflexivo": di="impulsivo";
-        add(lug, 5, 7);
+        add(5, 7);
         haTa(lug, datos = [
             ["", "Estilo reflexivo", "Estilo impulsivo"],
             ["Ventajas", "Hablar de manera más precisa<br>Leer de manera más precisa<br>Piensan cuidadosamente lo que van a hacer", "Más dispuestos para hablar en clase<br>Ágiles lectores<br>Son más rápidos en las pruebas estandarizadas"],
             ["Desventajas", "Esperan demasiado para hablar<br>Leen mucho más lento<br>Son más lentos en las pruebas estandarizadas", "Menos precisos al hablar<br>Menos precisos al leer<br>Actúan sin pensar"]
         ], "center");
         lug.append("<br><br>");
-        add(lug, 8, 9);
+        add(8, 9);
         //Sección 3
         HC(lug, 3, "Procesos hemisferio derecho y hemisferio izquierdo");
         HC(lug, 4, suma2);
-        add(lug, 10, 0, 1);
+        add(10, 12);
         haTa(lug, datos = [
             ["Puntaje", ""],
             ["28-32", "Alta preferencia por el hemisferio derecho"],
@@ -439,8 +491,9 @@ jQuery(document).ready(function($) {
             ["Enfocarse en los detalles", "Entiende la idea general"]
         ], "center green");
         lug.append("<br><br>");
-        DIAGNOS = "Estrategias deseables: " + izq + ", Estrategias a cambiar: " + der + "; " + "Rápido o lento: " + di + ", " + suma + "; Procesos hemisferio derecho y hemisferio izquierdo: "+di2 + ", "+ suma2;
-    }
+        DIAGNOS = "Preferencias del estudiante; estrategias deseables: " + izq + ", Estrategias a cambiar: " + der + "; " + "Rápido o lento: " + di + ", " + suma + "; Procesos hemisferio derecho y hemisferio izquierdo: "+di2 + ", "+ suma2;
+        resultadoHTML = '<h1>Preferencias del estudiante</h1> <table> <tr><th>Estrategias deseables</th><th>Estrategias a cambiar</th></tr> <tr><td>'+izq+'</td><td>'+der+'</td></tr> </table> <h1>Rápido o lento</h1> <p>Eres <b>'+di+'</b>, y tu puntaje fue <b>'+suma+'</b></p> <h1>Procesos hemisferio derecho y hemisferio izquierdo</h1> <p>Tienes <b>'+di2+'</b>, y tu puntaje fue <b>'+suma2+'</b></p>'; }
+
 
     function calTest03() {
         var resp = {},
@@ -469,7 +522,7 @@ jQuery(document).ready(function($) {
         var h = 0, h2 = 0;
         (suma <= 12) ? h = 3 : h = 2;
         (suma2 <= 12) ? h2 = 3 : h2 = 2;
-        lug.append("<h4>Posees una "+ (h == 2) ? "Alta automotivación" : "Baja automotivación"+" y una"+(h == 2) ? "Alta motivación de otros" : "Baja motivación de otros"+"</h4>");
+        lug.append("<h4>Posees una " + ((h == 2) ? "Alta automotivación" : "Baja automotivación"+" y una"+(h == 2) ? "Alta motivación de otros" : "Baja motivación de otros")+ "</h4>");
         add(0, 2);
         haTa(lug, datos = [
             ["Puntaje", "Parte I", "Parte II"],
@@ -516,9 +569,11 @@ jQuery(document).ready(function($) {
         (suma4 <= 13) ? h2 = 2: (suma4 >= 14 && suma4 <= 21) ? h2 = 3 : h2 = 4;
         $(".special3 tr:nth-child(" + h2 + ")").css({ "background-color": "#2FB3F7" });
         var di5 = $(".special3 tr:nth-child(" + h2 + ") td:nth-child(2)").html();
-        add(lug, 10, 10);
+        add(10, 10);
         lug.append("<br><br>");
-        DIAGNOS= "Dos tipos de motivación: "+ di2 +", " + di3 + ", " + suma + ", "+suma2+"; Autoestima en general: " + di4 + ", " + suma3 + "; Ego del idioma: " + di5 + ", " + suma4
+        DIAGNOS= "Dos tipos de motivación: "+ di2 +", " + di3 + ", " + suma + ", "+suma2+"; Autoestima en general: " + di4 + ", " + suma3 + "; Ego del idioma: " + di5 + ", " + suma4;
+        console.log(DIAGNOS)
+        resultadoHTML = '<h1>Dos tipos de motivación</h1> <p>Posees una '+((h == 2) ? "Alta automotivación" : "Baja automotivación"+" y una "+(h == 2) ? "Alta motivación de otros" : "Baja motivación de otros")+'. Tus puntajes fueron <b>'+suma+'</b> en la parte I y <b>'+suma2+'</b> en la parte II.</p> <h1>Autoestima en general</h1> <p>Tu puntaje fue <b>'+suma3+'</b> y '+di4+'</p> <h1>Ego del idioma</h1> <p>Tu puntaje fue <b>'+suma4+'</b> y posees un '+di5+'</p>';
     }
 
     function calTest04() {
@@ -547,7 +602,7 @@ jQuery(document).ready(function($) {
         HC(lug, 3, "Pronunciación");
         HC(lug, 4, suma2)
         add(3,3);
-        haTa(lug, datos = [["Puntaje",""], ["55-64","¡Tú pronunciación es muy buena! Sólo tienes que trabajar a unos pocos sonidos del inglés."], ["45-54","Tu pronunciación es buena, pero tienes varias áreas en las cuales aún necesitas trabajar."], ["35-44","Tu pronunciación está bien, pero necesitas trabajar en los apartados donde obtuviste menor puntaje."], ["Por debajo de 35","Necesitas trabajar en muchas áreas de pronunciación. "]], "center special");
+        haTa(lug, datos = [["Puntaje",""], ["55-64","¡Tu pronunciación es muy buena! Sólo tienes que trabajar en unos pocos sonidos del inglés."], ["45-54","Tu pronunciación es buena, pero tienes varias áreas en las cuales aún necesitas trabajar."], ["35-44","Tu pronunciación está bien, pero necesitas trabajar en los apartados donde obtuviste menor puntaje."], ["Por debajo de 35","Necesitas trabajar en muchas áreas de pronunciación. "]], "center special");
         $(".special tr:first th").attr('colspan', 2);
         $(".special tr td:first").css({ "width": "80px" });
         var h = 0;
@@ -559,11 +614,12 @@ jQuery(document).ready(function($) {
         add(4,4);
         haTa(lug, datos=[["Puntaje",""], ["0-10","Muy pocas diferencias"], ["11-20","Diferencias moderadas"], ["21-30","Grandes diferencias"]],"center special2");
         var h2 = 0;
-        (suma3 < 35) ? h2 = 5: (suma3 >= 35 && suma3 <= 44) ? h2 = 4 : (suma3 >= 45 && suma3 <= 54) ? h2 = 3 : h2 = 2;
+        (suma3 < 11) ? h2 = 2: (suma3 >= 11 && suma3 <= 20) ? h2 = 3 : h2 = 4;
         $(".special2 tr:nth-child(" + h2 + ")").css({ "background-color": "#2FB3F7" })
-        var di2 = $(".special2 tr:nth-child(" + h + ") td:nth-child(2)").html();
+        var di2 = $(".special2 tr:nth-child(" + h2 + ") td:nth-child(2)").html();
+        add(5,6);
         DIAGNOS = "Siete tipos de inteligencia: " + suma + "; Pronunciación: " + di + ", "+ suma2 + "; Diferencias culturales: " + di2 +", " +suma3; 
-    }
+        resultadoHTML = '<h1>Siete tipos de inteligencia</h1> <table> <tr><th></th><th>Puntaje</th></tr> <tr><td>Inteligencia lingüística</td><td>'+suma[0]+'</td></tr> <tr><td>inteligencia lógico-matemático</td><td>'+suma[1]+'</td></tr> <tr><td>inteligencia espacial</td><td>'+suma[2]+'</td></tr> <tr><td>inteligencia kinestésica</td><td>'+suma[3]+'</td></tr> <tr><td>inteligencia musical</td><td>'+suma[4]+'</td></tr> <tr><td>inteligencia interpersonal</td><td>'+suma[5]+'</td></tr> <tr><td>inteligencia intrapersonal</td><td>'+suma[6]+'</td></tr> </table> <h1>Pronunciación</h1> <p>Tu puntaje fue <b>'+suma2+'</b>, por lo tanto '+di+'</p> <h1>Diferencias culturales</h1> <p>Tu puntaje fue <b>'+suma3+'</b>, así que entre tu cultura y la del país hablante de inglés que seleccionaste hay '+di2+'</p>';    }
     function calTest05() {
         var resp ={}, suma=0, suma2=0, suma3=0;
         $("input:checked").each(function(){
@@ -589,6 +645,7 @@ jQuery(document).ready(function($) {
         (suma < 35) ? h = 2: (suma >= 36 && suma2 <= 63) ? h = 3 : h = 4;
         $(".special tr:nth-child(" + h + ") td:nth-child(2)").css({ "background-color": "#2FB3F7" });
         var di = $(".special tr:nth-child(" + h + ") td:nth-child(2)").html();
+        add(11,11);
         HC(lug, 3, "Extroversión e introversión");
         HC(lug, 4, suma2);
         add(0, 1);
@@ -617,6 +674,7 @@ jQuery(document).ready(function($) {
         var di3 = $(".special3 tr:nth-child(" + h3 + ") td:nth-child(2)").html();
         add(9,9);
         DIAGNOS = "Aprendizaje individual: "+suma+", "+di+"Extroversión e introversión: "+ suma2 +", "+di2 + "; Exámenes: " +suma3 +", " +di3;
+        resultadoHTML = '<h1>Aprendizaje individual</h1> <p>Tu puntaje fue <b>'+suma+'</b>, por lo tanto '+di+'</p> <h1>Extroversión e introversión</h1> <p>Tu puntaje fue <b>'+suma2+'</b>, por lo tanto eres '+di2+'</p> <h1>Exámenes</h1> <p>Tu puntaje fue <b>'+suma3+'</b>, así que posees un '+di3+'</p>'; 
     } //End of calTest05
     function calTest06() {
         var V = 0,
@@ -663,7 +721,7 @@ jQuery(document).ready(function($) {
         add(0, 2);
         lug.append(con2);
         DIAGNOS = M + ", " + V + ", " + A +", " + H;
-        //lug.append('<a href="#" onclick="return xepOnline.Formatter.Format("interpretacion");">            Click aquí para guardar como pdf.        </a>');
+        resultadoHTML = '<p>Eres <b>'+M+'</b></p>';
     }
 
     function calTest07() {
@@ -676,8 +734,8 @@ jQuery(document).ready(function($) {
         add(0, 2);
         lug.append(con2);
         DIAGNOS = r[0] + ", " + r[1] + ", " + r[2];
+        resultadoHTML = '<p>Eres <b>'+r[0]+'</b></p>';
     }
-
     function calTest08() {
         var r = diag("intuitivo", "secuencial concreto", true);
         lug.append("<h3>Eres " + r[0] + ".</h3>");
@@ -688,6 +746,8 @@ jQuery(document).ready(function($) {
         add(0, 2);
         lug.append(con2);
         DIAGNOS = r[0] + ", " + r[1] + ", " + r[2];
+        resultadoHTML = '<p>Eres <b>'+r[0]+'</b></p>';
+
     }
 
     function calTest09() {
@@ -700,6 +760,7 @@ jQuery(document).ready(function($) {
         add(0, 2);
         lug.append(con2);
         DIAGNOS = r[0] + ", " + r[1] + ", " + r[2];
+        resultadoHTML = '<p>Eres <b>'+r[0]+'</b></p>';
     }
 
     function calTest10() {
@@ -712,10 +773,11 @@ jQuery(document).ready(function($) {
         add(0, 2);
         lug.append(con2);
         DIAGNOS = r[0] + ", " + r[1] + ", " + r[2]; 
-    }
+        resultadoHTML = '<p>Eres <b>'+r[0]+'</b></p>';
+;    }
 
     function calTest11() {
-        var resp = {}, clave = ["2", "0", "1", "2", "2", "0", "2", "2", "2", "2", "2", "2", "3", "0", "1", "2", "2", "3", "2", "1", "2", "1", "0", "2", "1", "3", "2", "1", "2", "1", "3", "0", "2", "2", "3", "2", "2", "1", "1", "3", "2", "2", "0", "2", "2", "2", "2", "3", "1", "1", "1", "0", "2", "2", "2", "1", "1", "1", "1", "1", "0", "0", "1", "1", "1", "1", "2", "2", "0", "2", "2", "1", "1", "1", "1", "1", "1", "1", "1", "0", "2", "0", "1", "2", "1", "2", "1", "1", "1", "2", "2", "2", "1", "2", "1", "2", "2", "2", "1"], suma=0, M='', bien=[], mal=[],malas=[];
+        var resp = {}, clave = ["2", "0", "1", "2", "2", "0", "2", "2", "2", "2", "2", "2", "3", "0", "1", "2", "2", "3", "2", "1", "2", "1", "0", "2", "1", "3", "2", "1", "2", "1", "3", "0", "2", "2", "3", "2", "2", "1", "1", "3", "2", "2", "0", "2", "2", "2", "2", "3", "1", "1", "1", "0", "2", "2", "2", "1", "1", "1", "1", "1", "0", "0", "1", "1", "1", "1", "2", "2", "0", "2", "2", "1", "1", "1", "1", "1", "1", "1", "1", "0", "2", "0", "1", "2", "1", "2", "1", "1", "1", "2", "2", "2", "1", "2", "1", "2", "2", "2", "1"], suma=0, M='', bien={}, mal={},malas={};
         $("input[type=radio]:checked").each(function(){
             resp[this.name] = Number(this.value);
         })
@@ -723,10 +785,10 @@ jQuery(document).ready(function($) {
             num = Number(i.split("i")[0]);
             if (resp[i] == clave[num]) {
                 suma++;
-                bien.push(num+1);
+                bien[i] = num+1;
             } else {
-                mal.push(num+1);
-                malas.push($("label[for='"+num+"i"+clave[num]+"'").text());
+                mal[i] = num+1;
+                malas[i] = $("label[for='"+num+"i"+clave[num]+"'").text();
             }
         }
         (suma <= 20) ? M="elementary" : (suma > 20 && suma <= 50) ? M="lower intermediate" : (suma > 50 && suma <= 60) ?  M="intermediate" : (suma > 60 && suma <= 80) ? M="upper intermediate": M="advanced";
@@ -743,7 +805,6 @@ jQuery(document).ready(function($) {
                    .css( "color", "green" )
                    .append(" &#x2714;");
         }
-        var preguntas = $(".pregunta");
         $("td").hover(function(){
             var contenido = Number($(this).text().split(" ")[0])-1,  contenido2 = contenido+1;
             var marcado =  resp[contenido+"i"];
@@ -759,13 +820,30 @@ jQuery(document).ready(function($) {
                 $("#info").append("<p>Tu respuesta fue: <span style='color:red'>"+incorrecta+"</span></p><p>La respuesta correcta era: <span style='color:green'>"+correcta+"</span></p>");
                 }
             }
-            console.log(malas);
             $("#info").show();
                     }, function() {
                         $("#info").hide();
                     })
         DIAGNOS = "Nivel: "+ M + ", " + suma;
-    }
+        resultadoHTML = '<p>Tu nivel es '+M+', y tu puntaje fue <b>'+suma+'</b></p>'; 
+        console.log(resultadoHTML);
+        } //Fin de la función
+    function calTest12() {
+        var resp = {}, suma=[0,0,0,0,0,0,0], num2 = 0;
+        $("input[type=radio]:checked").each(function(){
+            resp[this.name] = Number(this.value);
+        })
+        for (i in resp) {
+            num = Number(i.split("i")[0]);
+            (num <= 10) ? num2 = 0 : (num > 10 && num <= 20) ? num2=1 :( num > 20 && num <= 30) ? num2=2 : (num > 30 && num <= 35) ? num2=3 : (num > 35 && num <= 39) ? num2=4 : num2=5;
+            suma[num2] += resp[i];
+            suma[6] += resp[i];
+        }
+        add(0,1);
+        haTa(lug, datos = [["Categoría","Resultado","Puntaje ideal"], ["Estudio independiente", suma[0],"55"], ["Habilidades de lectura",suma[1], "50"], ["Administración de tiempo",suma[2], "50"], ["Concentración",suma[3], "25"], ["Lugar de estudio",suma[4], "20"], ["Habilidades para procesar la información",suma[5], "50"], ["Total",suma[6], "250"]],"center");
+resultadoHTML = '<table> <tr><th>Categoría</th><th>Puntaje</th></tr> <tr><td>Estudio independiente</td><td>'+suma[0]+'</td></tr> <tr><td>Habilidades de lectura</td><td>'+suma[1]+'</td></tr> <tr><td>Administración de tiempo</td><td>'+suma[2]+'</td></tr> <tr><td>Concentración</td><td>'+suma[3]+'</td></tr> <tr><td>Lugar de estudio</td><td>'+suma[4]+'</td></tr> <tr><td>Habilidades para procesar la información</td><td>'+suma[5]+'</td></tr> <tr><td>Total</td><td>'+suma[6]+'</td></tr> </table>';
+
+    } //Fin de la función
     function calTest06B() {
         var resp = { "0i": {}, "1i": {}, "2i": {}, "3i": {}, "4i": {}, "5i": {}, "6i": {}, "7i": {}, "8i": {}, "9i": {}, "10i": {}, "11i": {}, "12i": {}, "13i": {}, "14i": {}, "15i": {} }
         $("input[type=checkbox]:checked").each(function() {
@@ -803,45 +881,42 @@ jQuery(document).ready(function($) {
         }
     } //fin de calTest06
 //Galería
-var slideIndex = 0, modal = $("#myModal");
-function currentDiv(n) {
-  showDivs(slideIndex = n);
+var diapositiva = 0, modal=0;
+function currentDiv(n, m) {
+  showDivs(diapositiva = n, modal = m);
 }
-function showDivs(n) {
-  var i, x = $(".BigImgs"), dots = $(".mini");
-  if (n > x.length-1) {slideIndex = 0}
-  if (n < 0) {slideIndex = x.length-1}
+function showDivs(n, m) {
+  var i, x = $('.BigImgs'+m);
+  if (n > x.length-1) {diapositiva = 0}
+  if (n < 0) {diapositiva = x.length-1}
   for (i = 0; i < x.length; i++) {
      x[i].style.display = "none";
   }
-  x[slideIndex].style.display = "block";
-  modal.show();
+  x[diapositiva].style.display = "block";
+  $(".modal"+m).show();
 }
 $(".close").click(function(){
-  $("#myModal").hide();
+  $(".modal").hide();
 });
-$("#myModal").click(function(){
-  $("#myModal").hide();
+$(".modal").click(function(){
+  $(".modal").hide();
 })
-$("#myModal div").click(function(e) {
+$(".modal div").click(function(e) {
         e.stopPropagation();
    });
 $(".mini").click(function(){
-  var Mini = $(".mini").index(this);
-  currentDiv(Mini);
+  var MiniV = Number($(this).attr('class').split(' ')[1].split('mini')[1]);
+  var Mini = $(".mini"+MiniV).index(this);
+  currentDiv(Mini, MiniV);
 })
 $(".right").click(function(){
-  currentDiv(slideIndex+1);
+  currentDiv(diapositiva+1, modal);
 })
 $(".left").click(function(){
-  currentDiv(slideIndex-1);
+  currentDiv(diapositiva-1, modal);
 })
-
-$.fn.shuffle = function() {
-        return this.each(function(){
-            var items = $(this).children().clone(true);
-            return (items.length) ? $(this).html($.shuffle(items)) : this;
-        });
-    }
+$(".escala-link").hover(function(){
+    $(".escala").toggle();
+}, function(){ $(".escala").toggle(); })
     //END OF THE DOCUMENT READY
 });

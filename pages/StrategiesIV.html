@@ -8,30 +8,31 @@
     </head>
     <body>
     <article id="main">
-    <h1>Strategies for success</h1><br>
+    <h1>Strategies for success</h1>
     <article id="interpretacion" >
-    <h2>¡Gracias por contestar!</h2><br>
-      <h2>RESULTADOS</h2><br>
+    <h2>¡Gracias por contestar!</h2>
+      <h2>RESULTADOS</h2>
             </article>
-            <div class="datos"><input type="text" id="nombre" placeholder="Nombre Completo">
-                  <input type="text" id="correo" placeholder="Correo electrónico">
-                  <input type="text" id="matricula" placeholder="Matrícula">
-                  <input type="text" id="seccion" placeholder="Sección"></div>
+            <div class="datos"><input type="text" list="nombre-lista" id="nombre" placeholder="Nombre Completo">
+            <input type="text" list="matricula-lista" id="matricula" placeholder="Matrícula">
+            <input type="text" id="correo" placeholder="Correo electrónico"></div>
                 <ul id="tabs"><!--Pestañas-->
-                  <li >El aprendizaje individual</li>
-                  <li class="active">Extroversión e introversión</li>
+                  <li class="active">El aprendizaje individual</li>
+                  <li >Extroversión e introversión</li>
                   <li>Exámenes</li>
                 </ul>
             <div class="wrapper">
             <div id="tab">
-              <section > <!--Sección 1-->
-            <div class="orden">Encierra el número que mejor describa que tan frecuentemente realizas estas actividades en inglés. Elige solo un número para cada sección usando la siguiente escala:
-            <div class="wrapper">5 Siempre
-            4 A menudo
-            3 A veces
-            2 Casi nunca
-            1 Nunca</div></div>
-
+              <section class="active"> <!--Sección 1-->
+            <div class="orden"><p>Selecciona el número que mejor describa qué tan frecuentemente realizas estas actividades en inglés de acuerdo a la <span class="escala-link">escala</span>.</p>
+            <ol class="escala" reversed>
+              <li>Siempre</li>
+              <li>A menudo</li>
+              <li>A veces</li>
+              <li>Casi nunca</li>
+              <li>Nunca</li>
+            </ol>
+            </div>
               <div class="caja"><table>
                 <tr>
                   <td>Veo televisión, escucho la radio, etc. (noticias, otros programas)</td>
@@ -46,11 +47,11 @@
                   <td class="radio R54321"></td>
                 </tr>
                 <tr>
-                  <td>Escucho con atención a sonidos específicos en inglés cuando las personas hablan conmigo</td>
+                  <td>Escucho con atención sonidos específicos en inglés cuando las personas hablan conmigo</td>
                   <td class="radio R54321"></td>
                 </tr>
                 <tr>
-                  <td>Escucho con atención a puntos de gramática específicos (tiempos verbales, artículos, etc.)</div>
+                  <td>Escucho con atención puntos de gramática específicos (tiempos verbales, artículos, etc.)</div>
                 <td class="radio R54321"></td>
                 </tr>
                 <tr>
@@ -100,8 +101,8 @@
               </table></div>
             </section>
 
-            <section class="active"> <!--Sección 2-->
-            <div class="orden">Encierra la letra que mejor te describe.</div>
+            <section > <!--Sección 2-->
+            <div class="orden">Selecciona la letra que mejor te describe.</div>
               <div class="caja"><table>
                 <tr>
                   <td>1.  Normalmente me gusta</td>
@@ -112,7 +113,7 @@
                   <td class="radio RAB"></td>
                 </tr>
                 <tr>
-                  <td>3.   Soy feliz cuando </td>
+                  <td>3.  Soy feliz cuando </td>
                   <td class="radio RAB"></td>
                 </tr>
                 <tr>
@@ -143,12 +144,15 @@
             </section>
 
             <section> <!--Sección 3-->
-            <div class="orden">La siguiente tabla se refiere a los exámenes que has tomado. Encierra el número que mejor te describe usando la siguiente escala:
-            <div class="wrapper">5 Siempre hago esto
-            4 Frecuentemente hago esto
-            3 A veces hago esto
-            2 Casi nunca hago esto
-            1 Nunca hago esto</div></div>
+            <div class="orden"><p>La siguiente tabla se refiere a los exámenes que has tomado. Selecciona el número que mejor te describe usando la <span class="escala-link">escala</span>.</p>
+            <ol class="escala" reversed>
+                <li>Siempre hago esto</li>
+                <li>Frecuentemente hago esto</li>
+                <li>A veces hago esto</li>
+                <li>Casi nunca hago esto</li>
+                <li>Nunca hago esto</li>
+            </ol>
+            </div>
               <div class="caja">
               <table>
               <tr ><th colspan="2">Antes del examen</th></tr>
@@ -226,7 +230,6 @@
     	<!-- <textarea id="texto"></textarea>
   		<input type="button" onclick="makeInciso()" > -->
     </body>
-<script src="../js/canvasjs.min.js"></script>
     <script src="../js/jquery-3.0.0.min.js"></script>
     <script src="../js/funciones.js"></script>
 </html>

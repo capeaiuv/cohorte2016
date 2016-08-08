@@ -8,15 +8,14 @@
     </head>
     <body>
     <article id="main">
-    <h1>Strategies for success</h1><br>
+    <h1>Strategies for success</h1>
     <article id="interpretacion" >
-    <h2>¡Gracias por contestar!</h2><br>
-      <h2>RESULTADOS</h2><br>
+    <h2>¡Gracias por contestar!</h2>
+      <h2>RESULTADOS</h2>
             </article>
-            <div class="datos"><input type="text" id="nombre" placeholder="Nombre Completo">
-                  <input type="text" id="correo" placeholder="Correo electrónico">
-                  <input type="text" id="matricula" placeholder="Matrícula">
-                  <input type="text" id="seccion" placeholder="Sección"></div>
+            <div class="datos"><input type="text" list="nombre-lista" id="nombre" placeholder="Nombre Completo">
+            <input type="text" list="matricula-lista" id="matricula" placeholder="Matrícula">
+            <input type="text" id="correo" placeholder="Correo electrónico"></div>
                 <ul id="tabs"><!--Pestañas-->
                   <li class="active">Dos tipos de motivación</li>
                   <li>Autoestima en general</li>
@@ -25,11 +24,13 @@
             <div class="wrapper">
             <div id="tab">
               <section class="active"> <!--Sección 1-->
-            <div class="orden">Encierra el número que mejor te describa cómo te sientes al aprender inglés. Encierra solo un número para cada sección, usando la siguiente escala. ¡Sé honesto!
-            <div class="wrapper">4.  Estoy totalmente de acuerdo. Ésta declaración me describe muy bien.<br>
-            3. Estoy de alguna manera de acuerdo. Ésta declaración probablemente me describa.<br>
-            2. Estoy de alguna manera en desacuerdo. Ésta declaración probablemente no me describa.<br>
-            1. Estoy totalmente en desacuerdo. Ésta declaración definitivamente no me describe.</div></div>
+            <div class="orden"><p>Selecciona el número que mejor describa cómo te sientes al aprender inglés, usando la <span class="escala-link">escala</span>. ¡Sé honesto!</p>
+            <ol class="escala" reversed>
+            <li>Estoy totalmente de acuerdo. Ésta declaración me describe muy bien.</li>
+            <li>Estoy de alguna manera de acuerdo. Ésta declaración probablemente me describa.</li>
+            <li>Estoy de alguna manera en desacuerdo. Ésta declaración probablemente no me describa.</li>
+            <li>Estoy totalmente en desacuerdo. Ésta declaración definitivamente no me describe.</li>
+            </ol></div>
             <div class="caja"><table>
               <tr>
               <td>Quiero aprender bien inglés así podré hablar con nativos del inglés.</td>
@@ -56,7 +57,7 @@
               <td class="radio R4321"></td>
               </tr>
               <tr>
-              <td>Necesito aprobar mi examen de eficiencia del inglés (como TOEFL o un examen de admisión). </td>
+              <td>Necesito aprobar mi examen de certificación del inglés (como TOEFL o EXAVER). </td>
               <td class="radio R4321"></td>
               </tr>
               <tr>
@@ -74,11 +75,14 @@
             </table></div> <!--tabla-->
             </section>
             <section> <!--Sección 2-->
-            <div class="orden">Encierra el número que mejor describa cómo te sientes acerca de ti mismo la mayor parte del tiempo. Elige solo un número para cada sección, usando la siguiente escala:
-            <div class="wrapper">4.  Estoy totalmente de acuerdo. Ésta declaración me describe muy bien.
-            3. Estoy de alguna manera de acuerdo. Ésta declaración probablemente me describa.
-            2. Estoy de alguna manera en desacuerdo. Ésta declaración probablemente no me describa.
-            1. Estoy totalmente en desacuerdo. Ésta declaración definitivamente no me describe.</div></div>
+            <div class="orden">Selecciona el número que mejor describa cómo te sientes acerca de ti mismo la mayor parte del tiempo, usando la <span class="escala-link">escala</span>.
+            <ol class="escala" reversed>
+            <li>Estoy totalmente de acuerdo. Ésta declaración me describe muy bien.</li>
+            <li>Estoy de alguna manera de acuerdo. Ésta declaración probablemente me describa.</li>
+            <li>Estoy de alguna manera en desacuerdo. Ésta declaración probablemente no me describa.</li>
+            <li>Estoy totalmente en desacuerdo. Ésta declaración definitivamente no me describe.</li>
+            </ol>
+            </div>
             <div class="caja"><table>
               <tr>
                 <td>Entiendo mi propia personalidad.</td>
@@ -115,11 +119,14 @@
             </table></div> <!--tabla-->
             </section>
             <section> <!--Sección 3-->
-            <div class="orden">Encierra en un círculo el número que te describe mejor. Elige solo un número por cada sección usando la siguiente escala:
-            <div class="wrapper">1.  La oración de la izquierda te describe bien.
-            2.  La oración de la izquierda de alguna manera te describe bien.
-            3.  La oración de la derecha de alguna manera te describe bien.
-            4.  La oración de la derecha te describe bien.</div></div>
+            <div class="orden">Selecciona el número que te describe mejor. Elige solo un número por cada sección usando la <span class="escala-link">escala</span>.
+            <ol class="escala">
+            <li>La oración de la izquierda te describe bien.</li>
+            <li>La oración de la izquierda de alguna manera te describe bien.</li>
+            <li>La oración de la derecha de alguna manera te describe bien.</li>
+            <li>La oración de la derecha te describe bien.</li>
+            </ol>
+            </div>
               <div class="caja"><table>
                 <tr>
                   <td> No quiero cometer ningún error porque la gente se reiría de mí. </td>
@@ -165,7 +172,6 @@
     	<!-- <textarea id="texto"></textarea>
   		<input type="button" onclick="makeInciso()" > -->
     </body>
-<script src="../js/canvasjs.min.js"></script>
     <script src="../js/jquery-3.0.0.min.js"></script>
     <script src="../js/funciones.js"></script>
 </html>

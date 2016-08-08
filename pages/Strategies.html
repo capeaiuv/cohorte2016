@@ -10,19 +10,13 @@
 <div id="identi">test02</div>
     <article id="main">
         <h1>Strategies for success</h1>
-        <br>
         <article id="interpretacion">
             <h2>¡Gracias por contestar!</h2>
-            <br>
             <h2>RESULTADOS</h2>
-            <br>
         </article>
-        <div class="datos">
-            <input type="text" id="nombre" placeholder="Nombre Completo">
-            <input type="text" id="correo" placeholder="Correo electrónico">
-            <input type="text" id="matricula" placeholder="Matrícula">
-            <input type="text" id="seccion" placeholder="Sección">
-        </div>
+        <div class="datos"><input type="text" list="nombre-lista" id="nombre" placeholder="Nombre Completo">
+            <input type="text" list="matricula-lista" id="matricula" placeholder="Matrícula">
+            <input type="text" id="correo" placeholder="Correo electrónico"></div>
         <ul id="tabs">
             <!--Pestañas-->
             <li class="active">Preferencias del estudiante</li>
@@ -33,11 +27,13 @@
             <div id="tab">
                 <section class="active">
                     <!--Sección 1-->
-                    <div class="orden">Selecciona la opción que mejor te describa usando la siguiente escala:
-                        <div class="wrapper">A. La oración de la izquierda te describe bien.
-                            <br> B. La oración de la izquierda de alguna manera te describe bien.
-                            <br> C. La oración de la derecha de alguna manera te describe bien.
-                            <br> D. La oración de la derecha te describe bien</div>
+                    <div class="orden"><p>Selecciona la opción que mejor te describa usando la <span class="escala-link">escala</span>.</p>
+                    <ol class="escala" type="A">
+                        <li>La oración de la izquierda te describe bien.</li>
+                        <li>La oración de la izquierda de alguna manera te describe bien.</li>
+                        <li>La oración de la derecha de alguna manera te describe bien.</li>
+                        <li>La oración de la derecha te describe bien</li>
+                    </ol>
                     </div>
                     <div class="caja">
                         <table>
@@ -72,14 +68,14 @@
                 </section>
                 <section>
                     <!--Sección 2-->
-                    <div class="orden">Encierra en un círculo el número de la oración que describe la velocidad con la que haces las cosas. Encierra solo un número por cada sección usando la siguiente escala:
-                        <div class="wrapper">
-                            <div class="en-linea">Muy rápido</div>
-                            <div class="en-linea">Rápido</div>
-                            <div class="en-linea">Más o menos</div>
-                            <div class="en-linea">Lento</div>
-                            <div class="en-linea">Muy lento</div>
-                        </div>
+                    <div class="orden"><p>Selecciona el número de la oración que describe la velocidad con la que haces las cosas de acuerdo a la <span class="escala-link">escala</span>.</p>
+                        <ol class="escala">
+                            <li>Muy rápido</li>
+                            <li>Rápido</li>
+                            <li>Más o menos</li>
+                            <li>Lento</li>
+                            <li>Muy lento</li>
+                        </ol>
                     </div>
                     <div class="caja">
                         <table>
@@ -130,11 +126,13 @@
                 </section>
                 <section>
                     <!--Sección 3-->
-                    <div class="orden">Selecciona la opción que mejor te describa usando la siguiente escala:
-                        <div class="wrapper">A. La oración de la izquierda te describe bien.
-                            <br> B. La oración de la izquierda de alguna manera te describe bien.
-                            <br> C. La oración de la derecha de alguna manera te describe bien.
-                            <br> D. La oración de la derecha te describe bien</div>
+                    <div class="orden"><p>Selecciona la opción que mejor te describa usando la <span class="escala-link">escala</span>.</p>
+                        <ol class="escala">
+                        <li>La oración de la izquierda te describe bien.</li>
+                        <li>La oración de la izquierda de alguna manera te describe bien.</li>
+                        <li>La oración de la derecha de alguna manera te describe bien.</li>
+                        <li>La oración de la derecha te describe bien</li>
+                        </ol>
                     </div>
                     <div class="caja">
                         <table>
@@ -194,7 +192,6 @@
         <br>
         <br>
 </body>
-<script src="../js/canvasjs.min.js"></script>
 <script src="../js/jquery-3.0.0.min.js"></script>
 <script src="../js/funciones.js"></script>
 </html>

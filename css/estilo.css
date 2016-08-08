@@ -58,6 +58,15 @@
     color: black;
     background-color:#ffc107;
 	}
+  .diagnostico ul {
+	padding-left:6em;
+}
+	#more-info {
+		float:right !important;
+		max-height:100%;
+		cursor:pointer;
+		margin-right:.5em;
+	}
 	#main {
     	display: block;
     	background-color: white;
@@ -114,7 +123,16 @@
     	margin: 0 auto;
     }
     /*Títulos*/
-    h1 {width:100%; text-align: center; padding: 0.5em 0; font-size: 2.6em; background: #0088AA; color: #fff;text-shadow: 0.063em 0.063em 0em #1A5D6E; box-shadow: 0 0 0.625em #AAA; top: 0; margin-bottom: 0em;}
+    h1 {width:100%; 
+			text-align: center; 
+			padding: 0.5em 0; 
+			font-size: 2.6em; 
+			background: #0088AA; 
+			color: #fff;
+			text-shadow: 0.063em 0.063em 0em #1A5D6E; 
+			box-shadow: 0 0 0.7em #AAA;
+			top: 0; 
+			margin-bottom: 1em;}
 	/*Títulos nivel 2*/
 	h2 {width: 100% + 2.4em; text-align: center; padding: 0.3em 0; position: relative; margin: 0 -1.2em; font-size: 2em; background: #3cb0fd; color: #FFF; text-shadow: 0.063em 0.063em 0em #1A5D6E; box-shadow: 0 0 0.625em #AAA;}
 	h2:after,
@@ -134,6 +152,17 @@
 		text-align: center;
 		z-index:4;
 	}
+	#nombre {
+		width:18em;
+	}
+	.escala {
+		display:none;
+		text-align:left;
+		background-color:#F48FB1;
+		padding:.2em .5em;
+		padding-left:1.8em;
+	}
+	
 	p, .expli {
     	text-align: justify;
     	padding: 0 4em 0 4em;
@@ -265,25 +294,33 @@
     font-weight: 600;
     color: #ffffff;
     background: #ea6153; }
-  	.green th {
+  	.green th, th.green {
     background: #27ae60; }
-  	.blue th {
+  	.blue th, th.blue {
     background: #2980b9;
 	}
     /*Enviar btn*/
-	#enviar {
-		margin: .5em;
+    button {
+    	margin: .5em;
 		border-radius: 2px;
 		outline: 0;
 		padding: 0 2rem;
 		border: none;
 		text-align: center;
-		color: #fff;
-		text-decoration: none;
 		cursor: pointer;
+		box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+		text-decoration: none;
+		color: #fff;
+    }
+    #copiar {
+    	background-color:#FFA726;
+    }
+    #copiar:hover {
+    	background-color:#E64A19;
+    }
+	#enviar {
 		background-color: #26a69a;
 		font-size: 2em;
-		box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
 	}
 	#enviar:hover {
 		background-color: #2bbbad;
@@ -375,17 +412,6 @@
 	.wrapper {
 		text-align: center;
 	}
-	#tab section .orden .wrapper {
-		text-align: justify;
-		display:inline-block;
-		font-size: 0.8em;
-		margin: .5em;
-	}
-	#tab section .orden .wrapper .en-linea {
-		display:inline-block;
-		margin: 0 .5em 0 .5em;
-		/*border: solid .05em #27ae60;*/
-	}
 	/*Enviar2*/
 	[class^="hvr-"] {
     /* display: inline-block; */
@@ -470,6 +496,20 @@
 	-moz-user-select: none; /* Firefox */
 	-ms-user-select: none; /* IE10+ */
 }
+.creditos {
+	width:70%;
+	left:15%;
+}
+.creditos p{
+	padding:0 2em;
+}
+#referencia {
+	display:none;
+	border-left: 3px solid #B0BEC5;
+	padding-left:.5em;
+	margin-left:2em;
+	color:#3F51B5;
+}
 .acciones {
 	border-top: 1px solid rgba(160,160,160,0.2);
     padding-top: 1em;
@@ -484,6 +524,7 @@
 }	
 #uv {
 	width:20%;
+	margin-bottom:1em;
 }
 #uvlogo {
 	height: 2em;
@@ -496,6 +537,14 @@
 }
 #identi {
 	display: none;
+}
+#titulo-libro,.escala-link {
+	color: #3F51B5;
+	text-decoration:underline;
+	cursor:pointer;
+}
+#titulo-libro:hover,.escala-link:hover {
+	color:#00BCD4;
 }
 
 .radioBtns, .RABCD, .R12345, .R54321, .R1234, .R0123, .RENG,.R4321 {
@@ -581,57 +630,6 @@ h5 {
 .BigImgs img {
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 	width:100%;
-}
-.sitio {
-	max-width:1366px;
-	width:100%;
-    overflow:hidden;
-    position:relative;
-    margin:0px auto;
-    display:block;
-}
-.trans {
-    width:100%;
-    height:auto;
-    display:block;
-    margin:0;
-    padding:0;
-}
-.sprite {
-    position:absolute;
-    top:0;
-    max-height:none;
-    max-width:100%;
-    display:block;
-}
-.sprite.s1 {
-	top:0;
-}
-.sprite.s2 {
-	top:-62.4%;
-}
-.sprite.s3 {
-	top:-260%;
-}
-.sitio_001{
-background-position: 0 0;
-width: 1366px;
-height: 643px;
-}
-.sitio_003{
-background-position: 0 -644px;
-width: 1366px;
-height: 1030px;
-}
-.sitio_004{
-background-position: 0 -1680.0000610351562px;
-width: 1366px;
-height: 643px;
-}
-.sitio_005{
-background-position: 0 -2327.0000610351562px;
-width: 1366px;
-height: 643px;
 }
 .modal {
     display:none;

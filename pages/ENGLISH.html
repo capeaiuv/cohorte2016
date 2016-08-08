@@ -3,24 +3,20 @@
   <head>
     <meta content="text/html; charset=UTF-8" http-equiv="content-type">
     <link rel="stylesheet" type="text/css" href="../css/estilo.css">
-    <script src="../js/canvasjs.min.js"></script>
-    <script src="../js/jquery-3.0.0.min.js"></script>
-    <script src="../js/funciones.js"></script>
     <title>ENGLISH DIAGNOSTIC TEST</title>
     </head>
     <body>
     <div id="identi">test11</div>
     <article id="main">
-    <h1>ENGLISH DIAGNOSTIC TEST</h1><br>
+    <h1>ENGLISH DIAGNOSTIC TEST</h1>
     <article id="interpretacion" >
-    <h2>¡Gracias por contestar!</h2><br>
-      <h2>RESULTADOS</h2><br>
+    <h2>¡Gracias por contestar!</h2>
+      <h2>RESULTADOS</h2>
       <div id="info"></div>
-            </article><br><br>
-            <div class="datos"><input type="text" id="nombre" placeholder="Nombre Completo">
-                  <input type="text" id="correo" placeholder="Correo electrónico">
-                  <input type="text" id="matricula" placeholder="Matrícula">
-                  <input type="text" id="seccion" placeholder="Sección"></div>
+            </article>
+            <div class="datos"><input type="text" list="nombre-lista" id="nombre" placeholder="Nombre Completo">
+            <input type="text" list="matricula-lista" id="matricula" placeholder="Matrícula">
+            <input type="text" id="correo" placeholder="Correo electrónico"></div>
                 <ul id="tabs"><!--Pestañas-->
                   <li class="active">Sección 1</li>
                   <li>Sección 2</li>
@@ -36,8 +32,7 @@
             <div class="wrapper">
             <div id="tab">
               <section class="active"> <!--Sección 1-->
-              <div class="orden">Please answer the following questions without spending too long considering your answers. 
-              The test multiple choice based and is there for diagnostic purposes to assess your present language needs. Good luck! Please choose the answer you think fits best into the gaps and enter your choice on the multiple choice answer paper provided. Indicate your answers on theanswer paper provided. </div>
+              <div class="orden"><p>Rellena los espacios con la opción correcta sin pensar demasiado en tus respuestas. Todo el examen es de opción múltiple y tiene como objetivo hacer un diagnóstico de tus necesidades lingüísticas. ¡Buena suerte!</p></div>
                 <div class="caja"><table>
                 <tr><td class="pregunta">He’s _______ doctor of law. </td></tr>
                 <tr><td class="radio RENG"></td></tr>
@@ -285,6 +280,9 @@
 <tr><td class="radio RENG"></td></tr>
 </table>
 </div>
+<div class="prueba"><p>1a</p><p>2a</p></div>
+<div class="prueba"><p>1b</p><p>2b</p></div>
+<div class="prueba"><p>1c</p><p>2c</p></div>
 </section>
 
 
@@ -293,5 +291,7 @@
     	<div class="wrapper"><button id="enviar" >Enviar respuestas</button></div>
     	
     </body>
+    <script src="../js/jquery-3.0.0.min.js"></script>
+    <script src="../js/funciones.js"></script>
 
 </html>

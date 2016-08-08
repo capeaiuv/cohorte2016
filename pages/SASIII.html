@@ -8,17 +8,16 @@
     </head>
     <body>
     <article id="main">
-    <h1>Cómo me encargo de las posibilidades</h1><br>
+    <h1>Style Analysis Survey (SAS)</h1>
     <article id="interpretacion" >
-    <h2>¡Gracias por contestar!</h2><br>
-      <h2>RESULTADOS</h2><br>
+    <h2>¡Gracias por contestar!</h2>
+      <h2>RESULTADOS</h2>
       <div id="promedios"></div>
             <div id="grafica"></div>
-            </article><br><br>
-            <div class="datos"><input type="text" id="nombre" placeholder="Nombre Completo">
-                  <input type="text" id="correo" placeholder="Correo electrónico">
-                  <input type="text" id="matricula" placeholder="Matrícula">
-                  <input type="text" id="seccion" placeholder="Sección"></div>
+            </article>
+            <div class="datos"><input type="text" list="nombre-lista" id="nombre" placeholder="Nombre Completo">
+            <input type="text" list="matricula-lista" id="matricula" placeholder="Matrícula">
+            <input type="text" id="correo" placeholder="Correo electrónico"></div>
                 <ul id="tabs"><!--Pestañas-->
                   <li class="active">Sección 1</li>
                   <li>Sección 2</li>
@@ -26,8 +25,15 @@
             <div class="wrapper">
             <div id="tab">
             <section class="active"> <!--Sección 1-->
-            <div class="orden">Para cada pregunta, selecciona la opción que mejor te identifique. Completa todas las preguntas. Cuando termines, se te mostrará tu puntaje y una interpretación de los resultados. Trata de no pensar demasiado en cada pregunta, marca la primera opción que te venga a la cabeza y continúa con la siguiente.
-            <br><div class="wrapper">0 = Nunca<br>1 = A veces<br>2 = A menudo<br>3 = Siempre</div></div>
+            <div class="orden"><p>Para cada pregunta, selecciona la opción que mejor te identifique de acuerdo con la <span class="escala-link">escala</span>. Completa todas las preguntas. Trata de no pensar demasiado en cada pregunta, marca la primera opción que te venga a la cabeza y continúa con la siguiente.</p>
+              <ol class="escala">
+                                <li>nunca</li>
+                                <li>a veces</li>
+                                <li>de vez en cuando</li>
+                                <li>a menudo</li>
+                                <li>siempre</li>
+                            </ol>
+              </div>
             <div class="caja"><table>
                  <tr><td>Tengo una gran imaginación.</td><td class="radio R0123"></td></tr>
                  <tr><td>Me gusta tener muchas nuevas ideas.</td><td class="radio R0123"></td></tr>
@@ -66,7 +72,6 @@
         <!-- <textarea id="texto"></textarea>
         <input type="button" onclick="makeInciso()" > -->
     </body>
-    <script src="../js/canvasjs.min.js"></script>
     <script src="../js/jquery-3.0.0.min.js"></script>
     <script src="../js/funciones.js"></script>
 </html>
