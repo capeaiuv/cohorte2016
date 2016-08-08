@@ -58,7 +58,7 @@ jQuery(document).ready(function($) {
             var h3 = $("<h3>").html(string);
             return place.append(h3);
         } else {
-            var h4 = $("<h4>").html("Tu puntaje fue " + string);
+            var h4 = "<div class='wrapper'><h4>Tu puntaje fue "+string+".</h4></div>";
             return place.append(h4);
         }
     }
@@ -266,11 +266,15 @@ jQuery(document).ready(function($) {
     //enitaim
     $('#enviar').click(function() {
         calificar();
-        enviarDatos();
+        addSpace();
         /*revisarCampos();
         if (completo) { calificar();
             enviarDatos(); } else { alerta(); }*/
     });
+    function addSpace() {
+    $("<br>").insertAfter("h3");
+    $("<br>").insertAfter("table");
+    }
     $("input[type=text]").focus(function() {
         var campo = $(this);
         if (campo.hasClass("incompleto")) {
@@ -448,7 +452,6 @@ jQuery(document).ready(function($) {
         HC(lug, 3, "Preferencias del estudiante");
         add(0, 1);
         haTa(lug, datos, "center");
-        lug.append("<br><br>");
         //Sección 2
         HC(lug, 3, "¿Rápido o lento?");
         HC(lug, 4, suma);
@@ -461,7 +464,6 @@ jQuery(document).ready(function($) {
             ["Ventajas", "Hablar de manera más precisa<br>Leer de manera más precisa<br>Piensan cuidadosamente lo que van a hacer", "Más dispuestos para hablar en clase<br>Ágiles lectores<br>Son más rápidos en las pruebas estandarizadas"],
             ["Desventajas", "Esperan demasiado para hablar<br>Leen mucho más lento<br>Son más lentos en las pruebas estandarizadas", "Menos precisos al hablar<br>Menos precisos al leer<br>Actúan sin pensar"]
         ], "center");
-        lug.append("<br><br>");
         add(8, 9);
         //Sección 3
         HC(lug, 3, "Procesos hemisferio derecho y hemisferio izquierdo");
@@ -475,7 +477,6 @@ jQuery(document).ready(function($) {
             ["13-17", "Preferencia moderada por el hemisferio izquierdo"],
             ["8-12", "Alta preferencia por el hemisferio izquierdo"]
         ], "center blue special");
-        lug.append("<br><br>");
         $(".special tr:first th").attr('colspan', 2);
         $(".special tr td:first").css({ "width": "80px" });
         var h = 0;
@@ -490,7 +491,6 @@ jQuery(document).ready(function($) {
             ["Idioma, matemáticas", "Música, arte"],
             ["Enfocarse en los detalles", "Entiende la idea general"]
         ], "center green");
-        lug.append("<br><br>");
         DIAGNOS = "Preferencias del estudiante; estrategias deseables: " + izq + ", Estrategias a cambiar: " + der + "; " + "Rápido o lento: " + di + ", " + suma + "; Procesos hemisferio derecho y hemisferio izquierdo: "+di2 + ", "+ suma2;
         resultadoHTML = '<h1>Preferencias del estudiante</h1> <table> <tr><th>Estrategias deseables</th><th>Estrategias a cambiar</th></tr> <tr><td>'+izq+'</td><td>'+der+'</td></tr> </table> <h1>Rápido o lento</h1> <p>Eres <b>'+di+'</b>, y tu puntaje fue <b>'+suma+'</b></p> <h1>Procesos hemisferio derecho y hemisferio izquierdo</h1> <p>Tienes <b>'+di2+'</b>, y tu puntaje fue <b>'+suma2+'</b></p>'; }
 
@@ -533,7 +533,6 @@ jQuery(document).ready(function($) {
         $(".special tr:nth-child(" + h2 + ") td:nth-child(3)").css({ "background-color": "#2FB3F7" });
         var di2 = $(".special tr:nth-child(" + h + ") td:nth-child(2)").html();
         var di3 = $(".special tr:nth-child(" + h2 + ") td:nth-child(3)").html();
-        lug.append("<br><br>");
         //Sección 2
         HC(lug, 3, "Autoestima en general");
         HC(lug, 4, suma3);
@@ -552,7 +551,6 @@ jQuery(document).ready(function($) {
         $(".special2 tr:nth-child(" + h + ")").css({ "background-color": "#2FB3F7" })
         var di4 = $(".special2 tr:nth-child(" + h + ") td:nth-child(2)").html();
         add(8, 8);
-        lug.append("<br><br>");
         //Sección 3
         HC(lug, 3, "Ego del idioma");
         HC(lug, 4, suma4);
@@ -570,9 +568,7 @@ jQuery(document).ready(function($) {
         $(".special3 tr:nth-child(" + h2 + ")").css({ "background-color": "#2FB3F7" });
         var di5 = $(".special3 tr:nth-child(" + h2 + ") td:nth-child(2)").html();
         add(10, 10);
-        lug.append("<br><br>");
         DIAGNOS= "Dos tipos de motivación: "+ di2 +", " + di3 + ", " + suma + ", "+suma2+"; Autoestima en general: " + di4 + ", " + suma3 + "; Ego del idioma: " + di5 + ", " + suma4;
-        console.log(DIAGNOS)
         resultadoHTML = '<h1>Dos tipos de motivación</h1> <p>Posees una '+((h == 2) ? "Alta automotivación" : "Baja automotivación"+" y una "+(h == 2) ? "Alta motivación de otros" : "Baja motivación de otros")+'. Tus puntajes fueron <b>'+suma+'</b> en la parte I y <b>'+suma2+'</b> en la parte II.</p> <h1>Autoestima en general</h1> <p>Tu puntaje fue <b>'+suma3+'</b> y '+di4+'</p> <h1>Ego del idioma</h1> <p>Tu puntaje fue <b>'+suma4+'</b> y posees un '+di5+'</p>';
     }
 
