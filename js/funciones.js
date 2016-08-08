@@ -273,7 +273,7 @@ jQuery(document).ready(function($) {
     $("<br>").insertAfter("h3");
     $("<br>").insertAfter("table");
     }
-    $("input[type=text]").focus(function() {
+    /*$("input[type=text]").focus(function() {
         var campo = $(this);
         if (campo.hasClass("incompleto")) {
             var i = campo.index(),
@@ -287,7 +287,7 @@ jQuery(document).ready(function($) {
                 "top": top,
             })
         }
-    })
+    })*/
     $("input[type=text]").blur(function() {
         $("#advertencia").remove();
     })
