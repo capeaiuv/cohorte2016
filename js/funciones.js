@@ -197,13 +197,10 @@ jQuery(document).ready(function($) {
                         (largo < 12) ? hacInc(campo): quiInc(campo);
                     },
                     "1": function() {
-                        (filtro.test(value)) ? quiInc(campo): hacInc(campo);
-                    },
-                    "2": function() {
                         (largo < 9) ? hacInc(campo): quiInc(campo);
                     },
-                    "3": function() {
-                        (largo < 3) ? hacInc(campo): quiInc(campo);
+                    "2": function() {
+                        (filtro.test(value)) ? quiInc(campo): hacInc(campo);                        
                     }
                 }
             CE[num]();
@@ -273,13 +270,13 @@ jQuery(document).ready(function($) {
     $("<br>").insertAfter("h3");
     $("<br>").insertAfter("table");
     }
-    /*$("input[type=text]").focus(function() {
+    $("input[type=text]").focus(function() {
         var campo = $(this);
         if (campo.hasClass("incompleto")) {
             var i = campo.index(),
                 left = campo.position().left,
                 top = campo.position().top + (campo.height()) * 1.5;
-            var props = ["Escribe tu <b>nombre completo</b>, por favor (:", "Por favor, verifica que sea un <b>correo válido</b>.", "Por favor, verifica que tu <b>matrícula</b> esté correcta y completa (:", "Por favor, verifica que tu <b>sección</b> sea correcta (:"];
+            var props = ["Escribe tu <b>nombre completo</b>, por favor (:", "Por favor, verifica que tu <b>matrícula</b> esté correcta y completa (:","Por favor, verifica que sea un <b>correo válido</b>."];
             $(".datos").append("<div id='advertencia'></div>");
             $("#advertencia").html(props[i]);
             $("#advertencia").css({
@@ -287,7 +284,7 @@ jQuery(document).ready(function($) {
                 "top": top,
             })
         }
-    })*/
+    })
     $("input[type=text]").blur(function() {
         $("#advertencia").remove();
     })
