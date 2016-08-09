@@ -178,7 +178,7 @@ jQuery(document).ready(function($) {
                     $(this).replaceWith($(revueltos2[i]));
                 })
             }
-            //shuffle2();
+            shuffle2();
         }
             }
 
