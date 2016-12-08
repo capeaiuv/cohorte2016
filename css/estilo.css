@@ -11,7 +11,7 @@
 	    z-index: 999;
 	}
 	#nav ul li {
-		float:left;	    
+		float:left;
 	    cursor: pointer;
 	}
 	#nav ul li:hover {

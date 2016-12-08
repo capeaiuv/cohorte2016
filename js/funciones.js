@@ -265,6 +265,7 @@ jQuery(document).ready(function($) {
         revisarCampos();
         if (completo) { calificar();addSpace();
             enviarDatos(); } else { alerta(); }
+            calificar();
     });
     function addSpace() {
     $("<br>").insertAfter("h3");
