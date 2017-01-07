@@ -163,8 +163,6 @@ input[type=radio]:checked+label {
 }
 .opcion {
 	color:#CFD8DC;
-	font-size:1.2vw;
-	flex-basis:100%;
 }
 button {
   margin:0 auto;
@@ -264,6 +262,18 @@ textarea {
 	float:left;
 	padding: 1em;
 }
-.opt {
-display:flex;
+@media all and (max-width: 800px) {
+	.opt.one {display:inline-flex; flex-wrap:wrap;width:30%;white-space: nowrap;text-align:right;}
+.no-opt.one {	width: 70%;}
+.opt.dos {	width:40%;	text-align: center;}
+.no-opt.dos {	width:60%;}
 }
+.opt.one {white-space: nowrap;text-align:center;}
+.opt.dos {	width:15%;	text-align: center;}
+.no-opt.dos {	width:60%;}
+div.center.datos {
+	display:flex;
+	flex-wrap:wrap;
+}
+
+
